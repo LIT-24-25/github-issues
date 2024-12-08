@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 
 base_url = "https://api.github.com"
 
@@ -32,8 +33,8 @@ def getIssuesComments(keys, headers):
     
 
 username = "USERNAME"
-repo = "REPO_NAME"
-personal_access_token = "YOUR TOKEN"
+repo = "REPO_NAMEs"
+personal_access_token = "YOURTOKEN"
 
 headers = {
     'Authorization': f"Bearer {personal_access_token}"}
@@ -45,7 +46,7 @@ if issues:
     for repo in issues:
         data[repo["title"]] = repo["comments_url"]
 else:
-    print(f"Failed to retrieve issues.")
+    print("There are no found issues in your repo")
 
 comments = getIssuesComments(data, headers)
 titles = list(data.keys())
@@ -53,10 +54,13 @@ if comments:
     for index in range(len(data)):
         data[titles[index]] = comments[index]
 else:
-    print(f"Failed to retrieve comments.")
+    print("There are no found comments in your issues")
 
-with open("data.txt", "w", encoding="utf-8") as f:
-    values = list(data.values())
-    for i in range(len(values)):
-        output = titles[i] + " : " + values[i] + "\n"
-        f.write(output)
+if issues:
+    with open("data.txt", "w", encoding="utf-8") as f:
+        values = list(data.values())
+        for i in range(len(values)):
+            output = titles[i] + " : " + values[i] + "\n"
+            f.write(output)
+    df = pd.DataFrame.from_dict(data, orient="index")
+    df.to_csv(path_or_buf="data.tsv", sep="\t", index=True, header=False)
