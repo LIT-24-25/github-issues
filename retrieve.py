@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+import json
 
 base_url = "https://api.github.com"
 
@@ -33,7 +34,7 @@ def getIssuesComments(keys, headers):
     
 
 username = "USERNAME"
-repo = "REPO_NAMEs"
+repo = "REPO_NAME"
 personal_access_token = "YOURTOKEN"
 
 headers = {
@@ -62,5 +63,8 @@ if issues:
         for i in range(len(values)):
             output = titles[i] + " : " + values[i] + "\n"
             f.write(output)
+
     df = pd.DataFrame.from_dict(data, orient="index")
     df.to_csv(path_or_buf="data.tsv", sep="\t", index=True, header=False)
+    with open("data.json", "w") as f:
+        json.dump(data, f, indent=4)
