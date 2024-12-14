@@ -8,17 +8,33 @@ def getIssues(owner, repo, headers):
     url = f"{base_url}/repos/{owner}/{repo}/issues"
     response = requests.get(url, headers=headers)
 
-    if response.status_code == 200:
-        repositories_data = response.json()
-        return repositories_data
-    else:
-        print(f"Failed to retrieve issues. Status code: {response.status_code}")
-        return None
+    issues = []
+    page = 1
+    per_page = 10
+
+    while True:
+        params = {'per_page': per_page, 'page': page}
+        response = requests.get(url, headers=headers, params=params)
+
+        if response.status_code != 200:
+            print(f"Error: {response.status_code}, {response.text}")
+            break
+
+        page_issues = response.json()
+
+        if not page_issues:
+            break
+
+        issues.extend(page_issues)
+        page += 1
+
+    return issues
     
 def getIssuesComments(keys, headers):
     result = []
     for item in keys.values():
-        url = item
+        url = item[0]
+        print(url)
         response = requests.get(url, headers=headers)
     
         if response.status_code == 200:
@@ -35,7 +51,7 @@ def getIssuesComments(keys, headers):
 
 username = "USERNAME"
 repo = "REPO_NAME"
-personal_access_token = "YOURTOKEN"
+personal_access_token = "TOKEN"
 
 headers = {
     'Authorization': f"Bearer {personal_access_token}"}
@@ -44,27 +60,19 @@ data = {}
 
 issues = getIssues(username, repo, headers)
 if issues:
-    for repo in issues:
-        data[repo["title"]] = repo["comments_url"]
+    for issue in issues:
+        data[(issue["title"] + " " + "[" + issue["state"] + "]")] = [issue["comments_url"], issue["body"]]
 else:
     print("There are no found issues in your repo")
-
+print(data)
 comments = getIssuesComments(data, headers)
 titles = list(data.keys())
 if comments:
     for index in range(len(data)):
-        data[titles[index]] = comments[index]
+        data[titles[index]] = data[titles[index]][1] + ". " + comments[index]
 else:
     print("There are no found comments in your issues")
 
 if issues:
-    with open("data.txt", "w", encoding="utf-8") as f:
-        values = list(data.values())
-        for i in range(len(values)):
-            output = titles[i] + " : " + values[i] + "\n"
-            f.write(output)
-
-    df = pd.DataFrame.from_dict(data, orient="index")
-    df.to_csv(path_or_buf="data.tsv", sep="\t", index=True, header=False)
     with open("data.json", "w") as f:
         json.dump(data, f, indent=4)
