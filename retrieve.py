@@ -1,78 +1,84 @@
-import requests
-import pandas as pd
 import json
+import asyncio
+import aiohttp
 
-base_url = "https://api.github.com"
+BASE_URL = "https://api.github.com"
 
-def getIssues(owner, repo, headers):   
-    url = f"{base_url}/repos/{owner}/{repo}/issues"
-    response = requests.get(url, headers=headers)
+class RetrieveRepo:
+    def __init__(self, username, repo, token):
+        self.username = username
+        self.repo = repo
+        self.token = token
+        self.headers = {
+        'Authorization': f"Bearer {self.token}"
+        }
 
-    issues = []
-    page = 1
-    per_page = 10
+    async def get_issues(self):   
+        url = f"{BASE_URL}/repos/{self.username}/{self.repo}/issues"
+        issues = []
+        page = 1
+        per_page = 10
+        async with aiohttp.ClientSession() as session:  # Single session for all requests
+            while True:
+                params = {'per_page': per_page, 'page': page}
+                page_issues = self.fetch_page(session, url, params)
+                if not page_issues or page==10:
+                    break
+                issues.append(page_issues)
+                page += 1
 
-    while True:
-        params = {'per_page': per_page, 'page': page}
-        response = requests.get(url, headers=headers, params=params)
+            results = await asyncio.gather(*issues)
 
-        if response.status_code != 200:
-            print(f"Error: {response.status_code}, {response.text}")
-            break
+            issues = [issue for page_issues in results for issue in page_issues]
 
-        page_issues = response.json()
-
-        if not page_issues:
-            break
-
-        issues.extend(page_issues)
-        page += 1
-
-    return issues
-    
-def getIssuesComments(keys, headers):
-    result = []
-    for item in keys.values():
-        url = item[0]
-        print(url)
-        response = requests.get(url, headers=headers)
-    
-        if response.status_code == 200:
-            repositories_data = response.json()
-            if len(repositories_data)!=0:
-                result.append(repositories_data[0]["body"])
-            else:
-                result.append("No description provided")
+        self.data = {}
+        if issues:
+            for issue in issues:
+                self.data[(issue["title"] + " [" + issue["state"] + "]")] = [issue["comments_url"]]
+                if issue["body"]:
+                    self.data[(issue["title"] + " [" + issue["state"] + "]")].append(issue["body"])
+                else:
+                    self.data[(issue["title"] + " [" + issue["state"] + "]")].append("No description provided")
         else:
-            print(f"Failed to retrieve comments. Status code: {response.status_code}")
-            return None
-    return result
-    
+            print("There are no found issues in your repo")
 
-username = "USERNAME"
-repo = "REPO_NAME"
-personal_access_token = "TOKEN"
+    async def fetch_page(self, session, url, params):
+        async with session.get(url, headers=self.headers, params=params) as response:
+            if response.status == 200:
+                return await response.json()
+            else:
+                print(f"Error: {response.status}, {await response.text()}")
+                return []            
 
-headers = {
-    'Authorization': f"Bearer {personal_access_token}"}
+    async def fetch_comments(self, url):
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url, headers=self.headers) as response:
+                if response.status == 200:
+                    repositories_data = await response.json()
+                    if repositories_data:
+                        return repositories_data[0]["body"]
+                    else:
+                        return "No comments provided"
+                else:
+                    print(f"Failed to retrieve comments. Status code: {response.status}")
+                    return "Failed to fetch"
+        return repositories_data
 
-data = {}
+    async def get_issues_comments(self):
+        result = []
+        tasks = []
+        async with aiohttp.ClientSession() as session:
+            for item in self.data.values():
+                url = item[0]
+                tasks.append(self.fetch_comments(url))
+        
+        result = await asyncio.gather(*tasks)
 
-issues = getIssues(username, repo, headers)
-if issues:
-    for issue in issues:
-        data[(issue["title"] + " " + "[" + issue["state"] + "]")] = [issue["comments_url"], issue["body"]]
-else:
-    print("There are no found issues in your repo")
-print(data)
-comments = getIssuesComments(data, headers)
-titles = list(data.keys())
-if comments:
-    for index in range(len(data)):
-        data[titles[index]] = data[titles[index]][1] + ". " + comments[index]
-else:
-    print("There are no found comments in your issues")
+        titles = list(self.data.keys())
+        for index, res in enumerate(result):
+            if res:
+                self.data[titles[index]] = self.data[titles[index]][1] + ". " + res
 
-if issues:
-    with open("data.json", "w") as f:
-        json.dump(data, f, indent=4)
+        with open("data.json", "w") as f:
+            json.dump(self.data, f, indent=4)
+        print(self.data)
