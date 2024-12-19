@@ -7,16 +7,11 @@ class ChunkSplitter():
       self.data = json.load(json_data)
 
   def create_chunks(self):
-    chunks = {}
+    self.output = []
     for question in self.data.keys():
-      text = self.data[question]
+      text = [question]
       splitter: RecursiveCharacterTextSplitter = RecursiveCharacterTextSplitter( 
       chunk_size=50,
       chunk_overlap = 10
       )
-      output = splitter.create_documents([text])
-      chunks[question] = []
-      for part in output:
-        chunks[question].append(part.page_content)
-    with open("chunks.json", "w") as f:
-      json.dump(chunks, f, indent=4)
+      self.output.extend(splitter.create_documents(text, {"title", question}))
