@@ -1,6 +1,7 @@
 from retrieve import RetrieveRepo
 import asyncio
 from chunks import ChunkSplitter
+from embeddings import Embeddings
 
 def get_data():
     with open("config.txt.", "r") as f:
@@ -12,8 +13,12 @@ def get_data():
     asyncio.run(fetch.get_issues())
     asyncio.run(fetch.get_issues_comments())
 
-def get_chunks():
-    chunkSplitter = ChunkSplitter()
-    chunkSplitter.create_chunks()
+def get_embeddings():
+    with open("gigachat.txt", "r") as f:
+        token = f.read()
+    model = Embeddings(token)
+    model.generate_embeddings(chunkSplitter.output)
 
-get_chunks()
+chunkSplitter = ChunkSplitter()
+chunkSplitter.create_chunks()
+get_embeddings()
