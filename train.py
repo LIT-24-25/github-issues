@@ -29,17 +29,10 @@ def create_model():
     model = Embeddings(token)
     return model
 
-client = chromadb.PersistentClient(path="./chromadb")
-try:
-    collection = client.get_collection("embeddings_collection")
-    print("Collection already exists. Document count:", collection.count())
-except chromadb.errors.InvalidCollectionException:
-    # Collection does not exist, create it
-    print("Collection does not exist. Creating new collection.")
-    # get_data()
-    chunkSplitter = ChunkSplitter()
-    chunkSplitter.create_chunks()
-    model = create_model()
-    chroma = Chroma(chunkSplitter.output[0:2], model)
-    collection = client.get_collection("embeddings_collection")
-    print("New collection created. Document count:", collection.count())
+
+get_data()
+chunkSplitter = ChunkSplitter()
+chunkSplitter.create_chunks()
+model = create_model()
+chroma = Chroma(chunkSplitter.output[0:2], model)
+chroma.get_data()
