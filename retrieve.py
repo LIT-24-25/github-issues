@@ -34,11 +34,10 @@ class RetrieveRepo:
         self.data = {}
         if issues:
             for issue in issues:
-                self.data[(issue["title"] + " [" + issue["state"] + "]")] = [issue["comments_url"]]
                 if issue["body"]:
-                    self.data[(issue["title"] + " [" + issue["state"] + "]")].append(issue["body"])
+                    self.data[(issue["title"] + " \n " + issue["body"] + " [" + issue["state"] + "]")] = [issue["comments_url"]]
                 else:
-                    self.data[(issue["title"] + " [" + issue["state"] + "]")].append("No description provided")
+                    self.data[(issue["title"] + " [" + issue["state"] + "]")] = [issue["comments_url"]]
         else:
             print("There are no found issues in your repo")
 
@@ -77,8 +76,7 @@ class RetrieveRepo:
         titles = list(self.data.keys())
         for index, res in enumerate(result):
             if res:
-                self.data[titles[index]] = self.data[titles[index]][1] + ". " + res
+                self.data[titles[index]] = res
 
         with open("data.json", "w") as f:
             json.dump(self.data, f, indent=4)
-        print(self.data)

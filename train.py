@@ -2,6 +2,16 @@ from retrieve import RetrieveRepo
 import asyncio
 from chunks import ChunkSplitter
 from embeddings import Embeddings
+from chroma import Chroma
+import chromadb
+from chromadb.config import Settings
+from retrieve import RetrieveRepo
+import asyncio
+from chunks import ChunkSplitter
+from embeddings import Embeddings
+from chroma import Chroma
+import chromadb
+from chromadb.config import Settings
 
 def get_data():
     with open("config.txt.", "r") as f:
@@ -13,12 +23,23 @@ def get_data():
     asyncio.run(fetch.get_issues())
     asyncio.run(fetch.get_issues_comments())
 
-def get_embeddings():
+def create_model():
     with open("gigachat.txt", "r") as f:
         token = f.read()
     model = Embeddings(token)
-    model.generate_embeddings(chunkSplitter.output)
+    return model
 
-chunkSplitter = ChunkSplitter()
-chunkSplitter.create_chunks()
-get_embeddings()
+client = chromadb.PersistentClient(path="./chromadb")
+try:
+    collection = client.get_collection("embeddings_collection")
+    print("Collection already exists. Document count:", collection.count())
+except chromadb.errors.InvalidCollectionException:
+    # Collection does not exist, create it
+    print("Collection does not exist. Creating new collection.")
+    # get_data()
+    chunkSplitter = ChunkSplitter()
+    chunkSplitter.create_chunks()
+    model = create_model()
+    chroma = Chroma(chunkSplitter.output[0:2], model)
+    collection = client.get_collection("embeddings_collection")
+    print("New collection created. Document count:", collection.count())
