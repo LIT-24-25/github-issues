@@ -1,16 +1,12 @@
 from gigachat import GigaChat
 from langchain_core.documents import Document
+from langchain_gigachat.embeddings import GigaChatEmbeddings
 
 class Embeddings:
     def __init__(self, token):
         self.giga = GigaChat(credentials=token, verify_ssl_certs=False)
+        self.gigachat_embeddings = GigaChatEmbeddings(credentials="ключ_авторизации")
 
-    def generate_embeddings(self, docs: list[Document]):
-        self.embeddings = []
-        self.metadatas = []
-        for doc in docs:
-            embedding = self.giga.embeddings(doc.page_content)
-            self.embeddings.append(embedding)
-            metadata = {"title": doc.metadata.get("title", "Untitled")}
-            self.metadatas.append(metadata)
-        
+
+    def embed(self, text):
+        return self.giga.embeddings(text)

@@ -9,10 +9,10 @@ class ChunkSplitter():
   def create_chunks(self):
     self.output = []
     for question, content in self.data.items():
-      text = [content]
+      text = [question]
       splitter: RecursiveCharacterTextSplitter = RecursiveCharacterTextSplitter( 
-      chunk_size=50,
+      chunk_size=30,
       chunk_overlap = 10
       )
-      metadata = {"title": question}
+      metadata = {"comment": content}
       self.output.extend(splitter.create_documents(text, [metadata]))
