@@ -30,9 +30,10 @@ def create_model():
     return model
 
 
-get_data()
-chunkSplitter = ChunkSplitter()
-chunkSplitter.create_chunks()
-model = create_model()
-chroma = Chroma(chunkSplitter.output[0:2], model)
-chroma.get_data()
+if __name__ == '__main__':
+    get_data()
+    chunkSplitter = ChunkSplitter()
+    chunkSplitter.create_chunks()
+    model = create_model()
+    chroma = Chroma(chunkSplitter.output[0:2], model)
+    chroma.get_data()
