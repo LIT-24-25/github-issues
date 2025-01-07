@@ -1,17 +1,13 @@
 from retrieve import RetrieveRepo
 import asyncio
 from chunks import ChunkSplitter
-from embeddings import Embeddings
+from model import Model
 from chroma import Chroma
-import chromadb
-from chromadb.config import Settings
 from retrieve import RetrieveRepo
 import asyncio
 from chunks import ChunkSplitter
-from embeddings import Embeddings
+from model import Model
 from chroma import Chroma
-import chromadb
-from chromadb.config import Settings
 
 def get_data():
     with open("config.txt.", "r") as f:
@@ -26,14 +22,14 @@ def get_data():
 def create_model():
     with open("gigachat.txt", "r") as f:
         token = f.read()
-    model = Embeddings(token)
+    model = Model(token)
     return model
 
 
 if __name__ == '__main__':
     get_data()
-    chunkSplitter = ChunkSplitter()
-    chunkSplitter.create_chunks()
-    model = create_model()
-    chroma = Chroma(chunkSplitter.output[0:2], model)
-    chroma.get_data()
+    # chunkSplitter = ChunkSplitter()
+    # chunkSplitter.create_chunks()
+    # model = create_model()
+    # chroma = Chroma(chunkSplitter.output[0:2], model)
+    # chroma.get_data()
