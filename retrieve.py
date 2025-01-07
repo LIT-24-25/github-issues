@@ -17,7 +17,6 @@ class RetrieveRepo:
         trash_1 = """### <span aria-hidden="true">✅</span> Deploy Preview for *label-studio-docs-new-theme* ready!"""
         trash_2 = "\r\n"
         trash = [trash_1, trash_2]
-        print(line)
         for i in trash:
             line = line.replace(i.strip(), "")
         return line
@@ -57,7 +56,7 @@ _To edit notification comments on pull requests, go to your [Netlify site config
             for issue in issues:
                 if issue["body"]:
                     body = self.clear_issue(issue["body"])
-                    self.data[issue["title"]] = [issue["comments_url"], ("State:[" + issue["state"] + "] " + body)]
+                    self.data[issue["title"]] = [issue["comments_url"], ("State:[" + issue["state"] + "]\n" + body)]
                 else:
                     self.data[issue["title"]] = [issue["comments_url"], (" [" + issue["state"] + "]")]
         else:
