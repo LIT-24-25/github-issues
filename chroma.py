@@ -1,10 +1,9 @@
 import chromadb
-from chromadb.config import Settings
 from langchain_core.documents import Document
-from embeddings import Embeddings
+from model import Model
 
 class Chroma:
-    def __init__(self, docs: list[Document], model: Embeddings):
+    def __init__(self, docs: list[Document], model: Model): #initiate chroma collection
         self.client = chromadb.PersistentClient(path="./chromadb")
         self.collection = self.client.create_collection(name="embeddings_collection")
         for idx, doc in enumerate(docs):
@@ -17,6 +16,6 @@ class Chroma:
             )
         print("Documents added to collection")
 
-    def get_data(self):
+    def get_data(self): #for debugging only
         coll = self.client.get_collection(name="embeddings_collection")
-        return coll.count()
+        return coll
