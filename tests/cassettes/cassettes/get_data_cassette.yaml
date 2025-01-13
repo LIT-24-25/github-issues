@@ -1,0 +1,1316 @@
+interactions:
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues?per_page=10&page=1
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6895\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6895/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6895/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6895/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/issues/6895\",\"id\":2783945286,\"node_id\":\"I_kwDOC3t2Ec6l76JG\",\"number\":6895,\"title\":\"QUESTION:
+        How to export/import a label-studio project ? How to merge databases of 2
+        label-sudio instances ?\",\"user\":{\"login\":\"Binnette\",\"id\":6597721,\"node_id\":\"MDQ6VXNlcjY1OTc3MjE=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/6597721?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/Binnette\",\"html_url\":\"https://github.com/Binnette\",\"followers_url\":\"https://api.github.com/users/Binnette/followers\",\"following_url\":\"https://api.github.com/users/Binnette/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/Binnette/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/Binnette/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/Binnette/subscriptions\",\"organizations_url\":\"https://api.github.com/users/Binnette/orgs\",\"repos_url\":\"https://api.github.com/users/Binnette/repos\",\"events_url\":\"https://api.github.com/users/Binnette/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/Binnette/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":0,\"created_at\":\"2025-01-13T13:20:17Z\",\"updated_at\":\"2025-01-13T13:20:17Z\",\"closed_at\":null,\"author_association\":\"NONE\",\"active_lock_reason\":null,\"body\":\"Hi,\\r\\n\\r\\nI
+        have 2 PC. I created 1 label-studio project on each PC. How can I import my
+        project from PC1 to PC2 ? That way, I can \\\"merge\\\" my two project in
+        a single database.\\r\\n\\r\\nIs there a import/export feature, that allow
+        user to export/import a label-studio project ? I want to move everything :
+        images + annotations + project settings + etc.\\r\\n\\r\\nHave a nice day.\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6895/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6895/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6894\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6894/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6894/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6894/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6894\",\"id\":2782873995,\"node_id\":\"PR_kwDOC3t2Ec6HePAP\",\"number\":6894,\"title\":\"docs:
+        Add SaaS release notes for 2025-01-13\",\"user\":{\"login\":\"robot-ci-heartex\",\"id\":87703623,\"node_id\":\"MDQ6VXNlcjg3NzAzNjIz\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/87703623?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/robot-ci-heartex\",\"html_url\":\"https://github.com/robot-ci-heartex\",\"followers_url\":\"https://api.github.com/users/robot-ci-heartex/followers\",\"following_url\":\"https://api.github.com/users/robot-ci-heartex/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/robot-ci-heartex/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/robot-ci-heartex/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/robot-ci-heartex/subscriptions\",\"organizations_url\":\"https://api.github.com/users/robot-ci-heartex/orgs\",\"repos_url\":\"https://api.github.com/users/robot-ci-heartex/repos\",\"events_url\":\"https://api.github.com/users/robot-ci-heartex/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/robot-ci-heartex/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":4281926120,\"node_id\":\"LA_kwDOC3t2Ec7_OQHo\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/docs\",\"name\":\"docs\",\"color\":\"ededed\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":2,\"created_at\":\"2025-01-13T02:30:10Z\",\"updated_at\":\"2025-01-13T02:31:42Z\",\"closed_at\":null,\"author_association\":\"COLLABORATOR\",\"active_lock_reason\":null,\"draft\":true,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/6894\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6894\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/6894.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/6894.patch\",\"merged_at\":null},\"body\":null,\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6894/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6894/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6893\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6893/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6893/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6893/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6893\",\"id\":2782779932,\"node_id\":\"PR_kwDOC3t2Ec6Hd6aO\",\"number\":6893,\"title\":\"Fix
+        S3 file storage import\",\"user\":{\"login\":\"kossnocorp\",\"id\":52201,\"node_id\":\"MDQ6VXNlcjUyMjAx\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/52201?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/kossnocorp\",\"html_url\":\"https://github.com/kossnocorp\",\"followers_url\":\"https://api.github.com/users/kossnocorp/followers\",\"following_url\":\"https://api.github.com/users/kossnocorp/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/kossnocorp/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/kossnocorp/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/kossnocorp/subscriptions\",\"organizations_url\":\"https://api.github.com/users/kossnocorp/orgs\",\"repos_url\":\"https://api.github.com/users/kossnocorp/repos\",\"events_url\":\"https://api.github.com/users/kossnocorp/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/kossnocorp/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":4280486442,\"node_id\":\"LA_kwDOC3t2Ec7_Iwoq\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/title%20needs%20formatting\",\"name\":\"title
+        needs formatting\",\"color\":\"EEEEEE\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":2,\"created_at\":\"2025-01-13T00:24:10Z\",\"updated_at\":\"2025-01-13T00:24:23Z\",\"closed_at\":null,\"author_association\":\"NONE\",\"active_lock_reason\":null,\"draft\":false,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/6893\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6893\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/6893.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/6893.patch\",\"merged_at\":null},\"body\":\"###
+        PR fulfills these requirements\\r\\n\\r\\n- [ ] Commit message(s) and PR title
+        follows the format `[fix|feat|ci|chore|doc]: TICKET-ID: Short description
+        of change made` ex. `fix: DEV-XXXX: Removed inconsistent code usage causing
+        intermittent errors`\\r\\n- [ ] Tests for the changes have been added/updated
+        (for bug fixes/features)\\r\\n- [ ] Docs have been added/updated (for bug
+        fixes/features)\\r\\n- [ ] Best efforts were made to ensure docs/code are
+        concise and coherent (checked for spelling/grammatical errors, commented out
+        code, debug logs etc.)\\r\\n- [x] Self-reviewed and ran all changes on a local
+        instance (for bug fixes/features)\\r\\n\\r\\nI'm not sure what I can do, I
+        don't have a ticket id.\\r\\n\\r\\n#### Change has impacts in these area(s)\\r\\n\\r\\n-
+        [ ] Product design\\r\\n- [ ] Backend (Database)\\r\\n- [x] Backend (API)\\r\\n-
+        [ ] Frontend\\r\\n\\r\\n### Describe the reason for change\\r\\n\\r\\nWhen
+        using cloud storage, a task created from an imported image has a relative
+        URL (e.g., `upload/1/d0672b53-ff-template.jpg`) that breaks when enabling
+        cloud file storage.\\r\\n\\r\\n<img width=\\\"1409\\\" alt=\\\"image\\\" src=\\\"https://github.com/user-attachments/assets/09c5065c-5314-4f3c-9e64-3bcc39749b82\\\"
+        />\\r\\n\\r\\n#### What does this fix?\\r\\n\\r\\nThe fix adds `CustomS3Boto3Storage::url`
+        and utilizes it in the `FileUpload::read_task_from_uploaded_file` to make
+        the app correctly display imported images.\\r\\n\\r\\n#### What is the new
+        behavior?\\r\\n\\r\\nWhen manually importing, the task URL will have `s3://BUCKER_NAME/`
+        prefix.\\r\\n\\r\\n\\r\\n#### What is the current behavior?\\r\\n\\r\\nThe
+        task URL has no prefix (e.g., `upload/1/d0672b53-ff-template.jpg`), so it
+        fails to display in the app.\\r\\n\\r\\n#### What libraries were added/updated?\\r\\n\\r\\nNA\\r\\n\\r\\n####
+        Does this change affect performance?\\r\\n\\r\\nNA\\r\\n\\r\\n#### Does this
+        change affect security?\\r\\n\\r\\nNA\\r\\n\\r\\n#### What alternative approaches
+        were there?\\r\\n\\r\\nThe alternative was to resolve to the storage URL when
+        displaying, but using the file storage instance was a more straightforward
+        approach and matched the storage-imported task schema.\\r\\n\\r\\n#### What
+        feature flags were used to cover this change?\\r\\n\\r\\nNA\\r\\n\\r\\n###
+        Does this PR introduce a breaking change?\\r\\n\\r\\n- [ ] Yes, and covered
+        entirely by feature flag(s)\\r\\n- [ ] Yes, and covered partially by feature
+        flag(s)\\r\\n- [ ] No\\r\\n- [x] Not sure (briefly explain the situation below)\\r\\n\\r\\nI'm
+        not sure what was the current setup, but it was clearly not working for cloud
+        file storage, but I can imagine there was a working setup that might get affected,
+        but it is not clear from the source code if there was any.\\r\\n\\r\\n###
+        What level of testing was included in the change?\\r\\n_(check all that apply)_\\r\\n-
+        [ ] e2e\\r\\n- [ ] integration\\r\\n- [ ] unit\\r\\n\\r\\n\\r\\n\\r\\n###
+        Which logical domain(s) does this change affect?\\r\\n_(for bug fixes/features,
+        be as precise as possible. ex. Authentication, Annotation History, Review
+        Stream etc.)_\\r\\n\\r\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6893/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6893/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6891\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6891/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6891/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6891/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6891\",\"id\":2781060194,\"node_id\":\"PR_kwDOC3t2Ec6HYSyx\",\"number\":6891,\"title\":\"feat:
+        DIA-1802: Anthropic support in Prompts\",\"user\":{\"login\":\"matt-bernstein\",\"id\":60152561,\"node_id\":\"MDQ6VXNlcjYwMTUyNTYx\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/60152561?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/matt-bernstein\",\"html_url\":\"https://github.com/matt-bernstein\",\"followers_url\":\"https://api.github.com/users/matt-bernstein/followers\",\"following_url\":\"https://api.github.com/users/matt-bernstein/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/matt-bernstein/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/matt-bernstein/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/matt-bernstein/subscriptions\",\"organizations_url\":\"https://api.github.com/users/matt-bernstein/orgs\",\"repos_url\":\"https://api.github.com/users/matt-bernstein/repos\",\"events_url\":\"https://api.github.com/users/matt-bernstein/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/matt-bernstein/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":4280486528,\"node_id\":\"LA_kwDOC3t2Ec7_IwqA\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/feat\",\"name\":\"feat\",\"color\":\"ededed\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":3,\"created_at\":\"2025-01-10T20:17:14Z\",\"updated_at\":\"2025-01-10T20:28:19Z\",\"closed_at\":null,\"author_association\":\"CONTRIBUTOR\",\"active_lock_reason\":null,\"draft\":false,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/6891\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6891\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/6891.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/6891.patch\",\"merged_at\":null},\"body\":\"###
+        PR fulfills these requirements\\r\\n- [ ] Commit message(s) and PR title follows
+        the format `[fix|feat|ci|chore|doc]: TICKET-ID: Short description of change
+        made` ex. `fix: DEV-XXXX: Removed inconsistent code usage causing intermittent
+        errors`\\r\\n- [ ] Tests for the changes have been added/updated (for bug
+        fixes/features)\\r\\n- [ ] Docs have been added/updated (for bug fixes/features)\\r\\n-
+        [ ] Best efforts were made to ensure docs/code are concise and coherent (checked
+        for spelling/grammatical errors, commented out code, debug logs etc.)\\r\\n-
+        [ ] Self-reviewed and ran all changes on a local instance (for bug fixes/features)\\r\\n\\r\\n\\r\\n\\r\\n####
+        Change has impacts in these area(s)\\r\\n_(check all that apply)_\\r\\n- [
+        ] Product design\\r\\n- [ ] Backend (Database)\\r\\n- [ ] Backend (API)\\r\\n-
+        [ ] Frontend\\r\\n\\r\\n\\r\\n\\r\\n### Describe the reason for change\\r\\n_(link
+        to issue, supportive screenshots etc.)_\\r\\n\\r\\n\\r\\n\\r\\n#### What does
+        this fix?\\r\\n_(if this is a bug fix)_\\r\\n\\r\\n\\r\\n\\r\\n#### What is
+        the new behavior?\\r\\n_(if this is a breaking or feature change)_\\r\\n\\r\\n\\r\\n\\r\\n####
+        What is the current behavior?\\r\\n_(if this is a breaking or feature change)_\\r\\n\\r\\n\\r\\n\\r\\n####
+        What libraries were added/updated?\\r\\n_(list all with version changes)_\\r\\n\\r\\n\\r\\n\\r\\n####
+        Does this change affect performance?\\r\\n_(if so describe the impacts positive
+        or negative)_\\r\\n\\r\\n\\r\\n\\r\\n#### Does this change affect security?\\r\\n_(if
+        so describe the impacts positive or negative)_\\r\\n\\r\\n\\r\\n\\r\\n####
+        What alternative approaches were there?\\r\\n_(briefly list any if applicable)_\\r\\n\\r\\n\\r\\n\\r\\n####
+        What feature flags were used to cover this change?\\r\\n_(briefly list any
+        if applicable)_\\r\\n\\r\\n\\r\\n\\r\\n### Does this PR introduce a breaking
+        change?\\r\\n_(check only one)_\\r\\n- [ ] Yes, and covered entirely by feature
+        flag(s)\\r\\n- [ ] Yes, and covered partially by feature flag(s)\\r\\n- [
+        ] No\\r\\n- [ ] Not sure (briefly explain the situation below)\\r\\n\\r\\n\\r\\n\\r\\n###
+        What level of testing was included in the change?\\r\\n_(check all that apply)_\\r\\n-
+        [ ] e2e\\r\\n- [ ] integration\\r\\n- [ ] unit\\r\\n\\r\\n\\r\\n\\r\\n###
+        Which logical domain(s) does this change affect?\\r\\n_(for bug fixes/features,
+        be as precise as possible. ex. Authentication, Annotation History, Review
+        Stream etc.)_\\r\\n\\r\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6891/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6891/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6890\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6890/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6890/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6890/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6890\",\"id\":2780838389,\"node_id\":\"PR_kwDOC3t2Ec6HXgTw\",\"number\":6890,\"title\":\"feat:
+        DIA-1716: Google AI Studio (Gemini) support in Prompts\",\"user\":{\"login\":\"matt-bernstein\",\"id\":60152561,\"node_id\":\"MDQ6VXNlcjYwMTUyNTYx\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/60152561?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/matt-bernstein\",\"html_url\":\"https://github.com/matt-bernstein\",\"followers_url\":\"https://api.github.com/users/matt-bernstein/followers\",\"following_url\":\"https://api.github.com/users/matt-bernstein/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/matt-bernstein/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/matt-bernstein/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/matt-bernstein/subscriptions\",\"organizations_url\":\"https://api.github.com/users/matt-bernstein/orgs\",\"repos_url\":\"https://api.github.com/users/matt-bernstein/repos\",\"events_url\":\"https://api.github.com/users/matt-bernstein/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/matt-bernstein/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":4280486528,\"node_id\":\"LA_kwDOC3t2Ec7_IwqA\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/feat\",\"name\":\"feat\",\"color\":\"ededed\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":3,\"created_at\":\"2025-01-10T18:35:15Z\",\"updated_at\":\"2025-01-10T18:51:41Z\",\"closed_at\":null,\"author_association\":\"CONTRIBUTOR\",\"active_lock_reason\":null,\"draft\":false,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/6890\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6890\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/6890.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/6890.patch\",\"merged_at\":null},\"body\":\"###
+        PR fulfills these requirements\\r\\n- [ ] Commit message(s) and PR title follows
+        the format `[fix|feat|ci|chore|doc]: TICKET-ID: Short description of change
+        made` ex. `fix: DEV-XXXX: Removed inconsistent code usage causing intermittent
+        errors`\\r\\n- [ ] Tests for the changes have been added/updated (for bug
+        fixes/features)\\r\\n- [ ] Docs have been added/updated (for bug fixes/features)\\r\\n-
+        [ ] Best efforts were made to ensure docs/code are concise and coherent (checked
+        for spelling/grammatical errors, commented out code, debug logs etc.)\\r\\n-
+        [ ] Self-reviewed and ran all changes on a local instance (for bug fixes/features)\\r\\n\\r\\n\\r\\n\\r\\n####
+        Change has impacts in these area(s)\\r\\n_(check all that apply)_\\r\\n- [
+        ] Product design\\r\\n- [ ] Backend (Database)\\r\\n- [ ] Backend (API)\\r\\n-
+        [ ] Frontend\\r\\n\\r\\n\\r\\n\\r\\n### Describe the reason for change\\r\\n_(link
+        to issue, supportive screenshots etc.)_\\r\\n\\r\\n\\r\\n\\r\\n#### What does
+        this fix?\\r\\n_(if this is a bug fix)_\\r\\n\\r\\n\\r\\n\\r\\n#### What is
+        the new behavior?\\r\\n_(if this is a breaking or feature change)_\\r\\n\\r\\n\\r\\n\\r\\n####
+        What is the current behavior?\\r\\n_(if this is a breaking or feature change)_\\r\\n\\r\\n\\r\\n\\r\\n####
+        What libraries were added/updated?\\r\\n_(list all with version changes)_\\r\\n\\r\\n\\r\\n\\r\\n####
+        Does this change affect performance?\\r\\n_(if so describe the impacts positive
+        or negative)_\\r\\n\\r\\n\\r\\n\\r\\n#### Does this change affect security?\\r\\n_(if
+        so describe the impacts positive or negative)_\\r\\n\\r\\n\\r\\n\\r\\n####
+        What alternative approaches were there?\\r\\n_(briefly list any if applicable)_\\r\\n\\r\\n\\r\\n\\r\\n####
+        What feature flags were used to cover this change?\\r\\n_(briefly list any
+        if applicable)_\\r\\n\\r\\n\\r\\n\\r\\n### Does this PR introduce a breaking
+        change?\\r\\n_(check only one)_\\r\\n- [ ] Yes, and covered entirely by feature
+        flag(s)\\r\\n- [ ] Yes, and covered partially by feature flag(s)\\r\\n- [
+        ] No\\r\\n- [ ] Not sure (briefly explain the situation below)\\r\\n\\r\\n\\r\\n\\r\\n###
+        What level of testing was included in the change?\\r\\n_(check all that apply)_\\r\\n-
+        [ ] e2e\\r\\n- [ ] integration\\r\\n- [ ] unit\\r\\n\\r\\n\\r\\n\\r\\n###
+        Which logical domain(s) does this change affect?\\r\\n_(for bug fixes/features,
+        be as precise as possible. ex. Authentication, Annotation History, Review
+        Stream etc.)_\\r\\n\\r\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6890/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6890/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6889\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6889/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6889/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6889/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/issues/6889\",\"id\":2780585425,\"node_id\":\"I_kwDOC3t2Ec6lvF3R\",\"number\":6889,\"title\":\"Deployment
+        on Azure using an ARM template, Forbidden (403) during log in or sign-up\",\"user\":{\"login\":\"MirkoGiugliano95\",\"id\":118755865,\"node_id\":\"U_kgDOBxQSGQ\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/118755865?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/MirkoGiugliano95\",\"html_url\":\"https://github.com/MirkoGiugliano95\",\"followers_url\":\"https://api.github.com/users/MirkoGiugliano95/followers\",\"following_url\":\"https://api.github.com/users/MirkoGiugliano95/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/MirkoGiugliano95/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/MirkoGiugliano95/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/MirkoGiugliano95/subscriptions\",\"organizations_url\":\"https://api.github.com/users/MirkoGiugliano95/orgs\",\"repos_url\":\"https://api.github.com/users/MirkoGiugliano95/repos\",\"events_url\":\"https://api.github.com/users/MirkoGiugliano95/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/MirkoGiugliano95/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":1,\"created_at\":\"2025-01-10T16:27:07Z\",\"updated_at\":\"2025-01-10T16:36:37Z\",\"closed_at\":null,\"author_association\":\"NONE\",\"active_lock_reason\":null,\"body\":\"Deploying
+        on Azure using with ARM template, once the app is started, when I try to authenticate
+        or register myself, I get the following error: \\r\\n\\r\\n\\\"Forbidden (403)\\r\\nCSRF
+        verification failed. Request aborted.\\r\\n\\r\\nMore information is available
+        with DEBUG=True.\\\"\\r\\n\\r\\nI\u2019ve also attached the screenshot.\\r\\nCould
+        you help me?\\r\\n\\r\\n![image](https://github.com/user-attachments/assets/c8815c3b-5651-4691-bffd-0fea400ca2cc)\\r\\n\\r\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6889/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6889/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6888\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6888/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6888/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6888/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/issues/6888\",\"id\":2780273292,\"node_id\":\"I_kwDOC3t2Ec6lt5qM\",\"number\":6888,\"title\":\"OCR
+        with Dense Text\",\"user\":{\"login\":\"cem-sirin\",\"id\":77017488,\"node_id\":\"MDQ6VXNlcjc3MDE3NDg4\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/77017488?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/cem-sirin\",\"html_url\":\"https://github.com/cem-sirin\",\"followers_url\":\"https://api.github.com/users/cem-sirin/followers\",\"following_url\":\"https://api.github.com/users/cem-sirin/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/cem-sirin/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/cem-sirin/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/cem-sirin/subscriptions\",\"organizations_url\":\"https://api.github.com/users/cem-sirin/orgs\",\"repos_url\":\"https://api.github.com/users/cem-sirin/repos\",\"events_url\":\"https://api.github.com/users/cem-sirin/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/cem-sirin/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":7614227735,\"node_id\":\"LA_kwDOC3t2Ec8AAAABxdflFw\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/community_needs-information\",\"name\":\"community_needs-information\",\"color\":\"ededed\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":1,\"created_at\":\"2025-01-10T14:07:56Z\",\"updated_at\":\"2025-01-13T16:47:09Z\",\"closed_at\":null,\"author_association\":\"NONE\",\"active_lock_reason\":null,\"body\":\"**Related
+        Problem:** Can neither text nor read the labels when using OCR applications
+        with dense text.\\r\\n\\r\\n<img width=\\\"543\\\" alt=\\\"Screenshot 2025-01-10
+        at 14 55 54\\\" src=\\\"https://github.com/user-attachments/assets/15751b87-ca11-4bcc-9405-669072250537\\\"
+        />\\r\\n\\r\\n**Easy solution:** Be able to move the text to the right of
+        the box. I tried with style tag, but i couldn't maybe it's a skill issue :)\\r\\n\\r\\n**A
+        Better solution:** Usually OCR results are displayed as having the image and
+        the boxes on the left. And on the right, you would have a blank page with
+        the rendered boxes and texts. So in your case, of course, there is no need
+        to render the text to image, it can stay as a text box. This is what it looks
+        like:\\r\\n\\r\\n<img src=\\\"https://github.com/PaddlePaddle/PaddleOCR/blob/main/docs/images/en_2.png?raw=true\\\"/>\\r\\n\\r\\n\\r\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6888/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6888/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6887\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6887/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6887/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6887/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/issues/6887\",\"id\":2779794469,\"node_id\":\"I_kwDOC3t2Ec6lsEwl\",\"number\":6887,\"title\":\"Bug
+        when exporting semantic segmentation annotations with masks.\",\"user\":{\"login\":\"MosbehBarhoumi\",\"id\":78423450,\"node_id\":\"MDQ6VXNlcjc4NDIzNDUw\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/78423450?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/MosbehBarhoumi\",\"html_url\":\"https://github.com/MosbehBarhoumi\",\"followers_url\":\"https://api.github.com/users/MosbehBarhoumi/followers\",\"following_url\":\"https://api.github.com/users/MosbehBarhoumi/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/MosbehBarhoumi/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/MosbehBarhoumi/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/MosbehBarhoumi/subscriptions\",\"organizations_url\":\"https://api.github.com/users/MosbehBarhoumi/orgs\",\"repos_url\":\"https://api.github.com/users/MosbehBarhoumi/repos\",\"events_url\":\"https://api.github.com/users/MosbehBarhoumi/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/MosbehBarhoumi/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":3,\"created_at\":\"2025-01-10T10:10:18Z\",\"updated_at\":\"2025-01-10T14:54:54Z\",\"closed_at\":null,\"author_association\":\"NONE\",\"active_lock_reason\":null,\"body\":\"When
+        attempting to export a labeled image in my semantic segmentation project,
+        the exported file does not match the labeled image as expected. After labeling
+        an image with the name **61148fa2-problem_frame_0190.jpg** and the label \\\"net,\\\"
+        I exported the mask annotation. However, the exported file was saved as **project-10-at-2025-01-10-10-05-5b8d7102.png**,
+        which does not indicate which original image this mask corresponds to.\\r\\n\\r\\n**Steps
+        to Reproduce:**\\r\\n\\r\\nUpload the image 61148fa2-problem_frame_0190.jpg
+        to the platform.\\r\\nLabel the image with the label \\\"net\\\" using the
+        semantic segmentation tool.\\r\\nExport the semantic segmentation mask.\\r\\nThe
+        exported file is named project-10-at-2025-01-10-10-05-5b8d7102.png but does
+        not visually indicate which image it corresponds to.\\r\\n\\r\\n**Expected
+        Behavior:**\\r\\nThe exported file should be clearly identifiable, possibly
+        by including the original image name or ID in the file name, or providing
+        a reference to link the mask back to the labeled image.\\r\\n\\r\\n**Actual
+        Behavior:**\\r\\nThe exported mask file name (project-10-at-2025-01-10-10-05-5b8d7102.png)
+        does not provide any clear reference to the original image or the labels applied.\\r\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6887/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6887/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6886\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6886/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6886/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6886/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/issues/6886\",\"id\":2779012514,\"node_id\":\"I_kwDOC3t2Ec6lpF2i\",\"number\":6886,\"title\":\"NER
+        Template Not Working as Expected\",\"user\":{\"login\":\"eschaffn\",\"id\":94634191,\"node_id\":\"U_kgDOBaQAzw\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/94634191?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/eschaffn\",\"html_url\":\"https://github.com/eschaffn\",\"followers_url\":\"https://api.github.com/users/eschaffn/followers\",\"following_url\":\"https://api.github.com/users/eschaffn/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/eschaffn/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/eschaffn/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/eschaffn/subscriptions\",\"organizations_url\":\"https://api.github.com/users/eschaffn/orgs\",\"repos_url\":\"https://api.github.com/users/eschaffn/repos\",\"events_url\":\"https://api.github.com/users/eschaffn/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/eschaffn/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":0,\"created_at\":\"2025-01-10T00:14:28Z\",\"updated_at\":\"2025-01-10T00:14:28Z\",\"closed_at\":null,\"author_association\":\"NONE\",\"active_lock_reason\":null,\"body\":\"The
+        NER template shows the label name inside the highlighted text region as shown
+        here:\\r\\n\\r\\n<img width=\\\"285\\\" alt=\\\"image\\\" src=\\\"https://github.com/user-attachments/assets/9616236b-ef7a-4c9d-a4b5-6da879f90415\\\"
+        />\\r\\n\\r\\nThis is also how the interactive example works [here](https://labelstud.io/playground?config=%3CView%3E%0A%20%20%3CLabels%20name%3D%22label%22%20toName%3D%22text%22%3E%0A%20%20%20%20%3CLabel%20value%3D%22PER%22%20background%3D%22red%22%2F%3E%0A%20%20%20%20%3CLabel%20value%3D%22ORG%22%20background%3D%22darkorange%22%2F%3E%0A%20%20%20%20%3CLabel%20value%3D%22LOC%22%20background%3D%22orange%22%2F%3E%0A%20%20%20%20%3CLabel%20value%3D%22MISC%22%20background%3D%22green%22%2F%3E%0A%20%20%3C%2FLabels%3E%0A%20%20%3CText%20name%3D%22text%22%20value%3D%22%24text%22%2F%3E%0A%3C%2FView%3E).
+        This makes it a lot easier to keep track of which color is which label, and
+        makes annotating much quicker. \\r\\n\\r\\nHowever, when creating an NER labeling
+        project using the template my UI looks like this:\\r\\n\\r\\n<img width=\\\"253\\\"
+        alt=\\\"image\\\" src=\\\"https://github.com/user-attachments/assets/daa11278-fca8-4672-8722-d4c5921de5dd\\\"
+        />\\r\\n\\r\\nThe highlighted text regions don't show the label names. \\r\\n\\r\\nI
+        tried copying the XML code from the web page but both the default template
+        and the copied XML behave the same for me. \\r\\n\\r\\nI'm using the following
+        label studio version:\\r\\n\\r\\n```\\r\\n{\\r\\n  \\\"release\\\": \\\"1.14.0.post0\\\",\\r\\n
+        \ \\\"label-studio-os-package\\\": {\\r\\n    \\\"version\\\": \\\"1.14.0.post0\\\",\\r\\n
+        \   \\\"short_version\\\": \\\"1.14\\\",\\r\\n    \\\"latest_version_from_pypi\\\":
+        \\\"1.14.0.post0\\\",\\r\\n    \\\"latest_version_upload_time\\\": \\\"2024-11-13T08:08:53\\\",\\r\\n
+        \   \\\"current_version_is_outdated\\\": false\\r\\n  },\\r\\n\\r\\n  \\\"label-studio-os-backend\\\":
+        {\\r\\n    \\\"message\\\": \\\"explicitly add setuptools to build\\\",\\r\\n
+        \   \\\"commit\\\": \\\"1873abacbe2b13c6e81483c377052a8ddf400a17\\\",\\r\\n
+        \   \\\"date\\\": \\\"2024/11/13 01:48:45\\\",\\r\\n    \\\"branch\\\": \\\"\\\",\\r\\n
+        \   \\\"version\\\": \\\"1.14.0.post0+0.g1873aba.dirty\\\"\\r\\n  },\\r\\n\\r\\n
+        \ \\\"label-studio-frontend\\\": {\\r\\n    \\\"message\\\": \\\"explicitly
+        add setuptools to build\\\",\\r\\n    \\\"commit\\\": \\\"1873abacbe2b13c6e81483c377052a8ddf400a17\\\",\\r\\n
+        \   \\\"date\\\": \\\"2024-11-13T06:48:45.000Z\\\",\\r\\n    \\\"branch\\\":
+        \\\"develop\\\"\\r\\n  },\\r\\n\\r\\n  \\\"dm2\\\": {\\r\\n    \\\"message\\\":
+        \\\"explicitly add setuptools to build\\\",\\r\\n    \\\"commit\\\": \\\"1873abacbe2b13c6e81483c377052a8ddf400a17\\\",\\r\\n
+        \   \\\"date\\\": \\\"2024-11-13T06:48:45.000Z\\\",\\r\\n    \\\"branch\\\":
+        \\\"develop\\\"\\r\\n  },\\r\\n\\r\\n  \\\"label-studio-converter\\\": {\\r\\n
+        \   \\\"version\\\": \\\"1.0.7\\\"\\r\\n  }\\r\\n}\\r\\n```\\r\\n\\r\\nLooking
+        at the release notes, not being on 1.15.0 shouldn't be the issue however.
+        \",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6886/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6886/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6885\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6885/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6885/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6885/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6885\",\"id\":2778981711,\"node_id\":\"PR_kwDOC3t2Ec6HRNfa\",\"number\":6885,\"title\":\"feat:
+        DIA-1794: [FE] Implement home page in LSO and LSE\",\"user\":{\"login\":\"nick-skriabin\",\"id\":767890,\"node_id\":\"MDQ6VXNlcjc2Nzg5MA==\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/767890?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/nick-skriabin\",\"html_url\":\"https://github.com/nick-skriabin\",\"followers_url\":\"https://api.github.com/users/nick-skriabin/followers\",\"following_url\":\"https://api.github.com/users/nick-skriabin/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/nick-skriabin/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/nick-skriabin/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/nick-skriabin/subscriptions\",\"organizations_url\":\"https://api.github.com/users/nick-skriabin/orgs\",\"repos_url\":\"https://api.github.com/users/nick-skriabin/repos\",\"events_url\":\"https://api.github.com/users/nick-skriabin/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/nick-skriabin/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":4280486528,\"node_id\":\"LA_kwDOC3t2Ec7_IwqA\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/feat\",\"name\":\"feat\",\"color\":\"ededed\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":3,\"created_at\":\"2025-01-09T23:45:33Z\",\"updated_at\":\"2025-01-13T17:43:34Z\",\"closed_at\":null,\"author_association\":\"MEMBER\",\"active_lock_reason\":null,\"draft\":false,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/6885\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6885\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/6885.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/6885.patch\",\"merged_at\":null},\"body\":\"###
+        PR fulfills these requirements\\n- [ ] Commit message(s) and PR title follows
+        the format `[fix|feat|ci|chore|doc]: TICKET-ID: Short description of change
+        made` ex. `fix: DEV-XXXX: Removed inconsistent code usage causing intermittent
+        errors`\\n- [ ] Tests for the changes have been added/updated (for bug fixes/features)\\n-
+        [ ] Docs have been added/updated (for bug fixes/features)\\n- [ ] Best efforts
+        were made to ensure docs/code are concise and coherent (checked for spelling/grammatical
+        errors, commented out code, debug logs etc.)\\n- [ ] Self-reviewed and ran
+        all changes on a local instance (for bug fixes/features)\\n\\n\\n\\n#### Change
+        has impacts in these area(s)\\n_(check all that apply)_\\n- [ ] Product design\\n-
+        [ ] Backend (Database)\\n- [ ] Backend (API)\\n- [ ] Frontend\\n\\n\\n\\n###
+        Describe the reason for change\\n_(link to issue, supportive screenshots etc.)_\\n\\n\\n\\n####
+        What does this fix?\\n_(if this is a bug fix)_\\n\\n\\n\\n#### What is the
+        new behavior?\\n_(if this is a breaking or feature change)_\\n\\n\\n\\n####
+        What is the current behavior?\\n_(if this is a breaking or feature change)_\\n\\n\\n\\n####
+        What libraries were added/updated?\\n_(list all with version changes)_\\n\\n\\n\\n####
+        Does this change affect performance?\\n_(if so describe the impacts positive
+        or negative)_\\n\\n\\n\\n#### Does this change affect security?\\n_(if so
+        describe the impacts positive or negative)_\\n\\n\\n\\n#### What alternative
+        approaches were there?\\n_(briefly list any if applicable)_\\n\\n\\n\\n####
+        What feature flags were used to cover this change?\\n_(briefly list any if
+        applicable)_\\n\\n\\n\\n### Does this PR introduce a breaking change?\\n_(check
+        only one)_\\n- [ ] Yes, and covered entirely by feature flag(s)\\n- [ ] Yes,
+        and covered partially by feature flag(s)\\n- [ ] No\\n- [ ] Not sure (briefly
+        explain the situation below)\\n\\n\\n\\n### What level of testing was included
+        in the change?\\n_(check all that apply)_\\n- [ ] e2e\\n- [ ] integration\\n-
+        [ ] unit\\n\\n\\n\\n### Which logical domain(s) does this change affect?\\n_(for
+        bug fixes/features, be as precise as possible. ex. Authentication, Annotation
+        History, Review Stream etc.)_\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6885/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6885/timeline\",\"performed_via_github_app\":null,\"state_reason\":null}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jan 2025 17:44:31 GMT
+      Etag:
+      - W/"1692f9bf24aa263b858a16369638eacea344e439105b47b1ba1da1590043cc32"
+      Link:
+      - <https://api.github.com/repositories/192640529/issues?per_page=10&page=2>;
+        rel="next", <https://api.github.com/repositories/192640529/issues?per_page=10&page=93>;
+        rel="last"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - FD1B:1B63F2:FF5B6B8:10545A32:678550FF
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4984'
+      X-RateLimit-Reset:
+      - '1736793243'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '16'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-03-07 07:00:55 +0300
+      x-accepted-github-permissions:
+      - issues=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/6887/comments
+  response:
+    body:
+      string: '[{"url":"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2582497776","html_url":"https://github.com/HumanSignal/label-studio/issues/6887#issuecomment-2582497776","issue_url":"https://api.github.com/repos/HumanSignal/label-studio/issues/6887","id":2582497776,"node_id":"IC_kwDOC3t2Ec6Z7cnw","user":{"login":"makseq","id":501780,"node_id":"MDQ6VXNlcjUwMTc4MA==","avatar_url":"https://avatars.githubusercontent.com/u/501780?v=4","gravatar_id":"","url":"https://api.github.com/users/makseq","html_url":"https://github.com/makseq","followers_url":"https://api.github.com/users/makseq/followers","following_url":"https://api.github.com/users/makseq/following{/other_user}","gists_url":"https://api.github.com/users/makseq/gists{/gist_id}","starred_url":"https://api.github.com/users/makseq/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/makseq/subscriptions","organizations_url":"https://api.github.com/users/makseq/orgs","repos_url":"https://api.github.com/users/makseq/repos","events_url":"https://api.github.com/users/makseq/events{/privacy}","received_events_url":"https://api.github.com/users/makseq/received_events","type":"User","user_view_type":"public","site_admin":false},"created_at":"2025-01-10T11:34:16Z","updated_at":"2025-01-10T11:35:46Z","author_association":"MEMBER","body":"It
+        looks like you exported in JSON format and changed the file extension from
+        .json to .png by mistake. \r\nWhen you export you have to chose BrushLabels
+        PNG format in the Export dialog instead of JSON. The naming will be like here:
+        https://github.com/HumanSignal/label-studio-sdk/blob/master/src/label_studio_sdk/converter/brush.py#L152","reactions":{"url":"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2582497776/reactions","total_count":0,"+1":0,"-1":0,"laugh":0,"hooray":0,"confused":0,"heart":0,"rocket":0,"eyes":0},"performed_via_github_app":null},{"url":"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2582746061","html_url":"https://github.com/HumanSignal/label-studio/issues/6887#issuecomment-2582746061","issue_url":"https://api.github.com/repos/HumanSignal/label-studio/issues/6887","id":2582746061,"node_id":"IC_kwDOC3t2Ec6Z8ZPN","user":{"login":"MosbehBarhoumi","id":78423450,"node_id":"MDQ6VXNlcjc4NDIzNDUw","avatar_url":"https://avatars.githubusercontent.com/u/78423450?v=4","gravatar_id":"","url":"https://api.github.com/users/MosbehBarhoumi","html_url":"https://github.com/MosbehBarhoumi","followers_url":"https://api.github.com/users/MosbehBarhoumi/followers","following_url":"https://api.github.com/users/MosbehBarhoumi/following{/other_user}","gists_url":"https://api.github.com/users/MosbehBarhoumi/gists{/gist_id}","starred_url":"https://api.github.com/users/MosbehBarhoumi/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/MosbehBarhoumi/subscriptions","organizations_url":"https://api.github.com/users/MosbehBarhoumi/orgs","repos_url":"https://api.github.com/users/MosbehBarhoumi/repos","events_url":"https://api.github.com/users/MosbehBarhoumi/events{/privacy}","received_events_url":"https://api.github.com/users/MosbehBarhoumi/received_events","type":"User","user_view_type":"public","site_admin":false},"created_at":"2025-01-10T13:45:08Z","updated_at":"2025-01-10T13:45:08Z","author_association":"NONE","body":"No,
+        it has nothing to do with that. **It''s just a single image, which is why
+        the name is like that**. However, the same problem would occur with multiple
+        images.","reactions":{"url":"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2582746061/reactions","total_count":0,"+1":0,"-1":0,"laugh":0,"hooray":0,"confused":0,"heart":0,"rocket":0,"eyes":0},"performed_via_github_app":null},{"url":"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2582890988","html_url":"https://github.com/HumanSignal/label-studio/issues/6887#issuecomment-2582890988","issue_url":"https://api.github.com/repos/HumanSignal/label-studio/issues/6887","id":2582890988,"node_id":"IC_kwDOC3t2Ec6Z88ns","user":{"login":"makseq","id":501780,"node_id":"MDQ6VXNlcjUwMTc4MA==","avatar_url":"https://avatars.githubusercontent.com/u/501780?v=4","gravatar_id":"","url":"https://api.github.com/users/makseq","html_url":"https://github.com/makseq","followers_url":"https://api.github.com/users/makseq/followers","following_url":"https://api.github.com/users/makseq/following{/other_user}","gists_url":"https://api.github.com/users/makseq/gists{/gist_id}","starred_url":"https://api.github.com/users/makseq/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/makseq/subscriptions","organizations_url":"https://api.github.com/users/makseq/orgs","repos_url":"https://api.github.com/users/makseq/repos","events_url":"https://api.github.com/users/makseq/events{/privacy}","received_events_url":"https://api.github.com/users/makseq/received_events","type":"User","user_view_type":"public","site_admin":false},"created_at":"2025-01-10T14:53:47Z","updated_at":"2025-01-10T14:54:54Z","author_association":"MEMBER","body":"Thank
+        you for the clarification. I''ve reproduced this problem, it''s a bug and
+        it happens only if you have a single task (image) in your project. If you
+        add more tasks to your project, you will get a zip file with images having
+        this filename format:\r\n```python\r\nfilename = os.path.join(\r\n    out_dir,\r\n    \"task-\"\r\n    +
+        str(task_id)\r\n    + \"-annotation-\"\r\n    + str(annotation_id)\r\n    +
+        \"-by-\"\r\n    + email\r\n    + \"-\"\r\n    + sanitized_name,\r\n)\r\n```\r\nwhere
+        \r\n* task - task id\r\n* annotation - annotation id\r\n* email - annotator
+        email \r\n* sanitized_name = f\"from_name-label-i\" => `from_name` of brush
+        labels tag from your labeling config, `label` - brush label that annotator
+        selected to draw brush strokes, `i` - number of a stroke. ","reactions":{"url":"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2582890988/reactions","total_count":0,"+1":0,"-1":0,"laugh":0,"hooray":0,"confused":0,"heart":0,"rocket":0,"eyes":0},"performed_via_github_app":null}]'
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jan 2025 17:44:31 GMT
+      Etag:
+      - W/"07dc06e18515eb7a9007feed7a4a34a6c44470790e20eacb416e69ba2f3490d0"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - FD23:1B30D8:EAF44ED:F0DE90D:678550FF
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4982'
+      X-RateLimit-Reset:
+      - '1736793243'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '18'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-03-07 07:00:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/6895/comments
+  response:
+    body:
+      string: '[]'
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Length:
+      - '2'
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jan 2025 17:44:31 GMT
+      Etag:
+      - '"ee9c20b24ffd68e0dbc45264fcbac3f7bdb6041e6d7084559c31807c99471345"'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - FD1D:1963B6:F108EE5:F6F342F:678550FF
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4983'
+      X-RateLimit-Reset:
+      - '1736793243'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '17'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-03-07 07:00:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/6888/comments
+  response:
+    body:
+      string: '[{"url":"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2587642125","html_url":"https://github.com/HumanSignal/label-studio/issues/6888#issuecomment-2587642125","issue_url":"https://api.github.com/repos/HumanSignal/label-studio/issues/6888","id":2587642125,"node_id":"IC_kwDOC3t2Ec6aPEkN","user":{"login":"heidi-humansignal","id":183714153,"node_id":"U_kgDOCvNBaQ","avatar_url":"https://avatars.githubusercontent.com/u/183714153?v=4","gravatar_id":"","url":"https://api.github.com/users/heidi-humansignal","html_url":"https://github.com/heidi-humansignal","followers_url":"https://api.github.com/users/heidi-humansignal/followers","following_url":"https://api.github.com/users/heidi-humansignal/following{/other_user}","gists_url":"https://api.github.com/users/heidi-humansignal/gists{/gist_id}","starred_url":"https://api.github.com/users/heidi-humansignal/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/heidi-humansignal/subscriptions","organizations_url":"https://api.github.com/users/heidi-humansignal/orgs","repos_url":"https://api.github.com/users/heidi-humansignal/repos","events_url":"https://api.github.com/users/heidi-humansignal/events{/privacy}","received_events_url":"https://api.github.com/users/heidi-humansignal/received_events","type":"User","user_view_type":"public","site_admin":false},"created_at":"2025-01-13T16:47:07Z","updated_at":"2025-01-13T16:47:07Z","author_association":"COLLABORATOR","body":"Hello,\n\n\n>
+        Be able to move the text to the right of the box. I tried with style tag,
+        but i couldn''t maybe it''s a skill issue\n\nSorry, I don''t understand what
+        you mean by move the text? Is that so text is editable? If that is the case,
+        you can try using TextArea tag and put the text in that.\n\nThank you,\nAbu\n\n>
+        Comment by Abubakar Saad\n> [Workflow Run](https://github.com/HumanSignal/label-studio/actions/runs/12751983232)","reactions":{"url":"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2587642125/reactions","total_count":0,"+1":0,"-1":0,"laugh":0,"hooray":0,"confused":0,"heart":0,"rocket":0,"eyes":0},"performed_via_github_app":null}]'
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jan 2025 17:44:31 GMT
+      Etag:
+      - W/"fcb7d878c89302141c8831efc7a88525436384ebbb5bd41b3de86df271edf84a"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - FD22:1B7BD3:F230AB3:F81AFAD:678550FF
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4981'
+      X-RateLimit-Reset:
+      - '1736793243'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '19'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-03-07 07:00:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/6894/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2586067060\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6894#issuecomment-2586067060\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6894\",\"id\":2586067060,\"node_id\":\"IC_kwDOC3t2Ec6aJEB0\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-13T02:30:33Z\",\"updated_at\":\"2025-01-13T02:31:42Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *heartex-docs*
+        ready!\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | a883052f7454cc7e3c68a2bb5b252d42186fd888
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/heartex-docs/deploys/67847ab486d3e900082ee3c7
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F60E</span> Deploy Preview | [https://deploy-preview-6894--heartex-docs.netlify.app](https://deploy-preview-6894--heartex-docs.netlify.app)
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F4F1</span> Preview on mobile |
+        <details><summary> Toggle QR Code... </summary><br /><br />![QR Code](https://app.netlify.com/qr-code/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwczovL2RlcGxveS1wcmV2aWV3LTY4OTQtLWhlYXJ0ZXgtZG9jcy5uZXRsaWZ5LmFwcCJ9.lKvo7ZnYJsTIXpweKuv_PP4HtOHHVmuM1iTf9xobW-4)<br
+        /><br />_Use your smartphone camera to open QR code link._</details> |\\n---\\n<!--
+        [heartex-docs Preview](https://deploy-preview-6894--heartex-docs.netlify.app)
+        -->\\n_To edit notification comments on pull requests, go to your [Netlify
+        site configuration](https://app.netlify.com/sites/heartex-docs/configuration/notifications#deploy-webhooks)._\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2586067060/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2586067115\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6894#issuecomment-2586067115\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6894\",\"id\":2586067115,\"node_id\":\"IC_kwDOC3t2Ec6aJECr\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-13T02:30:38Z\",\"updated_at\":\"2025-01-13T02:31:29Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *label-studio-docs-new-theme*
+        ready!\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | a883052f7454cc7e3c68a2bb5b252d42186fd888
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/67847ab4f77a0900085fb23e
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F60E</span> Deploy Preview | [https://deploy-preview-6894--label-studio-docs-new-theme.netlify.app](https://deploy-preview-6894--label-studio-docs-new-theme.netlify.app)
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F4F1</span> Preview on mobile |
+        <details><summary> Toggle QR Code... </summary><br /><br />![QR Code](https://app.netlify.com/qr-code/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwczovL2RlcGxveS1wcmV2aWV3LTY4OTQtLWxhYmVsLXN0dWRpby1kb2NzLW5ldy10aGVtZS5uZXRsaWZ5LmFwcCJ9.3zvZE-C0FlZaYeBSTTSzttCMOIQVPjwyerRE0O-CBAw)<br
+        /><br />_Use your smartphone camera to open QR code link._</details> |\\n---\\n<!--
+        [label-studio-docs-new-theme Preview](https://deploy-preview-6894--label-studio-docs-new-theme.netlify.app)
+        -->\\n_To edit notification comments on pull requests, go to your [Netlify
+        site configuration](https://app.netlify.com/sites/label-studio-docs-new-theme/configuration/notifications#deploy-webhooks)._\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2586067115/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jan 2025 17:44:31 GMT
+      Etag:
+      - W/"39b5199b335c3bd2d23fd94099170b466338bdc6adc579356a75ce5eb6463859"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - FD1C:19C59E:F8DB565:FEC5A5B:678550FF
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4979'
+      X-RateLimit-Reset:
+      - '1736793243'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '21'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-03-07 07:00:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/6893/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2585987023\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6893#issuecomment-2585987023\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6893\",\"id\":2585987023,\"node_id\":\"IC_kwDOC3t2Ec6aIwfP\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-13T00:24:14Z\",\"updated_at\":\"2025-01-13T00:24:14Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\U0001F477</span> Deploy request for *label-studio-docs-new-theme*
+        pending review.\\n[Visit the deploys page to approve it](https://app.netlify.com/sites/label-studio-docs-new-theme/deploys)\\n\\n|
+        \ Name | Link |\\n|:-:|------------------------|\\n|<span aria-hidden=\\\"true\\\">\U0001F528</span>
+        Latest commit | 18aecfb6b08d65eceeb4b0f38af72e7ceab62df5 |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2585987023/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2585987024\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6893#issuecomment-2585987024\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6893\",\"id\":2585987024,\"node_id\":\"IC_kwDOC3t2Ec6aIwfQ\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-13T00:24:14Z\",\"updated_at\":\"2025-01-13T00:24:14Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\U0001F477</span> Deploy request for *heartex-docs*
+        pending review.\\n[Visit the deploys page to approve it](https://app.netlify.com/sites/heartex-docs/deploys)\\n\\n|
+        \ Name | Link |\\n|:-:|------------------------|\\n|<span aria-hidden=\\\"true\\\">\U0001F528</span>
+        Latest commit | 18aecfb6b08d65eceeb4b0f38af72e7ceab62df5 |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2585987024/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jan 2025 17:44:31 GMT
+      Etag:
+      - W/"59c13caf2b4adf2fdc6da2281bc76d17dfc00fdb09d9e3fe1773c01da16681ac"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - FD1E:1963B6:F108EE7:F6F3431:678550FF
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4980'
+      X-RateLimit-Reset:
+      - '1736793243'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '20'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-03-07 07:00:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/6890/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2583528916\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6890#issuecomment-2583528916\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6890\",\"id\":2583528916,\"node_id\":\"IC_kwDOC3t2Ec6Z_YXU\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-10T18:35:32Z\",\"updated_at\":\"2025-01-10T18:41:54Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *heartex-docs*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 1baff06ee9e9340d947f5084c2a8fcc1615a42cf
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/heartex-docs/deploys/67816962784d0f000917a83a
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2583528916/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2583528992\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6890#issuecomment-2583528992\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6890\",\"id\":2583528992,\"node_id\":\"IC_kwDOC3t2Ec6Z_YYg\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-10T18:35:34Z\",\"updated_at\":\"2025-01-10T18:40:56Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *label-studio-docs-new-theme*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 1baff06ee9e9340d947f5084c2a8fcc1615a42cf
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/6781696257fec400084f3a2b
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2583528992/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2583584741\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6890#issuecomment-2583584741\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6890\",\"id\":2583584741,\"node_id\":\"IC_kwDOC3t2Ec6Z_l_l\",\"user\":{\"login\":\"codecov[bot]\",\"id\":22429695,\"node_id\":\"MDM6Qm90MjI0Mjk2OTU=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/254?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/codecov%5Bbot%5D\",\"html_url\":\"https://github.com/apps/codecov\",\"followers_url\":\"https://api.github.com/users/codecov%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/codecov%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/codecov%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/codecov%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/codecov%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/codecov%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/codecov%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/codecov%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/codecov%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-10T18:51:39Z\",\"updated_at\":\"2025-01-10T18:51:39Z\",\"author_association\":\"NONE\",\"body\":\"##
+        [Codecov](https://app.codecov.io/gh/HumanSignal/label-studio/pull/6890?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        Report\\nAll modified and coverable lines are covered by tests :white_check_mark:\\n>
+        Project coverage is 76.81%. Comparing base [(`8222cb5`)](https://app.codecov.io/gh/HumanSignal/label-studio/commit/8222cb5721459d05d0b883e578b45d5afbfd9bad?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        to head [(`1baff06`)](https://app.codecov.io/gh/HumanSignal/label-studio/commit/1baff06ee9e9340d947f5084c2a8fcc1615a42cf?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal).\\n>
+        Report is 8 commits behind head on develop.\\n\\n<details><summary>Additional
+        details and impacted files</summary>\\n\\n\\n```diff\\n@@             Coverage
+        Diff             @@\\n##           develop    #6890      +/-   ##\\n===========================================\\n+
+        Coverage    76.80%   76.81%   +0.01%     \\n===========================================\\n
+        \ Files          171      171              \\n  Lines        14031    14036
+        \      +5     \\n===========================================\\n+ Hits         10776
+        \   10782       +6     \\n+ Misses        3255     3254       -1     \\n```\\n\\n|
+        [Flag](https://app.codecov.io/gh/HumanSignal/label-studio/pull/6890/flags?src=pr&el=flags&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        | Coverage \u0394 | |\\n|---|---|---|\\n| [pytests](https://app.codecov.io/gh/HumanSignal/label-studio/pull/6890/flags?src=pr&el=flag&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        | `76.81% <100.00%> (+0.01%)` | :arrow_up: |\\n\\nFlags with carried forward
+        coverage won't be shown. [Click here](https://docs.codecov.io/docs/carryforward-flags?utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal#carryforward-flags-in-the-pull-request-comment)
+        to find out more.\\n\\n</details>\\n\\n[:umbrella: View full report in Codecov
+        by Sentry](https://app.codecov.io/gh/HumanSignal/label-studio/pull/6890?dropdown=coverage&src=pr&el=continue&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal).
+        \  \\n:loudspeaker: Have feedback on the report? [Share it here](https://about.codecov.io/codecov-pr-comment-feedback/?utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal).\\n\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2583584741/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":254,\"client_id\":\"Iv1.9d88ef6ecc903626\",\"slug\":\"codecov\",\"node_id\":\"MDM6QXBwMjU0\",\"owner\":{\"login\":\"codecov\",\"id\":8226205,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjgyMjYyMDU=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/8226205?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/codecov\",\"html_url\":\"https://github.com/codecov\",\"followers_url\":\"https://api.github.com/users/codecov/followers\",\"following_url\":\"https://api.github.com/users/codecov/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/codecov/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/codecov/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/codecov/subscriptions\",\"organizations_url\":\"https://api.github.com/users/codecov/orgs\",\"repos_url\":\"https://api.github.com/users/codecov/repos\",\"events_url\":\"https://api.github.com/users/codecov/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/codecov/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Codecov\",\"description\":\"Codecov
+        provides highly integrated tools to group, merge, archive and compare coverage
+        reports. Whether your team is comparing changes in a pull request or reviewing
+        a single commit, Codecov will improve the code review workflow and quality.\\r\\n\\r\\n##
+        Code coverage done right.\xAE\\r\\n\\r\\n1. Upload coverage reports from your
+        CI builds.\\r\\n2. Codecov merges all builds and languages into one beautiful
+        coherent report.\\r\\n3. Get commit statuses, pull request comments and coverage
+        overlay via our browser extension.\\r\\n\\r\\nWhen Codecov merges your uploads
+        it keeps track of the CI provider (inc. build details) and user specified
+        context, e.g. `#unittest` ~ `#smoketest` or `#oldcode` ~ `#newcode`. You can
+        track the `#unittest` coverage independently of other groups. [Learn more
+        here](\\r\\nhttp://docs.codecov.io/docs/flags)\\r\\n\\r\\nThrough **Codecov's
+        Browser Extension** reports overlay directly in GitHub UI to assist in code
+        review in [Chrome](https://chrome.google.com/webstore/detail/codecov/gedikamndpbemklijjkncpnolildpbgo)
+        or Firefox (https://addons.mozilla.org/en-US/firefox/addon/codecov/)\\r\\n\\r\\n*Highly
+        detailed* **pull request comments** and *customizable* **commit statuses**
+        will improve your team's workflow and code coverage incrementally.\\r\\n\\r\\n**File
+        backed configuration** all through the `codecov.yml`. \\r\\n\\r\\n## FAQ\\r\\n-
+        Do you **merge multiple uploads** to the same commit? **Yes**\\r\\n- Do you
+        **support multiple languages** in the same project? **Yes**\\r\\n- Can you
+        **group coverage reports** by project and/or test type? **Yes**\\r\\n- How
+        does **pricing** work? Only paid users can view reports and post statuses/comments.
+        \",\"external_url\":\"https://codecov.io\",\"html_url\":\"https://github.com/apps/codecov\",\"created_at\":\"2016-09-25T14:18:27Z\",\"updated_at\":\"2023-09-08T15:29:16Z\",\"permissions\":{\"administration\":\"read\",\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"read\",\"members\":\"read\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"check_run\",\"check_suite\",\"create\",\"delete\",\"fork\",\"member\",\"membership\",\"organization\",\"public\",\"pull_request\",\"push\",\"release\",\"repository\",\"status\",\"team_add\"]}}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jan 2025 17:44:31 GMT
+      Etag:
+      - W/"c6367e210a09d72c435da607daba96c513cbbd1f045fae8b388c16e51f9cbd27"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - FD20:1B63F2:FF5B825:10545BBD:678550FF
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4978'
+      X-RateLimit-Reset:
+      - '1736793243'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '22'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-03-07 07:00:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/6885/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2581460317\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6885#issuecomment-2581460317\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6885\",\"id\":2581460317,\"node_id\":\"IC_kwDOC3t2Ec6Z3fVd\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-09T23:45:55Z\",\"updated_at\":\"2025-01-09T23:47:45Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *label-studio-docs-new-theme*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 9ffd0096752e5a23291d97a33e027a4e8c5320e5
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/67806005d034010008724a3f
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2581460317/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2581460462\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6885#issuecomment-2581460462\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6885\",\"id\":2581460462,\"node_id\":\"IC_kwDOC3t2Ec6Z3fXu\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-09T23:46:03Z\",\"updated_at\":\"2025-01-09T23:47:50Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *heartex-docs*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 9ffd0096752e5a23291d97a33e027a4e8c5320e5
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/heartex-docs/deploys/67806005c46d770008ab945d
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2581460462/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2587539090\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6885#issuecomment-2587539090\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6885\",\"id\":2587539090,\"node_id\":\"IC_kwDOC3t2Ec6aOraS\",\"user\":{\"login\":\"nick-skriabin\",\"id\":767890,\"node_id\":\"MDQ6VXNlcjc2Nzg5MA==\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/767890?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/nick-skriabin\",\"html_url\":\"https://github.com/nick-skriabin\",\"followers_url\":\"https://api.github.com/users/nick-skriabin/followers\",\"following_url\":\"https://api.github.com/users/nick-skriabin/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/nick-skriabin/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/nick-skriabin/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/nick-skriabin/subscriptions\",\"organizations_url\":\"https://api.github.com/users/nick-skriabin/orgs\",\"repos_url\":\"https://api.github.com/users/nick-skriabin/repos\",\"events_url\":\"https://api.github.com/users/nick-skriabin/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/nick-skriabin/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-13T16:06:32Z\",\"updated_at\":\"2025-01-13T16:10:06Z\",\"author_association\":\"MEMBER\",\"body\":\"/git
+        merge\\n> [Workflow run](https://github.com/HumanSignal/label-studio/actions/runs/12751244582)\\n>
+        **Error**: Workflow failed\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2587539090/reactions\",\"total_count\":3,\"+1\":0,\"-1\":1,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":1,\"eyes\":1},\"performed_via_github_app\":null}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jan 2025 17:44:31 GMT
+      Etag:
+      - W/"2c7a0b1bba70b9f9fd9c4ff540319d4661c0ee4ce86d770887219b6c3158f3ce"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - FD25:190D50:EFE9693:F5D3B7C:678550FF
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4977'
+      X-RateLimit-Reset:
+      - '1736793243'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '23'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-03-07 07:00:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/6891/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2583977547\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6891#issuecomment-2583977547\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6891\",\"id\":2583977547,\"node_id\":\"IC_kwDOC3t2Ec6aBF5L\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-10T20:17:31Z\",\"updated_at\":\"2025-01-10T20:17:47Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *label-studio-docs-new-theme*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | a349ae667704f5f8cfc421c9477a025859649d69
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/6781804da258e90008964470
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2583977547/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2583978209\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6891#issuecomment-2583978209\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6891\",\"id\":2583978209,\"node_id\":\"IC_kwDOC3t2Ec6aBGDh\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-10T20:17:36Z\",\"updated_at\":\"2025-01-10T20:17:53Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *heartex-docs*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | a349ae667704f5f8cfc421c9477a025859649d69
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/heartex-docs/deploys/6781804df3afd40008ecb177
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2583978209/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2584026685\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/6891#issuecomment-2584026685\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/6891\",\"id\":2584026685,\"node_id\":\"IC_kwDOC3t2Ec6aBR49\",\"user\":{\"login\":\"codecov[bot]\",\"id\":22429695,\"node_id\":\"MDM6Qm90MjI0Mjk2OTU=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/254?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/codecov%5Bbot%5D\",\"html_url\":\"https://github.com/apps/codecov\",\"followers_url\":\"https://api.github.com/users/codecov%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/codecov%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/codecov%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/codecov%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/codecov%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/codecov%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/codecov%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/codecov%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/codecov%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-01-10T20:28:18Z\",\"updated_at\":\"2025-01-10T20:28:18Z\",\"author_association\":\"NONE\",\"body\":\"##
+        [Codecov](https://app.codecov.io/gh/HumanSignal/label-studio/pull/6891?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        Report\\nAll modified and coverable lines are covered by tests :white_check_mark:\\n>
+        Project coverage is 76.81%. Comparing base [(`8222cb5`)](https://app.codecov.io/gh/HumanSignal/label-studio/commit/8222cb5721459d05d0b883e578b45d5afbfd9bad?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        to head [(`a349ae6`)](https://app.codecov.io/gh/HumanSignal/label-studio/commit/a349ae667704f5f8cfc421c9477a025859649d69?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal).\\n>
+        Report is 8 commits behind head on develop.\\n\\n<details><summary>Additional
+        details and impacted files</summary>\\n\\n\\n```diff\\n@@             Coverage
+        Diff             @@\\n##           develop    #6891      +/-   ##\\n===========================================\\n+
+        Coverage    76.80%   76.81%   +0.01%     \\n===========================================\\n
+        \ Files          171      171              \\n  Lines        14031    14037
+        \      +6     \\n===========================================\\n+ Hits         10776
+        \   10783       +7     \\n+ Misses        3255     3254       -1     \\n```\\n\\n|
+        [Flag](https://app.codecov.io/gh/HumanSignal/label-studio/pull/6891/flags?src=pr&el=flags&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        | Coverage \u0394 | |\\n|---|---|---|\\n| [pytests](https://app.codecov.io/gh/HumanSignal/label-studio/pull/6891/flags?src=pr&el=flag&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        | `76.81% <100.00%> (+0.01%)` | :arrow_up: |\\n\\nFlags with carried forward
+        coverage won't be shown. [Click here](https://docs.codecov.io/docs/carryforward-flags?utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal#carryforward-flags-in-the-pull-request-comment)
+        to find out more.\\n\\n</details>\\n\\n[:umbrella: View full report in Codecov
+        by Sentry](https://app.codecov.io/gh/HumanSignal/label-studio/pull/6891?dropdown=coverage&src=pr&el=continue&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal).
+        \  \\n:loudspeaker: Have feedback on the report? [Share it here](https://about.codecov.io/codecov-pr-comment-feedback/?utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal).\\n\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2584026685/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":254,\"client_id\":\"Iv1.9d88ef6ecc903626\",\"slug\":\"codecov\",\"node_id\":\"MDM6QXBwMjU0\",\"owner\":{\"login\":\"codecov\",\"id\":8226205,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjgyMjYyMDU=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/8226205?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/codecov\",\"html_url\":\"https://github.com/codecov\",\"followers_url\":\"https://api.github.com/users/codecov/followers\",\"following_url\":\"https://api.github.com/users/codecov/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/codecov/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/codecov/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/codecov/subscriptions\",\"organizations_url\":\"https://api.github.com/users/codecov/orgs\",\"repos_url\":\"https://api.github.com/users/codecov/repos\",\"events_url\":\"https://api.github.com/users/codecov/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/codecov/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Codecov\",\"description\":\"Codecov
+        provides highly integrated tools to group, merge, archive and compare coverage
+        reports. Whether your team is comparing changes in a pull request or reviewing
+        a single commit, Codecov will improve the code review workflow and quality.\\r\\n\\r\\n##
+        Code coverage done right.\xAE\\r\\n\\r\\n1. Upload coverage reports from your
+        CI builds.\\r\\n2. Codecov merges all builds and languages into one beautiful
+        coherent report.\\r\\n3. Get commit statuses, pull request comments and coverage
+        overlay via our browser extension.\\r\\n\\r\\nWhen Codecov merges your uploads
+        it keeps track of the CI provider (inc. build details) and user specified
+        context, e.g. `#unittest` ~ `#smoketest` or `#oldcode` ~ `#newcode`. You can
+        track the `#unittest` coverage independently of other groups. [Learn more
+        here](\\r\\nhttp://docs.codecov.io/docs/flags)\\r\\n\\r\\nThrough **Codecov's
+        Browser Extension** reports overlay directly in GitHub UI to assist in code
+        review in [Chrome](https://chrome.google.com/webstore/detail/codecov/gedikamndpbemklijjkncpnolildpbgo)
+        or Firefox (https://addons.mozilla.org/en-US/firefox/addon/codecov/)\\r\\n\\r\\n*Highly
+        detailed* **pull request comments** and *customizable* **commit statuses**
+        will improve your team's workflow and code coverage incrementally.\\r\\n\\r\\n**File
+        backed configuration** all through the `codecov.yml`. \\r\\n\\r\\n## FAQ\\r\\n-
+        Do you **merge multiple uploads** to the same commit? **Yes**\\r\\n- Do you
+        **support multiple languages** in the same project? **Yes**\\r\\n- Can you
+        **group coverage reports** by project and/or test type? **Yes**\\r\\n- How
+        does **pricing** work? Only paid users can view reports and post statuses/comments.
+        \",\"external_url\":\"https://codecov.io\",\"html_url\":\"https://github.com/apps/codecov\",\"created_at\":\"2016-09-25T14:18:27Z\",\"updated_at\":\"2023-09-08T15:29:16Z\",\"permissions\":{\"administration\":\"read\",\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"read\",\"members\":\"read\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"check_run\",\"check_suite\",\"create\",\"delete\",\"fork\",\"member\",\"membership\",\"organization\",\"public\",\"pull_request\",\"push\",\"release\",\"repository\",\"status\",\"team_add\"]}}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jan 2025 17:44:31 GMT
+      Etag:
+      - W/"27b57cc3c73cc3c1b69246436bc9fe5acd4c718a1e9c59efa4a5ee40682933ba"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - FD21:1A7075:EFDD9D1:F5C7EE3:678550FF
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4975'
+      X-RateLimit-Reset:
+      - '1736793243'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '25'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-03-07 07:00:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/6886/comments
+  response:
+    body:
+      string: '[]'
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Length:
+      - '2'
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jan 2025 17:44:31 GMT
+      Etag:
+      - '"ee9c20b24ffd68e0dbc45264fcbac3f7bdb6041e6d7084559c31807c99471345"'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - FD24:1B63F2:FF5B82F:10545BC7:678550FF
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4976'
+      X-RateLimit-Reset:
+      - '1736793243'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '24'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-03-07 07:00:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/6889/comments
+  response:
+    body:
+      string: '[{"url":"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2583205312","html_url":"https://github.com/HumanSignal/label-studio/issues/6889#issuecomment-2583205312","issue_url":"https://api.github.com/repos/HumanSignal/label-studio/issues/6889","id":2583205312,"node_id":"IC_kwDOC3t2Ec6Z-JXA","user":{"login":"MirkoGiugliano95","id":118755865,"node_id":"U_kgDOBxQSGQ","avatar_url":"https://avatars.githubusercontent.com/u/118755865?v=4","gravatar_id":"","url":"https://api.github.com/users/MirkoGiugliano95","html_url":"https://github.com/MirkoGiugliano95","followers_url":"https://api.github.com/users/MirkoGiugliano95/followers","following_url":"https://api.github.com/users/MirkoGiugliano95/following{/other_user}","gists_url":"https://api.github.com/users/MirkoGiugliano95/gists{/gist_id}","starred_url":"https://api.github.com/users/MirkoGiugliano95/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/MirkoGiugliano95/subscriptions","organizations_url":"https://api.github.com/users/MirkoGiugliano95/orgs","repos_url":"https://api.github.com/users/MirkoGiugliano95/repos","events_url":"https://api.github.com/users/MirkoGiugliano95/events{/privacy}","received_events_url":"https://api.github.com/users/MirkoGiugliano95/received_events","type":"User","user_view_type":"public","site_admin":false},"created_at":"2025-01-10T16:36:35Z","updated_at":"2025-01-10T16:36:35Z","author_association":"NONE","body":"log
+        error: Forbidden (Origin checking failed - https://***.azurewebsites.net does
+        not match any trusted origins.): /user/signup/","reactions":{"url":"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2583205312/reactions","total_count":0,"+1":0,"-1":0,"laugh":0,"hooray":0,"confused":0,"heart":0,"rocket":0,"eyes":0},"performed_via_github_app":null}]'
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Jan 2025 17:44:32 GMT
+      Etag:
+      - W/"f95305bcc4bb5914909c1b29ae49d95bed1a6f1122a7f690ab4931f9cdf0c11d"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - FD1F:1994E9:EDED84E:F3D7CBE:678550FF
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4974'
+      X-RateLimit-Reset:
+      - '1736793243'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '26'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-03-07 07:00:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+version: 1

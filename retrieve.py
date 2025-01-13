@@ -1,6 +1,6 @@
-import json
 import asyncio
 import aiohttp
+from pathlib import Path
 
 BASE_URL = "https://api.github.com"
 
@@ -28,6 +28,7 @@ _To edit notification comments on pull requests, go to your [Netlify site config
         trash_3 = """/|<span aria-hidden="true">📱</span> Preview on mobile.*</details> |/"""
         trash_4 = """<span aria-hidden="true">✅</span> Deploy Preview for *label-studio-docs-new-theme* canceled."""
         trash_5 = """<span aria-hidden="true">✅</span> Deploy Preview for *heartex-docs* canceled."""
+        trash_6 = """|<span aria-hidden="true">\s(.*?)\s</span>"""
         trash = [trash_1, trash_2, trash_3, trash_4, trash_5]
         for i in trash:
             line = line.replace(i, "")
@@ -56,9 +57,9 @@ _To edit notification comments on pull requests, go to your [Netlify site config
             for issue in issues:
                 if issue["body"]:
                     body = self.clear_issue(issue["body"])
-                    self.data[issue["title"]] = [issue["comments_url"], ("State:[" + issue["state"] + "]\n" + body)]
+                    self.data[issue["title"]] = [issue["comments_url"], ("State:[" + issue["state"] + "]\n" + body), issue["id"]]
                 else:
-                    self.data[issue["title"]] = [issue["comments_url"], (" [" + issue["state"] + "]")]
+                    self.data[issue["title"]] = [issue["comments_url"], ("State: [" + issue["state"] + "]"), issue["id"]]
         else:
             print("There are no found issues in your repo")
 
@@ -97,9 +98,9 @@ _To edit notification comments on pull requests, go to your [Netlify site config
     
     def save_data(self, result: list): #save data
         titles = list(self.data.keys())
+        Path("issues/").mkdir(exist_ok=True)
         for index, res in enumerate(result):
             if res:
-                self.data[titles[index]] = self.data[titles[index]][1] + res
-                with open(f"issues/{index}.md", "w", encoding="utf-8") as f:
+                with open(f"issues/{self.data[titles[index]][2]}.md", "w", encoding="utf-8") as f:
                     f.write(f"# {titles[index]} \n")
-                    f.write(self.data[titles[index]])
+                    f.write(self.data[titles[index]][1] + res)
