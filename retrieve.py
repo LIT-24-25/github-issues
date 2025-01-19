@@ -1,5 +1,6 @@
 import requests
 from pathlib import Path
+import re
 
 class RetrieveRepo:
     def __init__(self, owner, repo, token): #set properties or repo
@@ -26,10 +27,13 @@ _To edit notification comments on pull requests, go to your [Netlify site config
         trash_3 = """/|<span aria-hidden="true">📱</span> Preview on mobile.*</details> |/"""
         trash_4 = """<span aria-hidden="true">✅</span> Deploy Preview for *label-studio-docs-new-theme* canceled."""
         trash_5 = """<span aria-hidden="true">✅</span> Deploy Preview for *heartex-docs* canceled."""
-        trash_6 = """|<span aria-hidden="true">\s(.*?)\s</span>"""
-        trash = [trash_1, trash_2, trash_3, trash_4, trash_5, trash_6]
+        trash_6 = r"\|.*?\|\n\|:-:.*?\|\n.*?\|\n"
+        trash = [trash_1, trash_2, trash_3, trash_4, trash_5]
         for i in trash:
             line = line.replace(i, "")
+            line = line.replace('\n', '. ')
+            line = line.replace('\r', '. ')
+        line = re.sub(trash_6, '', line)
         return line
 
     def get_issues(self): #retrieve issues in format: title, body and state = url of comments for this issue

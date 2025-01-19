@@ -33,9 +33,6 @@ if __name__ == '__main__':
     # get_data()
     chunkSplitter = ChunkSplitter()
     output = chunkSplitter.create_chunks()
-    for el in output:
-        print(el.page_content)
-        print(el.metadata)
     # model = create_model()
     # chroma = Chroma(chunkSplitter.output[0:2], model)
     # chroma.get_data()
