@@ -1,14 +1,12 @@
-import asyncio
-import aiohttp
+import requests
 from pathlib import Path
 
-BASE_URL = "https://api.github.com"
-
 class RetrieveRepo:
-    def __init__(self, username, repo, token): #set properties or repo
-        self.username = username
+    def __init__(self, owner, repo, token): #set properties or repo
+        self.owner = owner
         self.repo = repo
         self.token = token
+        self.data = {}
         self.headers = {
         'Authorization': f"Bearer {self.token}"
         }
@@ -29,72 +27,58 @@ _To edit notification comments on pull requests, go to your [Netlify site config
         trash_4 = """<span aria-hidden="true">✅</span> Deploy Preview for *label-studio-docs-new-theme* canceled."""
         trash_5 = """<span aria-hidden="true">✅</span> Deploy Preview for *heartex-docs* canceled."""
         trash_6 = """|<span aria-hidden="true">\s(.*?)\s</span>"""
-        trash = [trash_1, trash_2, trash_3, trash_4, trash_5]
+        trash = [trash_1, trash_2, trash_3, trash_4, trash_5, trash_6]
         for i in trash:
             line = line.replace(i, "")
         return line
 
-    async def get_issues(self): #retrieve issues in format: title, body and state = url of comments for this issue
-        url = f"{BASE_URL}/repos/{self.username}/{self.repo}/issues"
+    def get_issues(self): #retrieve issues in format: title, body and state = url of comments for this issue
+        url = f"https://api.github.com/repos/{self.owner}/{self.repo}/issues"
         issues = []
         page = 1
         per_page = 10
-        async with aiohttp.ClientSession() as session:  # Single session for all requests
-            while True:
-                params = {'per_page': per_page, 'page': page}
-                page_issues = self.fetch_page(session, url, params)
-                if not page_issues or page==2: #for testing reasons only
-                    break
-                issues.append(page_issues)
-                page += 1
+        while True:
+            params = {'per_page': per_page, 'page': page}
+            response = requests.get(url, params=params)
+            if response.status_code != 200:
+                break
+            page_issues = response.json()
+            if not page_issues or page == 2:  # For testing reasons only
+                break
+            issues.extend(page_issues)
+            page += 1
 
-            results = await asyncio.gather(*issues)
-
-            issues = [issue for page_issues in results for issue in page_issues]
-
-        self.data = {}
         if issues:
             for issue in issues:
-                if issue["body"]:
+                if issue.get("body"):
                     body = self.clear_issue(issue["body"])
-                    self.data[issue["title"]] = [issue["comments_url"], ("State:[" + issue["state"] + "]\n" + body), issue["id"]]
+                    self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]\n{body}", issue["id"]]
                 else:
-                    self.data[issue["title"]] = [issue["comments_url"], ("State: [" + issue["state"] + "]"), issue["id"]]
+                    self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]", issue["id"]]
         else:
             print("There are no found issues in your repo")
 
-    async def fetch_page(self, session: aiohttp.ClientSession, url, params): #get data from a single page
-        async with session.get(url, headers=self.headers, params=params) as response:
-            if response.status == 200:
-                return await response.json()
-            else:
-                print(f"Error: {response.status}, {await response.text()}")
-                return []
 
-    async def get_issues_comments(self): #get comments
+    def get_issues_comments(self):  # Get comments
         result = []
-        tasks = []
-        async with aiohttp.ClientSession() as session:
-            for item in self.data.values():
-                url = item[0]
-                tasks.append(self.fetch_comments(url))
-        
-        result = await asyncio.gather(*tasks)
+        for item in self.data.values():
+            url = item[0]
+            comment = self.fetch_comments(url)
+            result.append(comment)
+
         self.save_data(result)
 
-    async def fetch_comments(self, url): #get single comment from API
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url, headers=self.headers) as response:
-                if response.status == 200:
-                    repositories_data = await response.json()
-                    if repositories_data:
-                        return self.clear_comment(repositories_data[0]["body"])
-                    else:
-                        return "No comments provided"
-                else:
-                    print(f"Failed to retrieve comments. Status code: {response.status}")
-                    return "Failed to fetch"
-        return repositories_data
+    def fetch_comments(self, url):  # Get single comment from API
+        response = requests.get(url, headers=self.headers)
+        if response.status_code == 200:
+            repositories_data = response.json()
+            if repositories_data:
+                return self.clear_comment(repositories_data[0]["body"])
+            else:
+                return "No comments provided"
+        else:
+            print(f"Failed to retrieve comments. Status code: {response.status_code}")
+            return "Failed to fetch"
     
     def save_data(self, result: list): #save data
         titles = list(self.data.keys())

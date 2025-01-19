@@ -1,12 +1,14 @@
 from train import read_config, RetrieveRepo
 from chunks import ChunkSplitter
+from chroma import Chroma
+from model import Model
+from langchain_core.documents import Document
 import pytest
 import vcr
 import os
 from io import StringIO
 from dotenv import load_dotenv
-import asyncio
-from unittest.mock import patch, MagicMock, mock_open
+from unittest.mock import MagicMock, mock_open
 
 # Load environment variables from .env file
 load_dotenv()
@@ -15,7 +17,7 @@ load_dotenv()
 @pytest.fixture
 def mock_read_config(monkeypatch):
     def mock_open(*args, **kwargs):
-        mock_file_content = f"{os.getenv('USERNAME')}\n{os.getenv('REPO')}\n{os.getenv('TOKEN')}\n"
+        mock_file_content = f"{os.getenv('OWNER')}\n{os.getenv('REPO')}\n{os.getenv('TOKEN')}\n"
         return StringIO(mock_file_content)
 
     monkeypatch.setattr('builtins.open', mock_open)
@@ -39,7 +41,7 @@ def vcr_config():
         return response
 
     myvcr = vcr.VCR(
-        cassette_library_dir='tests/cassettes',
+        cassette_library_dir='cassettes',
         record_mode= vcr.record_mode.RecordMode.ONCE,
         filter_headers=['authorization', 'Authorization', 'Bearer'],
         before_record_request=before_record_request,
@@ -51,10 +53,10 @@ def vcr_config():
 @pytest.mark.usefixtures("vcr_config")
 async def test_get_data(mock_read_config, vcr_config):
     with vcr_config.use_cassette('cassettes/get_data_cassette.yaml'):
-        username, repo, token = read_config()
-        fetch = RetrieveRepo(username, repo, token)
-        await fetch.get_issues()
-        await fetch.get_issues_comments()
+        owner, repo, token = read_config()
+        fetch = RetrieveRepo(owner, repo, token)
+        fetch.get_issues()
+        fetch.get_issues_comments()
 
         issues_dir = "issues/"
 
@@ -85,25 +87,76 @@ async def test_get_data(mock_read_config, vcr_config):
                 # Compare the content of the two files
                 assert generated_content == local_content, f"Content of {issue_file_path} does not match local file"
 
-# @pytest.fixture
-# def mock_persistent_client():
-#     with patch('chromadb.PersistentClient') as MockPersistentClient:
-#         # Set up the mock client
-#         mock_client = MockPersistentClient.return_value
-        
-#         # Mock the create_collection method
-#         mock_collection = MagicMock()
-#         mock_client.create_collection.return_value = mock_collection
-        
-#         yield mock_client, mock_collection
+class MockChroma:
+    def __init__(self, docs: list[Document], model: Model):
+        self.collection = MagicMock()
+        self.collection.add = MagicMock()
+        print("Mocked Chroma initialized.")
 
-# def test_create_collection(mock_persistent_client):
-#     mock_client, mock_collection = mock_persistent_client
+    def get_data(self):
+        return self.collection  # Returning a mock collection
+
+@pytest.fixture
+def mock_file_data(monkeypatch):
+    # Mock os.listdir to return a fixed list of filenames (hardcoded)
+    monkeypatch.setattr(os, 'listdir', lambda _: [
+        'issues/2778981711.md',
+        'issues/2779012514.md'
+    ])
     
-#     # Example of using the mocked client
-#     client = mock_client
-#     collection = client.create_collection(name="embeddings_collection")
+    # Mock open to return the content of the file dynamically
+    def custom_open(filename, *args, **kwargs):
+        if filename == 'issues/2778981711.md':
+            return StringIO('Question 1\nExtra data 1')
+        elif filename == 'issues/2779012514.md':
+            return StringIO('Question 2\nExtra data 2')
+        return mock_open()().return_value
+
+    monkeypatch.setattr('builtins.open', custom_open)
+
+@pytest.fixture
+def mock_text_splitter(monkeypatch):
+    # Mock RecursiveCharacterTextSplitter and its create_documents method
+    mock_splitter = MagicMock()
+    mock_splitter_instance = mock_splitter.return_value
+    mock_splitter_instance.create_documents.side_effect = [
+        [
+            {"content": "Mocked chunk 1 from Question 1", "metadata": {"comment": "Extra data 1"}},
+            {"content": "Mocked chunk 2 from Question 1", "metadata": {"comment": "Extra data 1"}}
+        ],
+        [
+            {"content": "Mocked chunk 1 from Question 2", "metadata": {"comment": "Extra data 2"}},
+            {"content": "Mocked chunk 2 from Question 2", "metadata": {"comment": "Extra data 2"}}
+        ]
+    ]
+    monkeypatch.setattr('your_module.RecursiveCharacterTextSplitter', mock_splitter)
+
+# Test case to check the functionality
+def test_create_chunks(mock_file_data, mock_text_splitter):
+    # Create an instance of ChunkSplitter and call create_chunks
+    splitter = ChunkSplitter()
+    result = splitter.create_chunks()
+
+    # Assertions to check the correctness of the mocked behavior
+    assert len(result) == 4
+    assert result[0]["content"] == "Mocked chunk 1 from Question 1"
+    assert result[0]["metadata"]["comment"] == "Extra data 1"
+    assert result[1]["content"] == "Mocked chunk 2 from Question 1"
+    assert result[2]["content"] == "Mocked chunk 1 from Question 2"
+    assert result[2]["metadata"]["comment"] == "Extra data 2"
+    assert result[3]["content"] == "Mocked chunk 2 from Question 2"
+
+# Additional test case for Chroma class
+def test_chroma(mock_file_data, mock_text_splitter):
+    # Mock documents and model (replace with actual Document and Model mock)
+    mock_docs = [Document(page_content="Content 1", metadata={"comment": "Data 1"}),
+                 Document(page_content="Content 2", metadata={"comment": "Data 2"})]
+    mock_model = MagicMock()
+    mock_model.embed = MagicMock(return_value=MagicMock(data=[MagicMock(embedding=[0.1, 0.2, 0.3])]))
     
-#     # Assertions to verify behavior
-#     mock_client.create_collection.assert_called_once_with(name="embeddings_collection")
-#     assert collection == mock_collection
+    # Instantiate MockChroma
+    mock_chroma = MockChroma(mock_docs, mock_model)
+
+    # Test the behavior of the Chroma class (mocked)
+    mock_chroma.get_data()
+    assert mock_chroma.collection.add.called
