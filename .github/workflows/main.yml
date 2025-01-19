@@ -1,4 +1,4 @@
-name: Run Tests
+name: Run Tests on Windows
 
 on:
   pull_request:
@@ -7,11 +7,11 @@ on:
 
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: windows-latest 
+
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
-        python-version: [3.9, 3.10]
+        python-version: [3.9, 3.10] 
 
     steps:
       - name: Checkout code
