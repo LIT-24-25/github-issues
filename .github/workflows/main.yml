@@ -7,16 +7,20 @@ on:
 
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python-version: [3.9, 3.10, 3.11]
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # This step checks out your code
+        uses: actions/checkout@v2
 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'  # Specify the Python version for the test environment
+          python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
         run: |
@@ -29,4 +33,4 @@ jobs:
           REPO: ${{ secrets.REPO }}
           TOKEN: ${{ secrets.TOKEN }}
         run: |
-          pytest  # You can replace this with the test command for your language/framework
+          pytest
