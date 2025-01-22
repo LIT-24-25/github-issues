@@ -4,8 +4,9 @@ from model import Model
 
 class Chroma:
     def __init__(self, docs: list[Document], model: Model): #initiate chroma collection
+        self.model = model
         self.client = chromadb.PersistentClient(path="./chromadb")
-        self.collection = self.client.create_collection(name="embeddings_collection")
+        self.collection = self.client.get_or_create_collection(name="embeddings_collection")
         for idx, doc in enumerate(docs):
             embedding = model.embed(doc.page_content)
             self.collection.add(
@@ -19,3 +20,8 @@ class Chroma:
     def get_data(self): #for debugging only
         coll = self.client.get_collection(name="embeddings_collection")
         return coll
+
+    def find_embeddings(self, question):
+        emb_user = self.model.embed(question)
+        result = self.collection.query(query_embeddings=[emb_user.data[0].embedding], n_results=10)
+        documents = result.get('documents')
