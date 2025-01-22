@@ -34,5 +34,5 @@ if __name__ == '__main__':
     chunkSplitter = ChunkSplitter()
     output = chunkSplitter.create_chunks()
     model = create_model()
-    chroma = Chroma(output[0:2], model)
-    chroma.find_embeddings("can't find the name of a function")
+    chroma = Chroma(output, model)
+    results = chroma.find_embeddings("can't find the name of a function")

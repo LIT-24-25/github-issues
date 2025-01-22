@@ -24,4 +24,9 @@ class Chroma:
     def find_embeddings(self, question):
         emb_user = self.model.embed(question)
         result = self.collection.query(query_embeddings=[emb_user.data[0].embedding], n_results=10)
-        documents = result.get('documents')
+        documents = result.get('documents')[0]
+        comments = result.get('metadatas')[0]
+        product = []
+        for i in range(len(documents)):
+            product.append([documents[i], comments[i]])
+        return product
