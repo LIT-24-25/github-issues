@@ -1,4 +1,5 @@
-from train import read_config, RetrieveRepo
+from train import read_config
+from retrieve import RetrieveRepo
 from chunks import ChunkSplitter
 from model import Model
 from langchain_core.documents import Document
@@ -9,7 +10,7 @@ import os
 from io import StringIO
 from dotenv import load_dotenv
 from unittest.mock import MagicMock
-from mocked_issues import cont1, cont2
+from tests.mockedIssues import cont1, cont2
 
 # Load environment variables from .env file
 load_dotenv()
