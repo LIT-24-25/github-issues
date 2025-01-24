@@ -6,3 +6,4 @@ python-dotenv~=1.0.1
 gigachat~=0.1.36
 chromadb~=0.5.23
 requests~=2.32.3
+langchain_gigachat~=0.3.1
