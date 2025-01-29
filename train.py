@@ -5,6 +5,7 @@ from chroma import Chroma
 from retrieve import RetrieveRepo
 from chunks import ChunkSplitter
 from model import Model
+from langchain_core.messages import HumanMessage, SystemMessage
 
 def get_data():
     owner, repo, token = read_config()
@@ -34,5 +35,16 @@ if __name__ == '__main__':
     model = create_model()
     chroma = Chroma(output, model)
     chroma.get_data()
-    # userQuestion = input("Which question do you have?")
-    # results = chroma.find_embeddings(userQuestion)
+    userQuestion = input("Which question do you have?")
+    results = chroma.find_embeddings(userQuestion)
+    messages = [
+    SystemMessage(
+        content="Ты бот для решения проблем по программированию. Твоя задача решать проблему пользователю с помощью контекста, который тебе будет дан. При прочтении контекста отдавай большее предпочтение тем текстам, которые имеют [State]:closed."
+    )
+    ]
+    context = userQuestion + "\n"
+    for i in results:
+        context = context + i[0] + ". " + i[1]['comment'] + "\n"
+    messages.append(HumanMessage(content=context))
+    response = model.invoke(context)
+    print(response)

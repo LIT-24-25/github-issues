@@ -6,3 +6,7 @@ class Model:
 
     def embed(self, text): #create embedding for text
         return self.giga.embeddings(text)
+
+    def invoke(self, context:str):
+        response = self.giga.chat(context)
+        return response.choices[0].message.content
