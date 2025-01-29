@@ -108,7 +108,7 @@ typing-extensions==4.12.2
     #   langchain-core
     #   pydantic
     #   pydantic-core
-urllib3==2.3.0
+urllib3~=1.21.1
     # via
     #   requests
     #   types-requests
