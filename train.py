@@ -66,7 +66,3 @@ def train_process():
     # output = chunk_splitter.create_chunks()
     model = create_model()
     my_chroma = MyChroma(model)
-    
-
-if __name__ == "__main__":
-    model_call()
