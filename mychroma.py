@@ -2,7 +2,7 @@ import chromadb
 from langchain_core.documents import Document
 from model import Model
 
-class Chroma:
+class MyChroma:
     def __init__(self, docs: list[Document], model: Model): #initiate chroma collection
         self.model = model
         self.client = chromadb.PersistentClient(path="./chromadb")
@@ -22,11 +22,11 @@ class Chroma:
         return coll
 
     def find_embeddings(self, question):
-        emb_user = self.model.embed(question)
-        result = self.collection.query(query_embeddings=[emb_user.data[0].embedding], n_results=10)
+        user_embedding = self.model.embed(question).data[0].embedding
+        result = self.collection.query(query_embeddings=[user_embedding], n_results=10)
         documents = result.get('documents')[0]
         comments = result.get('metadatas')[0]
-        product = []
+        retrieved_context = []
         for i in range(len(documents)):
-            product.append([documents[i], comments[i]])
-        return product
+            retrieved_context.append([documents[i], comments[i]])
+        return retrieved_context

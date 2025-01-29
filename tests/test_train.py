@@ -10,7 +10,7 @@ import os
 from io import StringIO
 from dotenv import load_dotenv
 from unittest.mock import MagicMock
-from tests.mockedIssues import cont1, cont2
+from tests.mocked_issues import cont_1, cont_2
 
 # Load environment variables from .env file
 load_dotenv()
@@ -43,7 +43,7 @@ def vcr_config():
         return response
 
     myvcr = vcr.VCR(
-        cassette_library_dir='./cassettes',
+        cassette_library_dir='./tests',
         record_mode= vcr.record_mode.RecordMode.ONCE,
         filter_headers=['authorization', 'Authorization', 'Bearer'],
         before_record_request=before_record_request,
@@ -109,8 +109,8 @@ def mock_file_data(monkeypatch):
     # Mock open to return the content of the file dynamically
     def custom_open(filename, *args, **kwargs):
         file_contents = {
-            'issues/2793904575.md': cont1,
-            'issues/2794019646.md': cont2,
+            'issues/2793904575.md': cont_1,
+            'issues/2794019646.md': cont_2,
         }
         return StringIO(file_contents.get(filename, ''))  # Return empty string if file is not found
     
