@@ -1,10 +1,8 @@
 from retrieve import RetrieveRepo
-import asyncio
 from chunks import ChunkSplitter
 from model import Model
 from chroma import Chroma
 from retrieve import RetrieveRepo
-import asyncio
 from chunks import ChunkSplitter
 from model import Model
 
@@ -35,5 +33,6 @@ if __name__ == '__main__':
     output = chunkSplitter.create_chunks()
     model = create_model()
     chroma = Chroma(output, model)
-    userQuestion = input("Which question do you have?")
-    results = chroma.find_embeddings(userQuestion)
+    chroma.get_data()
+    # userQuestion = input("Which question do you have?")
+    # results = chroma.find_embeddings(userQuestion)

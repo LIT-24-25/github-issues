@@ -43,7 +43,7 @@ def vcr_config():
         return response
 
     myvcr = vcr.VCR(
-        cassette_library_dir='cassettes',
+        cassette_library_dir='./cassettes',
         record_mode= vcr.record_mode.RecordMode.ONCE,
         filter_headers=['authorization', 'Authorization', 'Bearer'],
         before_record_request=before_record_request,
