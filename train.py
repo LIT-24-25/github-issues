@@ -28,8 +28,8 @@ def create_model():
     return model
 
 
-if __name__ == '__main__':
-    # get_data()
+def train_process():
+    get_data()
     chunk_splitter = ChunkSplitter()
     output = chunk_splitter.create_chunks()
     model = create_model()
