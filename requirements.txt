@@ -16,6 +16,8 @@ certifi==2024.12.14
 charset-normalizer==3.4.1
     # via requests
 colorama==0.4.6
+
+chromadb==0.5.23
     # via pytest
 gigachat==0.1.37.post1
     # via
