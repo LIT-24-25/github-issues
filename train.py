@@ -1,7 +1,7 @@
 from retrieve import RetrieveRepo
 from chunks import ChunkSplitter
 from model import Model
-from chroma import Chroma
+from mychroma import MyChroma
 from retrieve import RetrieveRepo
 from chunks import ChunkSplitter
 from model import Model
@@ -30,21 +30,37 @@ def create_model():
 
 if __name__ == '__main__':
     # get_data()
-    chunkSplitter = ChunkSplitter()
-    output = chunkSplitter.create_chunks()
+    chunk_splitter = ChunkSplitter()
+    output = chunk_splitter.create_chunks()
     model = create_model()
-    chroma = Chroma(output, model)
-    chroma.get_data()
-    userQuestion = input("Which question do you have?")
-    results = chroma.find_embeddings(userQuestion)
-    messages = [
-    SystemMessage(
-        content="Ты бот для решения проблем по программированию. Твоя задача решать проблему пользователю с помощью контекста, который тебе будет дан. При прочтении контекста отдавай большее предпочтение тем текстам, которые имеют [State]:closed."
-    )
-    ]
-    context = userQuestion + "\n"
-    for i in results:
-        context = context + i[0] + ". " + i[1]['comment'] + "\n"
-    messages.append(HumanMessage(content=context))
-    response = model.invoke(context)
-    print(response)
+    my_chroma = MyChroma(output, model)
+    my_chroma.get_data()
+    while True:
+        user_question = input("Which question do you have?")
+        retrieved_context = my_chroma.find_embeddings(user_question)
+        context = ''
+        for i in retrieved_context:
+            context = context + i[0] + ". " + i[1]['comment'] + "\n\n"
+        messages = [
+        HumanMessage(
+        content=f"""Инструкция для LLM: 
+Используй предоставленный контекст из закрытых issue'ов для формирования ответа на запрос пользователя. Отдавай предпочтение информации из issue'ов с меткой [State]:closed. Ответ должен быть максимально ясным, лаконичным и соответствовать сути проблемы, описанной пользователем.
+
+
+
+
+Контекст:
+=========================
+{context}
+=========================
+
+
+
+Запрос пользователя:
+{user_question}
+    """
+        )
+        ]
+        print(messages[0].content)
+        response = model.invoke(context)
+        print(response)
