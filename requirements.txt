@@ -16,8 +16,6 @@ certifi==2024.12.14
 charset-normalizer==3.4.1
     # via requests
 colorama==0.4.6
-
-chromadb==0.5.23
     # via pytest
 chromadb==0.5.23
 
@@ -108,7 +106,7 @@ typing-extensions==4.12.2
     #   langchain-core
     #   pydantic
     #   pydantic-core
-urllib3>=1.21.1, <3
+urllib3==2.3.0
     # via
     #   requests
     #   types-requests
