@@ -4,7 +4,6 @@ from model import Model
 
 class MyChroma:
     def __init__(self, model: Model): #initiate chroma collection
-
         self.model = model
         self.client = chromadb.PersistentClient(path="./chromadb")
         self.collection = self.client.get_or_create_collection(name="embeddings_collection")
