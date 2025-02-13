@@ -3,12 +3,14 @@ from langchain_core.documents import Document
 from model import Model
 
 class MyChroma:
-    def __init__(self, docs: list[Document], model: Model): #initiate chroma collection
+    def __init__(self, model: Model): #initiate chroma collection
         self.model = model
         self.client = chromadb.PersistentClient(path="./chromadb")
         self.collection = self.client.get_or_create_collection(name="embeddings_collection")
+
+    def fill_data(self, docs: list[Document]):
         for idx, doc in enumerate(docs):
-            embedding = model.embed(doc.page_content)
+            embedding = self.model.embed(doc.page_content)
             self.collection.add(
                 documents=[doc.page_content],
                 embeddings=[embedding.data[0].embedding],

@@ -7,6 +7,7 @@ class ChunkSplitter():
 		pass
 
 	def create_chunks(self): #create chunks from the data we received. only questions are splitted
+		print('started chunking')
 		output = []
 		for filename in os.listdir('issues/'):
 			with open(os.path.join('issues/', filename), 'r', encoding="utf-8") as f: # open in readonly mode
@@ -18,4 +19,5 @@ class ChunkSplitter():
 				)
 				metadata = {"comment": extra}
 				output.extend(splitter.create_documents([head], [metadata]))
+		print('ended chunking')
 		return output

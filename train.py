@@ -27,40 +27,46 @@ def create_model():
     model = Model(token)
     return model
 
-
-def train_process():
-    get_data()
-    chunk_splitter = ChunkSplitter()
-    output = chunk_splitter.create_chunks()
+def model_call():
     model = create_model()
-    my_chroma = MyChroma(output, model)
-    my_chroma.get_data()
+    my_chroma = MyChroma(model)
     while True:
-        user_question = input("Which question do you have?")
+        user_question = input("Which question do you have? ")
         retrieved_context = my_chroma.find_embeddings(user_question)
         context = ''
         for i in retrieved_context:
             context = context + i[0] + ". " + i[1]['comment'] + "\n\n"
         messages = [
         HumanMessage(
-        content=f"""Инструкция для LLM: 
-Используй предоставленный контекст из закрытых issue'ов для формирования ответа на запрос пользователя. Отдавай предпочтение информации из issue'ов с меткой [State]:closed. Ответ должен быть максимально ясным, лаконичным и соответствовать сути проблемы, описанной пользователем.
+        content=f"""Instruction for LLM: 
+Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user’s request. The context and user question will be in English.
 
 
 
-
-Контекст:
+Context:
 =========================
 {context}
 =========================
 
 
 
-Запрос пользователя:
+User question:
 {user_question}
-    """
-        )
-        ]
+"""
+    )
+    ]
         print(messages[0].content)
         response = model.invoke(context)
         print(response)
+
+
+def train_process():
+    # get_data()
+    # chunk_splitter = ChunkSplitter()
+    # output = chunk_splitter.create_chunks()
+    model = create_model()
+    my_chroma = MyChroma(model)
+    
+
+if __name__ == "__main__":
+    model_call()
