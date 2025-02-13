@@ -67,6 +67,5 @@ def train_process():
     model = create_model()
     my_chroma = MyChroma(model)
     
-
 if __name__ == "__main__":
     model_call()
