@@ -37,19 +37,22 @@ _To edit notification comments on pull requests, go to your [Netlify site config
         return line
 
     def get_issues(self): #retrieve issues in format: title, body and state = url of comments for this issue
+        print("Starting retrieval of issues")
         url = f"https://api.github.com/repos/{self.owner}/{self.repo}/issues"
         issues = []
         page = 1
         per_page = 10
         while True:
             params = {'per_page': per_page, 'page': page}
-            response = requests.get(url, params=params)
+            response = requests.get(url, params=params, headers=self.headers)
             if response.status_code != 200:
                 break
             page_issues = response.json()
-            if not page_issues or page == 2:  # For testing reasons only
+            print(page_issues)
+            if not page_issues:  # For testing reasons only
                 break
             issues.extend(page_issues)
+            print("page ", page)
             page += 1
 
         if issues:
@@ -59,12 +62,14 @@ _To edit notification comments on pull requests, go to your [Netlify site config
                     self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]\n{body}", issue["id"]]
                 else:
                     self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]", issue["id"]]
+            print("succesfully retrieved")
         else:
             print("There are no found issues in your repo")
 
 
     def get_issues_comments(self):  # Get comments
         result = []
+        print('starting to retrieve comments')
         for item in self.data.values():
             url = item[0]
             comment = self.fetch_comments(url)
@@ -92,3 +97,4 @@ _To edit notification comments on pull requests, go to your [Netlify site config
                 with open(f"issues/{self.data[titles[index]][2]}.md", "w", encoding="utf-8") as f:
                     f.write(f"# {titles[index]} \n")
                     f.write(self.data[titles[index]][1] + res)
+        print('finished saving')
