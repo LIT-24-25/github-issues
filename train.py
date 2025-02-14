@@ -27,19 +27,17 @@ def create_model():
     model = Model(token)
     return model
 
-def model_call():
+def model_call(user_question):
     model = create_model()
     my_chroma = MyChroma(model)
-    while True:
-        user_question = input("Which question do you have? ")
-        retrieved_context = my_chroma.find_embeddings(user_question)
-        context = ''
-        for i in retrieved_context:
-            context = context + i[0] + ". " + i[1]['comment'] + "\n\n"
-        messages = [
-        HumanMessage(
-        content=f"""Instruction for LLM: 
-Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user’s request. The context and user question will be in English.
+    retrieved_context = my_chroma.find_embeddings(user_question)
+    context = ''
+    for i in retrieved_context:
+        context = context + i[0] + ". " + i[1]['comment'] + "\n\n"
+    messages = [
+    HumanMessage(
+    content=f"""Instruction for LLM: 
+Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user’s request. Write only possible solutions without summary and key points of the question itself.
 
 
 
@@ -53,11 +51,10 @@ Context:
 User question:
 {user_question}
 """
-    )
-    ]
-        print(messages[0].content)
-        response = model.invoke(context)
-        print(response)
+)
+]
+    response = model.invoke(context)
+    return response
 
 
 def train_process():
@@ -66,6 +63,3 @@ def train_process():
     # output = chunk_splitter.create_chunks()
     model = create_model()
     my_chroma = MyChroma(model)
-    
-if __name__ == "__main__":
-    model_call()
