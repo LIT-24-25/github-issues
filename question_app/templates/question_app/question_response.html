@@ -1,0 +1,53 @@
+<!-- question_answer.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question and Answer Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        .question, .answer {
+            margin-bottom: 20px;
+        }
+        .question-label, .answer-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .question-text, .answer-text {
+            font-size: 16px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="question">
+            <span class="question-label">Question:</span>
+            <span class="question-text" id="question-text">{{ question }}</span>
+        </div>
+        <div class="answer">
+            <span class="answer-label">Answer:</span>
+            <span class="answer-text" id="answer-text">{{ answer }}</span>
+        </div>
+    </div>
+</body>
+</html>
