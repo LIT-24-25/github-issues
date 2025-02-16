@@ -3,9 +3,10 @@ from chunks import ChunkSplitter
 from model import Model
 from mychroma import MyChroma
 from retrieve import RetrieveRepo
-from chunks import ChunkSplitter
 from model import Model
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage
+import requests
+import json
 
 def get_data():
     owner, repo, token = read_config()
@@ -21,6 +22,12 @@ def read_config():
         token = lines[2].replace("\n", "")
     return owner, repo, token
 
+def get_operouter():
+    with open("config/openrouter.txt", "r") as f:
+        openrouter_token = f.readline()
+        return openrouter_token
+
+
 def create_model():
     with open("config/gigachat.txt", "r") as f:
         token = f.read()
@@ -34,9 +41,21 @@ def model_call(user_question):
     context = ''
     for i in retrieved_context:
         context = context + i[0] + ". " + i[1]['comment'] + "\n\n"
-    messages = [
-    HumanMessage(
-    content=f"""Instruction for LLM: 
+    response = requests.post(
+        url="https://openrouter.ai/api/v1/chat/completions",
+        headers={
+            "Authorization": f"Bearer {get_operouter()}",
+            "Content-Type": "application/json",
+        },
+        data=json.dumps({
+            "model": "qwen/qwen-plus",
+            "messages": [
+            {
+                "role": "user",
+                "content": [
+                {
+                    "type": "text",
+                    "text": f"""Instruction for LLM: 
 Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user’s request. Write only possible solutions without summary and key points of the question itself.
 
 
@@ -51,15 +70,22 @@ Context:
 User question:
 {user_question}
 """
-)
-]
-    response = model.invoke(context)
-    return response
+                }
+                ]
+            }
+            ],
+            
+        })
+        )
+
+    data = response.json()
+    return data['choices'][0]['message']['content']
 
 
 def train_process():
-    # get_data()
-    # chunk_splitter = ChunkSplitter()
-    # output = chunk_splitter.create_chunks()
+    get_data()
+    chunk_splitter = ChunkSplitter()
+    output = chunk_splitter.create_chunks()
     model = create_model()
-    my_chroma = MyChroma(model)
+    my_chroma = MyChroma()
+    my_chroma.fill_data(output, model)

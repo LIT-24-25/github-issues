@@ -8,7 +8,7 @@ class MyChroma:
         self.client = chromadb.PersistentClient(path="./chromadb")
         self.collection = self.client.get_or_create_collection(name="embeddings_collection")
 
-    def fill_data(self, docs: list[Document]):
+    def fill_data(self, docs: list[Document]): #fill data with issues and comments
         for idx, doc in enumerate(docs):
             embedding = self.model.embed(doc.page_content)
             self.collection.add(
@@ -18,10 +18,6 @@ class MyChroma:
                 ids=[f"doc_{idx}"]
             )
         print("Documents added to collection")
-
-    def get_data(self): #for debugging only
-        coll = self.client.get_collection(name="embeddings_collection")
-        return coll
 
     def find_embeddings(self, question):
         user_embedding = self.model.embed(question).data[0].embedding
