@@ -36,7 +36,47 @@
             font-size: 16px;
             color: #333;
         }
+        
+        /* Add styles for Markdown formatting */
+        .markdown-content {
+            text-align: left;
+            line-height: 1.6;
+        }
+        
+        .markdown-content h1,
+        .markdown-content h2,
+        .markdown-content h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .markdown-content code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        .markdown-content pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        
+        .markdown-content ul,
+        .markdown-content ol {
+            padding-left: 20px;
+        }
+        
+        .markdown-content blockquote {
+            border-left: 4px solid #ddd;
+            padding-left: 15px;
+            margin-left: 0;
+            color: #666;
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -46,8 +86,27 @@
         </div>
         <div class="answer">
             <span class="answer-label">Answer:</span>
-            <span class="answer-text" id="answer-text">{{ answer }}</span>
+            <div class="answer-text markdown-content" id="answer-text">
+                {{ answer }}
+            </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Configure marked options for better security and formatting
+            marked.setOptions({
+                breaks: true,  // Convert \n to <br>
+                gfm: true,     // Enable GitHub Flavored Markdown
+                sanitize: false, // Allow HTML in the markdown
+                highlight: function(code, lang) {
+                    return code;
+                }
+            });
+            
+            var answerText = document.getElementById("answer-text").innerText;
+            var html = marked.parse(answerText);
+            document.getElementById("answer-text").innerHTML = html;
+        });
+    </script>
 </body>
 </html>
