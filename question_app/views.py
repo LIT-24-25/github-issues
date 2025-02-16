@@ -13,11 +13,10 @@ def question_ask(request):
         return render(request, 'question_app/question_form.html')
     elif request.method == "POST":
         question = request.POST.get('question')
-        model_response = model_call(question)
-        Question.objects.create(question=question, answer=model_response)
+        issues_info, model_response = model_call(question)
+        Question.objects.create(question=question, answer=model_response, context=issues_info)
         context = {
         'question': question,
         'answer': model_response
         }
-        
         return render(request, 'question_app/question_response.html', context)

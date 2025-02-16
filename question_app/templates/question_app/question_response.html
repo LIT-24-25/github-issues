@@ -104,6 +104,8 @@
             });
             
             var answerText = document.getElementById("answer-text").innerText;
+            // Add line break before numbers followed by a period
+            answerText = answerText.replace(/(\d+\.)/g, '\n$1');
             var html = marked.parse(answerText);
             document.getElementById("answer-text").innerHTML = html;
         });

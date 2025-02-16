@@ -43,7 +43,7 @@
         <form method="POST">
             {% csrf_token %}
             <label for="question">What's your question?</label><br>
-            <input type="text" id="question" name="question" placeholder="Type your question here"><br>
+            <input type="text" id="question" maxlength="255" name="question" placeholder="Type your question here"><br>
             <button type="submit">Submit</button>
         </form>
     </div>

@@ -75,11 +75,11 @@ User question:
             }
             ],
             
-        })
+        }, indent=2)
         )
 
     data = response.json()
-    return data['choices'][0]['message']['content']
+    return context, data['choices'][0]['message']['content']
 
 
 def train_process():
