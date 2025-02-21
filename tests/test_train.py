@@ -1,7 +1,7 @@
-from train import read_config
-from retrieve import RetrieveRepo
-from chunks import ChunkSplitter
-from model import Model
+from business_logic.train import read_config
+from business_logic.retrieve import RetrieveRepo
+from business_logic.chunks import ChunkSplitter
+from business_logic.model import Model
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import pytest

@@ -2,11 +2,10 @@ from retrieve import RetrieveRepo
 from chunks import ChunkSplitter
 from model import Model
 from mychroma import MyChroma
-from retrieve import RetrieveRepo
 from model import Model
-from langchain_core.messages import HumanMessage
 import requests
 import json
+from question_app.initialize import model, my_chroma
 
 def get_data():
     owner, repo, token = read_config()
@@ -35,8 +34,6 @@ def create_model():
     return model
 
 def model_call(user_question):
-    model = create_model()
-    my_chroma = MyChroma(model)
     retrieved_context = my_chroma.find_embeddings(user_question)
     context = ''
     for i in retrieved_context:

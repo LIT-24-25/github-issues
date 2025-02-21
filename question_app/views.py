@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.renderers import TemplateHTMLRenderer, JSONRenderer
 from .models import Question
 from .serializers import QuestionSerializer
-from train import model_call
+from business_logic.train import model_call
 
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
