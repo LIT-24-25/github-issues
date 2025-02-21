@@ -1,10 +1,12 @@
 <!-- question_answer.html -->
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question and Answer Page</title>
+    <title>AI Response</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -75,22 +77,92 @@
             margin-left: 0;
             color: #666;
         }
+        .response-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .markdown-content {
+            text-align: left;
+            line-height: 1.6;
+        }
+        .markdown-content pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .markdown-content code {
+            background-color: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+        .question-section {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .context-section {
+            margin-top: 30px;
+        }
+        .context-content {
+            font-size: 0.9em;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-family: monospace;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
-    <div class="container">
-        <div class="question">
-            <span class="question-label">Question:</span>
-            <span class="question-text" id="question-text">{{ question }}</span>
+<body class="bg-light">
+    <div class="response-container">
+        <div class="question-section">
+            <h5 class="mb-2">Question:</h5>
+            <p class="mb-0">{{ question }}</p>
         </div>
-        <div class="answer">
-            <span class="answer-label">Answer:</span>
-            <div class="answer-text markdown-content" id="answer-text">
-                {{ answer }}
+        
+        <div class="answer-section">
+            <h5 class="mb-3">Answer:</h5>
+            <div class="markdown-content" id="answer-content">
+                {{ answer|safe }}
             </div>
         </div>
+        
+        <!-- Add context dropdown section -->
+        <div class="context-section mt-4">
+            <div class="d-grid gap-2">
+                <button class="btn btn-outline-secondary" type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#contextCollapse" 
+                        aria-expanded="false" 
+                        aria-controls="contextCollapse">
+                    Show Context
+                </button>
+            </div>
+            <div class="collapse mt-3" id="contextCollapse">
+                <div class="card card-body bg-light">
+                    <h6 class="mb-3">Relevant Context:</h6>
+                    <div class="context-content">
+                        {{ context|safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-4 text-center">
+            <a href="{% url 'ask-form' %}" class="btn btn-primary">Ask Another Question</a>
+        </div>
     </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Configure marked options for better security and formatting
@@ -103,11 +175,15 @@
                 }
             });
             
-            var answerText = document.getElementById("answer-text").innerText;
-            // Add line break before numbers followed by a period
-            answerText = answerText.replace(/(\d+\.)/g, '\n$1');
-            var html = marked.parse(answerText);
-            document.getElementById("answer-text").innerHTML = html;
+            // Get the answer content element
+            var answerContent = document.getElementById("answer-content");
+            if (answerContent) {
+                var answerText = answerContent.innerText;
+                // Add line break before numbers followed by a period
+                answerText = answerText.replace(/(\d+\.)/g, '\n$1');
+                var html = marked.parse(answerText);
+                answerContent.innerHTML = html;
+            }
         });
     </script>
 </body>
