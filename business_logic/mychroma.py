@@ -1,6 +1,6 @@
 import chromadb
 from langchain_core.documents import Document
-from model import Model
+from business_logic.model import Model
 
 class MyChroma:
     def __init__(self, model: Model): #initiate chroma collection

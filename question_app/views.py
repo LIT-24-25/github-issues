@@ -5,31 +5,32 @@ from rest_framework.response import Response
 from rest_framework.renderers import TemplateHTMLRenderer, JSONRenderer
 from .models import Question
 from .serializers import QuestionSerializer
-from business_logic.train import model_call
+from question_app.instances import my_model, my_chroma
 
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
     renderer_classes = [JSONRenderer, TemplateHTMLRenderer]
+    template_name = 'question_app/question_form.html'
 
     @action(detail=False, methods=['GET'], renderer_classes=[TemplateHTMLRenderer])
     def ask_form(self, request):
         """Render the question form"""
-        return Response(
-            template_name='question_app/question_form.html'
-        )
+        self.template_name = 'question_app/question_form.html'
+        return Response({}, template_name=self.template_name)
 
     @action(detail=True, methods=['GET'], renderer_classes=[TemplateHTMLRenderer])
     def view_response(self, request, pk=None):
         """View a specific question response"""
         question = self.get_object()
+        self.template_name = 'question_app/question_response.html'
         return Response(
             {
                 'question': question.question,
                 'answer': question.answer,
                 'context': question.context
             },
-            template_name='question_app/question_response.html'
+            template_name=self.template_name
         )
 
     def create(self, request, *args, **kwargs):
@@ -42,7 +43,9 @@ class QuestionViewSet(viewsets.ModelViewSet):
             )
         
         try:
-            context, model_response = model_call(question_text)
+            print(question_text)
+            context, model_response = my_model.model_call(question_text, my_chroma)
+            print(model_response)
             question = Question.objects.create(
                 question=question_text,
                 answer=model_response,
@@ -59,6 +62,6 @@ class QuestionViewSet(viewsets.ModelViewSet):
             )
         except Exception as e:
             return Response(
-                {'error': str(e)}, 
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                {'error': str(e), 'retrived':question_text}, 
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
             )
