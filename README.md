@@ -16,7 +16,7 @@ git clone https://github.com/LIT-24-25/github-issues.git
     - openrouter.txt - Here you need to have information in such order:
         - Your OpenRouter API key
 
-3. Run train_process command to train the model on your repository's issues
+3. Run train_model command to train the model on your repository's issues
 ```
 python manage.py train_model
 ```
