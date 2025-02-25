@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from train import train_process
+from business_logic.train import train_process
 
 class Command(BaseCommand):
     help = 'Trains the model by processing GitHub issues and creating embeddings'

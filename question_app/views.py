@@ -23,15 +23,23 @@ class QuestionViewSet(viewsets.ModelViewSet):
     def view_response(self, request, pk=None):
         """View a specific question response"""
         question = self.get_object()
-        self.template_name = 'question_app/question_response.html'
-        return Response(
-            {
-                'question': question.question,
-                'answer': question.answer,
-                'context': question.context
-            },
-            template_name=self.template_name
-        )
+        
+        if request.accepted_renderer.format == 'html':
+            return Response(
+                {
+                    'question': question.question,
+                    'answer': question.answer,
+                    'context': question.context
+                },
+                template_name='question_app/question_response.html'
+            )
+        
+        # For API requests
+        return Response({
+            'question': question.question,
+            'answer': question.answer,
+            'context': question.context
+        })
 
     def create(self, request, *args, **kwargs):
         """Create a new question and get model response"""

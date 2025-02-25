@@ -54,14 +54,17 @@
             background-color: #e9ecef;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
-    <div class="main-container">
+    <div id="app" class="main-container">
         <!-- Sidebar with questions -->
         <div class="sidebar">
             <h3 class="mb-4">Previous Questions</h3>
-            <ul class="question-list" id="questionList">
-                <!-- Questions will be loaded here -->
+            <ul class="question-list">
+                <li v-for="question in questions" :key="question.id" class="question-list-item" @click="viewResponse(question.id)">
+                    [[ question.question ]]
+                </li>
             </ul>
         </div>
 
@@ -69,18 +72,19 @@
         <div class="content">
             <div class="form-container">
                 <h2 class="mb-4 text-center">Ask Your Question</h2>
-                <form method="POST" id="questionForm" action="{{ request.path }}">
-                    {% csrf_token %}
+                <form @submit.prevent="submitQuestion">
                     <div class="mb-3">
                         <textarea 
                             class="form-control question-input"
-                            id="question"
-                            name="question"
+                            v-model="newQuestion"
                             placeholder="Type your question here..."
                             required></textarea>
                     </div>
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Submit Question</button>
+                        <button type="submit" class="btn btn-primary" :disabled="loading">
+                            <span v-if="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            [[ loading ? 'Processing...' : 'Submit Question' ]]
+                        </button>
                     </div>
                 </form>
             </div>
@@ -88,37 +92,55 @@
     </div>
     
     <script>
-        // Load questions when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            fetchQuestions();
-        });
+        Vue.options.delimiters = ['[[', ']]'];
 
-        // Fetch questions from API
-        function fetchQuestions() {
-            fetch('/api/questions/')
-                .then(response => response.json())
-                .then(data => {
-                    const questionList = document.getElementById('questionList');
-                    questionList.innerHTML = '';
-                    
-                    data.forEach(question => {
-                        const li = document.createElement('li');
-                        li.className = 'question-list-item';
-                        li.textContent = question.question;
-                        li.addEventListener('click', () => {
-                            window.location.href = `/api/questions/${question.id}/view_response/`;
-                        });
-                        questionList.appendChild(li);
+        new Vue({
+            el: '#app',
+            data: {
+                questions: [],
+                newQuestion: '',
+                loading: false
+            },
+            created() {
+                this.fetchQuestions();
+            },
+            methods: {
+                fetchQuestions() {
+                    fetch('/api/questions/')
+                        .then(response => response.json())
+                        .then(data => {
+                            this.questions = data;
+                        })
+                        .catch(error => console.error('Error fetching questions:', error));
+                },
+                submitQuestion() {
+                    this.loading = true;
+                    fetch('/api/questions/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': '{{ csrf_token }}'
+                        },
+                        body: JSON.stringify({ question: this.newQuestion })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        this.loading = false;
+                        if (data.error) {
+                            alert(data.error);
+                        } else {
+                            window.location.href = `/api/questions/${data.id}/view_response/`;
+                        }
+                    })
+                    .catch(error => {
+                        this.loading = false;
+                        console.error('Error submitting question:', error);
                     });
-                })
-                .catch(error => console.error('Error fetching questions:', error));
-        }
-
-        // Form submission handler
-        document.getElementById('questionForm').addEventListener('submit', function(e) {
-            const button = this.querySelector('button[type="submit"]');
-            button.disabled = true;
-            button.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...';
+                },
+                viewResponse(id) {
+                    window.location.href = `/api/questions/${id}/view_response/`;
+                }
+            }
         });
     </script>
 </body>
