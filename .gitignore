@@ -1,5 +1,5 @@
 *.env
-**/config
+*.txt
 **/.vscode
 **/__pycache__/
 **/.pytest_cache
@@ -7,5 +7,4 @@
 **/issues
 **/.idea
 **/chromadb
-*.md
 *.cer
