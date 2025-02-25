@@ -3,8 +3,14 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.renderers import TemplateHTMLRenderer, JSONRenderer
+from django.shortcuts import render, redirect
+from rest_framework import viewsets, status
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from rest_framework.renderers import TemplateHTMLRenderer, JSONRenderer
 from .models import Question
 from .serializers import QuestionSerializer
+from question_app.instances import my_model, my_chroma
 from question_app.instances import my_model, my_chroma
 
 class QuestionViewSet(viewsets.ModelViewSet):
