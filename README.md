@@ -31,4 +31,4 @@ python manage.py train_model
 python manage.py runserver
 ```
 
-5. Open the browser and go to http://127.0.0.1:8000/ or http://localhost:8000/
+6. Open the browser and go to http://127.0.0.1:8000/ or http://localhost:8000/
