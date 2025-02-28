@@ -4,7 +4,7 @@ import json
 
 class Model:
     def __init__(self, token): #initiate gigachat model
-        self.giga = GigaChat(credentials=token, model="GigaChat", ca_bundle_file="russian_trusted_root_ca.cer")
+        self.giga = GigaChat(credentials=token, model="GigaChat", verify_ssl_certs=False)
         with open("config/openrouter.txt", "r") as f:
             self.openrouter_token = f.readline()
 
