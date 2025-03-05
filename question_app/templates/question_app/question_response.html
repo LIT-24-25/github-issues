@@ -214,7 +214,6 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body class="bg-light">
     <div id="app" class="main-container">
@@ -257,7 +256,7 @@
                     <div class="card card-body bg-light">
                         <h6 class="mb-3">Relevant Context:</h6>
                         <div class="context-content">
-                            {{ context|safe }}
+                            [[ currentQuestion.context ]]
                         </div>
                     </div>
                 </div>
@@ -301,14 +300,7 @@
                         .catch(error => console.error('Error fetching questions:', error));
                 },
                 viewResponse(id) {
-                    axios.get(`/api/questions/${id}/view_response/`)
-                        .then(response => {
-                            this.currentQuestion = response.data;
-                            let answerText = response.data.answer;
-                            answerText = answerText.replace(/(\d+\.)/g, '\n$1');
-                            this.formattedAnswer = marked.parse(answerText);
-                        })
-                        .catch(error => console.error('Error fetching response:', error));
+                    window.location.href = `/api/questions/${id}/view_response/`;
                 }
             }
         });

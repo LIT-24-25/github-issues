@@ -1,7 +1,7 @@
 from business_logic.train import read_config
 from business_logic.retrieve import RetrieveRepo
 from business_logic.chunks import ChunkSplitter
-from business_logic.model import Model
+from business_logic.mymodel import MyModel
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import pytest
@@ -90,7 +90,7 @@ async def test_get_data(mock_read_config, vcr_config):
                 assert generated_content == local_content, f"Content of {issue_file_path} does not match local file"
 
 class MockChroma:
-    def __init__(self, docs: list[Document], model: Model):
+    def __init__(self, docs: list[Document], model: MyModel):
         self.collection = MagicMock()
         self.collection.add = MagicMock()
         print("Mocked Chroma initialized.")
