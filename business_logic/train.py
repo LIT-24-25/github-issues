@@ -1,6 +1,6 @@
 from business_logic.retrieve import RetrieveRepo
 from business_logic.chunks import ChunkSplitter
-from business_logic.model import Model
+from business_logic.mymodel import MyModel
 from business_logic.mychroma import MyChroma
 
 def get_data():
@@ -12,16 +12,16 @@ def get_data():
 def read_config():
     with open("config/config.txt.", "r") as f:
         lines = f.readlines()
-        owner = lines[0].replace("\n", "")
-        repo = lines[1].replace("\n", "")
-        token = lines[2].replace("\n", "")
+        owner = lines[0].strip()
+        repo = lines[1].strip()
+        token = lines[2].strip()
     return owner, repo, token
 
 
 def create_model():
     with open("config/gigachat.txt", "r") as f:
-        token = f.read()
-    model = Model(token)
+        token = f.readline().strip()
+    model = MyModel(token)
     return model
 
 

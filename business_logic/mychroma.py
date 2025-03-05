@@ -1,9 +1,9 @@
 import chromadb
 from langchain_core.documents import Document
-from business_logic.model import Model
+from business_logic.mymodel import MyModel
 
 class MyChroma:
-    def __init__(self, model: Model): #initiate chroma collection
+    def __init__(self, model: MyModel): #initiate chroma collection
         self.model = model
         self.client = chromadb.PersistentClient(path="./chromadb")
         self.collection = self.client.get_or_create_collection(name="embeddings_collection")
@@ -27,4 +27,7 @@ class MyChroma:
         retrieved_context = []
         for i in range(len(documents)):
             retrieved_context.append([documents[i], comments[i]])
-        return retrieved_context
+        context = ''
+        for i in retrieved_context:
+            context = context + i[0] + ". " + i[1]['comment'] + "\n\n"
+        return context

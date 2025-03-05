@@ -1,30 +1,50 @@
 from gigachat import GigaChat
+from gigachat.models import Chat, Messages, MessagesRole
 import requests
 import json
 
-class Model:
+class MyModel:
     def __init__(self, token): #initiate gigachat model
         self.giga = GigaChat(credentials=token, model="GigaChat", verify_ssl_certs=False)
+        self.giga_token = token
         with open("config/openrouter.txt", "r") as f:
-            self.openrouter_token = f.readline()
+            self.openrouter_token = f.readline().strip()
 
     def embed(self, text): #create embedding for text
         return self.giga.embeddings(text)
 
-    def invoke(self, context:str):
-        response = self.giga.chat(context)
-        return response.choices[0].message.content
+    def call_gigachat(self, user_question, some_chroma):
+        context = some_chroma.find_embeddings(user_question)
+        prompt = f"""Instruction for LLM: 
+        Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user’s request. Write only possible solutions without summary and key points of the question itself.
+
+
+
+        Context:
+        =========================
+        {context}
+        =========================
+
+
+
+        User question:
+        {user_question}
+        """
+        payload = Chat(
+            messages=[
+                Messages(
+                    role=MessagesRole.USER,
+                    content=prompt
+                )
+            ],
+            temperature=0,
+        )
+        response = self.giga.chat(payload)
+        return context,response.choices[0].message.content
     
 
-    def model_call(self, user_question, some_chroma):
-        print('entered model call')
-        print(f"Chroma is {some_chroma}")
-        retrieved_context = some_chroma.find_embeddings(user_question)
-        print('retrieved')
-        context = ''
-        for i in retrieved_context:
-            context = context + i[0] + ". " + i[1]['comment'] + "\n\n"
-        print('here')
+    def call_qwen(self, user_question, some_chroma):
+        context = some_chroma.find_embeddings(user_question)
         response = requests.post(
             url="https://openrouter.ai/api/v1/chat/completions",
             headers={
