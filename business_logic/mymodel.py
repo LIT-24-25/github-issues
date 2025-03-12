@@ -4,11 +4,10 @@ import requests
 import json
 
 class MyModel:
-    def __init__(self, token): #initiate gigachat model
-        self.giga = GigaChat(credentials=token, model="GigaChat", verify_ssl_certs=False)
-        self.giga_token = token
-        with open("config/openrouter.txt", "r") as f:
-            self.openrouter_token = f.readline().strip()
+    def __init__(self, gigachat_token, openrouter_token): #initiate gigachat model
+        self.gigachat_token = gigachat_token
+        self.openrouter_token = openrouter_token
+        self.giga = GigaChat(credentials=self.gigachat_token, model="GigaChat", verify_ssl_certs=False)
 
     def embed(self, text): #create embedding for text
         return self.giga.embeddings(text)

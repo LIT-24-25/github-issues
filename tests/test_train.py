@@ -1,7 +1,5 @@
-from business_logic.train import read_config
 from business_logic.retrieve import RetrieveRepo
 from business_logic.chunks import ChunkSplitter
-from business_logic.mymodel import MyModel
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import pytest
@@ -14,15 +12,6 @@ from tests.mocked_issues import cont_1, cont_2
 
 # Load environment variables from .env file
 load_dotenv()
-
-# Mock function to simulate reading from config.txt using environment variables
-@pytest.fixture
-def mock_read_config(monkeypatch):
-    def mock_open(*args, **kwargs):
-        mock_file_content = f"{os.getenv('OWNER')}\n{os.getenv('REPO')}\n{os.getenv('TOKEN')}\n"
-        return StringIO(mock_file_content)
-
-    monkeypatch.setattr('builtins.open', mock_open)
 
 @pytest.fixture(scope='module')
 def vcr_config():
@@ -51,13 +40,47 @@ def vcr_config():
     )
     return myvcr
 
+def mocked_get_issues():
+    def get_issues(self): #retrieve issues in format: title, body and state = url of comments for this issue
+        print("Starting retrieval of issues")
+        url = f"https://api.github.com/repos/{self.owner}/{self.repo}/issues"
+        issues = []
+        page = 1
+        per_page = 10
+        while True:
+            params = {'per_page': per_page, 'page': page}
+            response = requests.get(url, params=params, headers=self.headers)
+            if response.status_code != 200:
+                break
+            page_issues = response.json()
+            if not page_issues or page==2:  # For testing reasons only
+                break
+            issues.extend(page_issues)
+            print("page ", page)
+            page += 1
+
+        if issues:
+            for issue in issues:
+                if issue.get("body"):
+                    body = self.clear_issue(issue["body"])
+                    self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]\n{body}", issue["id"]]
+                else:
+                    self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]", issue["id"]]
+            print("succesfully retrieved")
+        else:
+            print("There are no found issues in your repo")
+
 @pytest.mark.asyncio
 @pytest.mark.usefixtures("vcr_config")
-async def test_get_data(mock_read_config, vcr_config):
+async def test_get_data(vcr_config):
     with vcr_config.use_cassette('cassettes/get_data_cassette.yaml'):
-        owner, repo, token = read_config()
+        # Removed read_config and replaced with direct assignment
+        owner = os.getenv('OWNER')
+        repo = os.getenv('REPO')
+        token = os.getenv('TOKEN')
+        
         fetch = RetrieveRepo(owner, repo, token)
-        fetch.get_issues()
+        fetch.get_issues = mocked_get_issues
         fetch.get_issues_comments()
 
         issues_dir = "issues/"
@@ -88,15 +111,6 @@ async def test_get_data(mock_read_config, vcr_config):
 
                 # Compare the content of the two files
                 assert generated_content == local_content, f"Content of {issue_file_path} does not match local file"
-
-class MockChroma:
-    def __init__(self, docs: list[Document], model: MyModel):
-        self.collection = MagicMock()
-        self.collection.add = MagicMock()
-        print("Mocked Chroma initialized.")
-
-    def get_data(self):
-        return self.collection  # Returning a mock collection
 
 @pytest.fixture
 def mock_file_data(monkeypatch):
@@ -155,21 +169,3 @@ def test_create_chunks(mock_file_data, mock_text_splitter):
     assert result[2].metadata["comment"] == '''State: [open]\nHello, I want to plot 8 time series stored in same file in same row, and choose between 4 labels for classification.\n\nBut i\'m getting problem importing the csv \'Problems with parsing CSV: 
 Cannot find provided separator ",". Row 1:\nURL: undefined$\' what does it mean ?No comments provided'''
     assert result[3].page_content == "time series in same window?"
-
-# Additional test case for Chroma class
-#NOT POSSIBLE
-# def test_chroma(mock_file_data, mock_text_splitter):
-#     mock_docs = [
-#         Document(page_content="# docs: DOC-274: Refresh", metadata={'comment': 'State: [open]\nNew template image files### . . . |  Name | Link |. |:-:|------------------------|. |<span aria-hidden="true">🔨</span> Latest commit | e8f38db1d90b310002ef0abd465ad21b7dff198c |. |<span aria-hidden="true">🔍</span> Latest deploy log | https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/678aa11a4ae8f500082235c7 |'}),
-#         Document(page_content="Refresh template images", metadata={'comment': 'State: [open]\nNew template image files### . . . |  Name | Link |. |:-:|------------------------|. |<span aria-hidden="true">🔨</span> Latest commit | e8f38db1d90b310002ef0abd465ad21b7dff198c |. |<span aria-hidden="true">🔍</span> Latest deploy log | https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/678aa11a4ae8f500082235c7 |'}),
-#         Document(page_content="# How to plot multiple time", metadata={'comment': '''State: [open]\nHello, I want to plot 8 time series stored in same file in same row, and choose between 4 labels for classification.\n\nBut i\'m getting problem importing the csv \'Problems with parsing CSV: 
-# Cannot find provided separator ",". Row 1:\nURL: undefined$\' what does it mean ?No comments provided'''}),
-#         Document(page_content="time series in same window?", metadata={'comment': '''State: [open]\nHello, I want to plot 8 time series stored in same file in same row, and choose between 4 labels for classification.\n\nBut i\'m getting problem importing the csv \'Problems with parsing CSV: 
-# Cannot find provided separator ",". Row 1:\nURL: undefined$\' what does it mean ?No comments provided'''})
-#     ]
-#     mock_model = MagicMock()
-#     mock_model.embed = MagicMock(return_value=MagicMock(data=[MagicMock(embedding=[0.1, 0.2, 0.3])]))
-    
-#     mock_chroma = MockChroma(mock_docs, mock_model)
-#     mock_chroma.get_data()
-#     assert mock_chroma.collection.add.called

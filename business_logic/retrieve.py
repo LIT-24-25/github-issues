@@ -48,7 +48,7 @@ _To edit notification comments on pull requests, go to your [Netlify site config
             if response.status_code != 200:
                 break
             page_issues = response.json()
-            if not page_issues or page==2:  # For testing reasons only
+            if not page_issues:
                 break
             issues.extend(page_issues)
             print("page ", page)
