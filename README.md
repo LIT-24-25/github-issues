@@ -18,7 +18,7 @@ git clone https://github.com/LIT-24-25/github-issues.git
 pip install -r /path/to/requirements.txt
 ```
 
-4. Run train_process command to train the model on your repository's issues
+4. Run train_model command to train the model on your repository's issues
 ```
 python manage.py train_model
 ```
