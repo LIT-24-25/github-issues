@@ -1,0 +1,1266 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/7217/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2719067838\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7217#issuecomment-2719067838\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7217\",\"id\":2719067838,\"node_id\":\"IC_kwDOC3t2Ec6iEa6-\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T20:35:45Z\",\"updated_at\":\"2025-03-12T20:36:04Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *heartex-docs*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 9372c7abe55ace25b866463a8793ff38db9a9512
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/heartex-docs/deploys/67d1f01358368f0008bc28d6
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2719067838/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2719068012\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7217#issuecomment-2719068012\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7217\",\"id\":2719068012,\"node_id\":\"IC_kwDOC3t2Ec6iEa9s\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T20:35:51Z\",\"updated_at\":\"2025-03-12T20:36:10Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *label-studio-docs-new-theme*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 9372c7abe55ace25b866463a8793ff38db9a9512
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/67d1f013ee63d9000833f4e5
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2719068012/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2719088077\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7217#issuecomment-2719088077\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7217\",\"id\":2719088077,\"node_id\":\"IC_kwDOC3t2Ec6iEf3N\",\"user\":{\"login\":\"codecov[bot]\",\"id\":22429695,\"node_id\":\"MDM6Qm90MjI0Mjk2OTU=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/254?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/codecov%5Bbot%5D\",\"html_url\":\"https://github.com/apps/codecov\",\"followers_url\":\"https://api.github.com/users/codecov%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/codecov%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/codecov%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/codecov%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/codecov%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/codecov%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/codecov%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/codecov%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/codecov%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T20:46:45Z\",\"updated_at\":\"2025-03-12T20:46:45Z\",\"author_association\":\"NONE\",\"body\":\"##
+        [Codecov](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7217?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        Report\\nAttention: Patch coverage is `88.23529%` with `2 lines` in your changes
+        missing coverage. Please review.\\n> Project coverage is 77.32%. Comparing
+        base [(`fc3c543`)](https://app.codecov.io/gh/HumanSignal/label-studio/commit/fc3c54388bffdd6960aec69e03ace83cb85bd2d5?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        to head [(`9372c7a`)](https://app.codecov.io/gh/HumanSignal/label-studio/commit/9372c7abe55ace25b866463a8793ff38db9a9512?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal).\\n>
+        Report is 4 commits behind head on develop.\\n\\n| [Files with missing lines](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7217?dropdown=coverage&src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        | Patch % | Lines |\\n|---|---|---|\\n| [label\\\\_studio/data\\\\_import/api.py](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7217?src=pr&el=tree&filepath=label_studio%2Fdata_import%2Fapi.py&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal#diff-bGFiZWxfc3R1ZGlvL2RhdGFfaW1wb3J0L2FwaS5weQ==)
+        | 0.00% | [1 Missing :warning: ](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7217?src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        |\\n| [label\\\\_studio/projects/models.py](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7217?src=pr&el=tree&filepath=label_studio%2Fprojects%2Fmodels.py&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal#diff-bGFiZWxfc3R1ZGlvL3Byb2plY3RzL21vZGVscy5weQ==)
+        | 75.00% | [1 Missing :warning: ](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7217?src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        |\\n\\n<details><summary>Additional details and impacted files</summary>\\n\\n\\n```diff\\n@@
+        \            Coverage Diff             @@\\n##           develop    #7217
+        \     +/-   ##\\n===========================================\\n- Coverage
+        \   77.32%   77.32%   -0.01%     \\n===========================================\\n
+        \ Files          188      188              \\n  Lines        14581    14576
+        \      -5     \\n===========================================\\n- Hits         11275
+        \   11271       -4     \\n+ Misses        3306     3305       -1     \\n```\\n\\n|
+        [Flag](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7217/flags?src=pr&el=flags&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        | Coverage \u0394 | |\\n|---|---|---|\\n| [pytests](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7217/flags?src=pr&el=flag&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        | `77.32% <88.23%> (-0.01%)` | :arrow_down: |\\n\\nFlags with carried forward
+        coverage won't be shown. [Click here](https://docs.codecov.io/docs/carryforward-flags?utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal#carryforward-flags-in-the-pull-request-comment)
+        to find out more.\\n\\n</details>\\n\\n[:umbrella: View full report in Codecov
+        by Sentry](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7217?dropdown=coverage&src=pr&el=continue&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal).
+        \  \\n:loudspeaker: Have feedback on the report? [Share it here](https://about.codecov.io/codecov-pr-comment-feedback/?utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal).\\n\\n<details><summary>\U0001F680
+        New features to boost your workflow: </summary>\\n\\n- \u2744 [Test Analytics](https://docs.codecov.com/docs/test-analytics):
+        Detect flaky tests, report on failures, and find test suite problems.\\n-
+        \U0001F4E6 [JS Bundle Analysis](https://docs.codecov.com/docs/javascript-bundle-analysis):
+        Save yourself from yourself by tracking and limiting bundle sizes in JS merges.\\n</details>\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2719088077/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":254,\"client_id\":\"Iv1.9d88ef6ecc903626\",\"slug\":\"codecov\",\"node_id\":\"MDM6QXBwMjU0\",\"owner\":{\"login\":\"codecov\",\"id\":8226205,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjgyMjYyMDU=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/8226205?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/codecov\",\"html_url\":\"https://github.com/codecov\",\"followers_url\":\"https://api.github.com/users/codecov/followers\",\"following_url\":\"https://api.github.com/users/codecov/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/codecov/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/codecov/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/codecov/subscriptions\",\"organizations_url\":\"https://api.github.com/users/codecov/orgs\",\"repos_url\":\"https://api.github.com/users/codecov/repos\",\"events_url\":\"https://api.github.com/users/codecov/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/codecov/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Codecov\",\"description\":\"Codecov
+        provides highly integrated tools to group, merge, archive and compare coverage
+        reports. Whether your team is comparing changes in a pull request or reviewing
+        a single commit, Codecov will improve the code review workflow and quality.\\r\\n\\r\\n##
+        Code coverage done right.\xAE\\r\\n\\r\\n1. Upload coverage reports from your
+        CI builds.\\r\\n2. Codecov merges all builds and languages into one beautiful
+        coherent report.\\r\\n3. Get commit statuses, pull request comments and coverage
+        overlay via our browser extension.\\r\\n\\r\\nWhen Codecov merges your uploads
+        it keeps track of the CI provider (inc. build details) and user specified
+        context, e.g. `#unittest` ~ `#smoketest` or `#oldcode` ~ `#newcode`. You can
+        track the `#unittest` coverage independently of other groups. [Learn more
+        here](\\r\\nhttp://docs.codecov.io/docs/flags)\\r\\n\\r\\nThrough **Codecov's
+        Browser Extension** reports overlay directly in GitHub UI to assist in code
+        review in [Chrome](https://chrome.google.com/webstore/detail/codecov/gedikamndpbemklijjkncpnolildpbgo)
+        or Firefox (https://addons.mozilla.org/en-US/firefox/addon/codecov/)\\r\\n\\r\\n*Highly
+        detailed* **pull request comments** and *customizable* **commit statuses**
+        will improve your team's workflow and code coverage incrementally.\\r\\n\\r\\n**File
+        backed configuration** all through the `codecov.yml`. \\r\\n\\r\\n## FAQ\\r\\n-
+        Do you **merge multiple uploads** to the same commit? **Yes**\\r\\n- Do you
+        **support multiple languages** in the same project? **Yes**\\r\\n- Can you
+        **group coverage reports** by project and/or test type? **Yes**\\r\\n- How
+        does **pricing** work? Only paid users can view reports and post statuses/comments.
+        \",\"external_url\":\"https://codecov.io\",\"html_url\":\"https://github.com/apps/codecov\",\"created_at\":\"2016-09-25T14:18:27Z\",\"updated_at\":\"2025-03-05T19:27:10Z\",\"permissions\":{\"administration\":\"read\",\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"read\",\"members\":\"read\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"check_run\",\"check_suite\",\"create\",\"delete\",\"fork\",\"member\",\"membership\",\"organization\",\"public\",\"pull_request\",\"push\",\"release\",\"repository\",\"status\",\"team_add\"]}}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Mar 2025 21:38:01 GMT
+      ETag:
+      - W/"0673f32d998e3d7a64fc5afaae540331f8a80bc0343408194415bcbc77f58851"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - CB8E:33CFBA:A546DE:AB17D7:67D1FEB8
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4965'
+      X-RateLimit-Reset:
+      - '1741818568'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '35'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-06-05 21:34:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/7216/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2718949940\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7216#issuecomment-2718949940\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7216\",\"id\":2718949940,\"node_id\":\"IC_kwDOC3t2Ec6iD-I0\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T19:55:06Z\",\"updated_at\":\"2025-03-12T19:55:40Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *heartex-docs*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | f874d56e5e84cceea6b3f6fd6c27bd860aec36cb
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/heartex-docs/deploys/67d1e68b5f498f00082afa43
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2718949940/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2718951497\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7216#issuecomment-2718951497\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7216\",\"id\":2718951497,\"node_id\":\"IC_kwDOC3t2Ec6iD-hJ\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T19:55:43Z\",\"updated_at\":\"2025-03-12T19:55:57Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *label-studio-docs-new-theme*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | f874d56e5e84cceea6b3f6fd6c27bd860aec36cb
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/67d1e68be250ab0008fbf3cb
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2718951497/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Mar 2025 21:38:01 GMT
+      ETag:
+      - W/"36312a1a8ddeccf22f5aab58bc04b5a37b3fe78715ec9c01b70e3211ba87b684"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - EBE5:1D6DEF:A3C051:A99192:67D1FEB9
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4964'
+      X-RateLimit-Reset:
+      - '1741818568'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '36'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-06-05 21:34:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/7215/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2718347320\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7215#issuecomment-2718347320\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7215\",\"id\":2718347320,\"node_id\":\"IC_kwDOC3t2Ec6iBrA4\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T15:52:19Z\",\"updated_at\":\"2025-03-12T15:52:39Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *heartex-docs*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 010880776acdf5228bea8a6bf8f48cbb7a4e45f0
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/heartex-docs/deploys/67d1ad9e7aaff20007061965
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2718347320/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2718349389\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7215#issuecomment-2718349389\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7215\",\"id\":2718349389,\"node_id\":\"IC_kwDOC3t2Ec6iBrhN\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T15:52:54Z\",\"updated_at\":\"2025-03-12T15:53:10Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *label-studio-docs-new-theme*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 010880776acdf5228bea8a6bf8f48cbb7a4e45f0
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/67d1ad9e3d67800008226b3e
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2718349389/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Mar 2025 21:38:02 GMT
+      ETag:
+      - W/"a7e51babeb1b1c8ade86a67dc86b93f1e7bd148297ccec7084a3cd3e772c0b68"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - AAE0:654C6:A77419:AD456A:67D1FEBA
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4963'
+      X-RateLimit-Reset:
+      - '1741818568'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '37'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-06-05 21:34:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/7213/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2717478934\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7213#issuecomment-2717478934\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7213\",\"id\":2717478934,\"node_id\":\"IC_kwDOC3t2Ec6h-XAW\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T10:59:03Z\",\"updated_at\":\"2025-03-12T10:59:27Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *label-studio-docs-new-theme*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 4f7df318c044ec2a6930b6b6733d8705730ec089
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/67d168e76f800300087f30e0
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2717478934/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2717478940\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7213#issuecomment-2717478940\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7213\",\"id\":2717478940,\"node_id\":\"IC_kwDOC3t2Ec6h-XAc\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T10:59:03Z\",\"updated_at\":\"2025-03-12T10:59:28Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *heartex-docs*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 4f7df318c044ec2a6930b6b6733d8705730ec089
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/heartex-docs/deploys/67d168e74704f1000857fdab
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2717478940/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Mar 2025 21:38:02 GMT
+      ETag:
+      - W/"d1f12ca52e9aec8e6e5566c83a584c94fbdca3d82b4f5f05524e96ad8bc9aa8c"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - A97A:58784:AF6C3C:B53D73:67D1FEBA
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4962'
+      X-RateLimit-Reset:
+      - '1741818568'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '38'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-06-05 21:34:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/7212/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2717415637\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7212#issuecomment-2717415637\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7212\",\"id\":2717415637,\"node_id\":\"IC_kwDOC3t2Ec6h-HjV\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T10:34:23Z\",\"updated_at\":\"2025-03-12T10:34:42Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *label-studio-docs-new-theme*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 31ed89f7c784e103935aa7702c0bc0585cede237
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/67d163227ac98f000823d777
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2717415637/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2717415689\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7212#issuecomment-2717415689\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7212\",\"id\":2717415689,\"node_id\":\"IC_kwDOC3t2Ec6h-HkJ\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T10:34:24Z\",\"updated_at\":\"2025-03-12T10:34:46Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *heartex-docs*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 31ed89f7c784e103935aa7702c0bc0585cede237
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/heartex-docs/deploys/67d16322d5daff00088aafce
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2717415689/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Mar 2025 21:38:03 GMT
+      ETag:
+      - W/"fe5a016cc712836882dcf4028666e5ba333f7f9a7039c04046e3f5e8a21c908c"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - 3ADE:84B7B:A87045:AE41C4:67D1FEBB
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4961'
+      X-RateLimit-Reset:
+      - '1741818568'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '39'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-06-05 21:34:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/7211/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2717144930\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7211#issuecomment-2717144930\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7211\",\"id\":2717144930,\"node_id\":\"IC_kwDOC3t2Ec6h9Fdi\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T09:02:23Z\",\"updated_at\":\"2025-03-12T09:14:45Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *label-studio-docs-new-theme*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 3530aa5d16f58f0cdb38e3dd77f328311f820527
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/67d1506185063c0008310311
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2717144930/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2717145001\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7211#issuecomment-2717145001\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7211\",\"id\":2717145001,\"node_id\":\"IC_kwDOC3t2Ec6h9Fep\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T09:02:24Z\",\"updated_at\":\"2025-03-12T09:14:49Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *heartex-docs*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 3530aa5d16f58f0cdb38e3dd77f328311f820527
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/heartex-docs/deploys/67d1506157591b0008d15fea
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2717145001/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Mar 2025 21:38:04 GMT
+      ETag:
+      - W/"75464a0150436716130f6be7bba40af5e369c07a77d512edcce24f36d435b30b"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - 7D01:12CEE:BD151F:C2E70C:67D1FEBB
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4960'
+      X-RateLimit-Reset:
+      - '1741818568'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '40'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-06-05 21:34:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/7210/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2715950383\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7210#issuecomment-2715950383\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7210\",\"id\":2715950383,\"node_id\":\"IC_kwDOC3t2Ec6h4h0v\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-11T23:28:41Z\",\"updated_at\":\"2025-03-12T17:37:01Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *heartex-docs*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 623ed3a19e29520913509eccefd8cf92b7f56780
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/heartex-docs/deploys/67d1c61b91d3c70008ccf416
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2715950383/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2715950536\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7210#issuecomment-2715950536\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7210\",\"id\":2715950536,\"node_id\":\"IC_kwDOC3t2Ec6h4h3I\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-11T23:28:51Z\",\"updated_at\":\"2025-03-12T17:36:57Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *label-studio-docs-new-theme*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 623ed3a19e29520913509eccefd8cf92b7f56780
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/67d1c61bbc5d1c0008b8c5a8
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2715950536/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Mar 2025 21:38:04 GMT
+      ETag:
+      - W/"f95d050e05e7e357c792059211a270750db716f0a7f4d73d9b150afaed290fed"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - 230A:FF020:B52316:BAF4CA:67D1FEBC
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4959'
+      X-RateLimit-Reset:
+      - '1741818568'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '41'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-06-05 21:34:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/7206/comments
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2715058651\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7206#issuecomment-2715058651\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7206\",\"id\":2715058651,\"node_id\":\"IC_kwDOC3t2Ec6h1IHb\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-11T16:52:16Z\",\"updated_at\":\"2025-03-12T15:41:39Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *label-studio-docs-new-theme*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 20008e0b648eca543446dfb8695937fc2802b783
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/67d1aad6379d3e000883a7a3
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2715058651/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2715058669\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7206#issuecomment-2715058669\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7206\",\"id\":2715058669,\"node_id\":\"IC_kwDOC3t2Ec6h1IHt\",\"user\":{\"login\":\"netlify[bot]\",\"id\":40209326,\"node_id\":\"MDM6Qm90NDAyMDkzMjY=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/13473?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify%5Bbot%5D\",\"html_url\":\"https://github.com/apps/netlify\",\"followers_url\":\"https://api.github.com/users/netlify%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/netlify%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-11T16:52:17Z\",\"updated_at\":\"2025-03-12T15:41:43Z\",\"author_association\":\"NONE\",\"body\":\"###
+        <span aria-hidden=\\\"true\\\">\u2705</span> Deploy Preview for *heartex-docs*
+        canceled.\\n\\n\\n|  Name | Link |\\n|:-:|------------------------|\\n|<span
+        aria-hidden=\\\"true\\\">\U0001F528</span> Latest commit | 20008e0b648eca543446dfb8695937fc2802b783
+        |\\n|<span aria-hidden=\\\"true\\\">\U0001F50D</span> Latest deploy log |
+        https://app.netlify.com/sites/heartex-docs/deploys/67d1aad6dc23ee0008321df7
+        |\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2715058669/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":13473,\"client_id\":\"Iv1.0acdee22e0bba5eb\",\"slug\":\"netlify\",\"node_id\":\"MDM6QXBwMTM0NzM=\",\"owner\":{\"login\":\"netlify\",\"id\":7892489,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjc4OTI0ODk=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/7892489?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/netlify\",\"html_url\":\"https://github.com/netlify\",\"followers_url\":\"https://api.github.com/users/netlify/followers\",\"following_url\":\"https://api.github.com/users/netlify/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/netlify/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/netlify/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/netlify/subscriptions\",\"organizations_url\":\"https://api.github.com/users/netlify/orgs\",\"repos_url\":\"https://api.github.com/users/netlify/repos\",\"events_url\":\"https://api.github.com/users/netlify/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/netlify/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Netlify\",\"description\":\"Publish
+        incredibly high performance websites and applications right from GitHub. The
+        Netlify platform connects your repositories to an all-in-one workflow for
+        global CDN deployment, continuous integration, and automatic (and free) HTTPS.
+        Each time you commit changes, Netlify builds your site, prerenders markup,
+        and optimizes assets on dedicated build infrastructure. Easily create an entirely
+        automated workflow around any site generator such as Jekyll, Hugo, or Gatsby.\\r\\n\\r\\n##
+        Features\\r\\n\\r\\n### Push your site live, directly from GitHub\\r\\nDeploy
+        your site to an ultra-redundant global CDN that\u2019s purpose built for serving
+        pages and assets quickly and consistently.\\r\\n\\r\\n### Automate deployment\\r\\nNetlify\u2019s
+        built-in Continuous Deployment automatically runs your build commands and
+        deploys the result whenever you push to your Git repository.\\r\\n\\r\\n###
+        Add a custom domain\\r\\nPurchase domains and manage DNS zones and records
+        right inside of Netlify.\\r\\n\\r\\n### HTTPS is automatic\\r\\nYour site
+        will automatically be secured with a free TLS certificate from Let\u2019s
+        Encrypt.\\r\\n\\r\\n### Deploy Previews\\r\\nNetlify\u2019s Deploy Previews
+        streamlined your workflow by giving you a unique, permanent URL to check what
+        your changes will be like in production whenever you submit a pull request.\\r\\n\\r\\n###
+        And a lot more!\\r\\nNetlify includes solutions for forms, identity, and even
+        custom functions powered by AWS Lambda. And all this functionality can be
+        configured directly in your repo.\\r\\n\",\"external_url\":\"https://www.netlify.com\",\"html_url\":\"https://github.com/apps/netlify\",\"created_at\":\"2018-06-12T15:16:51Z\",\"updated_at\":\"2023-03-08T17:02:55Z\",\"permissions\":{\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"write\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"create\",\"delete\",\"issue_comment\",\"pull_request\",\"pull_request_review\",\"pull_request_review_comment\",\"push\"]}},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2716121141\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7206#issuecomment-2716121141\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7206\",\"id\":2716121141,\"node_id\":\"IC_kwDOC3t2Ec6h5Lg1\",\"user\":{\"login\":\"nick-skriabin\",\"id\":767890,\"node_id\":\"MDQ6VXNlcjc2Nzg5MA==\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/767890?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/nick-skriabin\",\"html_url\":\"https://github.com/nick-skriabin\",\"followers_url\":\"https://api.github.com/users/nick-skriabin/followers\",\"following_url\":\"https://api.github.com/users/nick-skriabin/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/nick-skriabin/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/nick-skriabin/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/nick-skriabin/subscriptions\",\"organizations_url\":\"https://api.github.com/users/nick-skriabin/orgs\",\"repos_url\":\"https://api.github.com/users/nick-skriabin/repos\",\"events_url\":\"https://api.github.com/users/nick-skriabin/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/nick-skriabin/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T01:11:54Z\",\"updated_at\":\"2025-03-12T01:12:15Z\",\"author_association\":\"MEMBER\",\"body\":\"/fm
+        sync\\n> [Workflow run](https://github.com/HumanSignal/label-studio/actions/runs/13801476531)\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2716121141/reactions\",\"total_count\":3,\"+1\":1,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":1,\"eyes\":1},\"performed_via_github_app\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2716136371\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7206#issuecomment-2716136371\",\"issue_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7206\",\"id\":2716136371,\"node_id\":\"IC_kwDOC3t2Ec6h5POz\",\"user\":{\"login\":\"codecov[bot]\",\"id\":22429695,\"node_id\":\"MDM6Qm90MjI0Mjk2OTU=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/254?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/codecov%5Bbot%5D\",\"html_url\":\"https://github.com/apps/codecov\",\"followers_url\":\"https://api.github.com/users/codecov%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/codecov%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/codecov%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/codecov%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/codecov%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/codecov%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/codecov%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/codecov%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/codecov%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"created_at\":\"2025-03-12T01:25:58Z\",\"updated_at\":\"2025-03-12T15:52:25Z\",\"author_association\":\"NONE\",\"body\":\"##
+        [Codecov](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7206?dropdown=coverage&src=pr&el=h1&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        Report\\nAttention: Patch coverage is `66.66667%` with `6 lines` in your changes
+        missing coverage. Please review.\\n> Project coverage is 77.18%. Comparing
+        base [(`0aec72b`)](https://app.codecov.io/gh/HumanSignal/label-studio/commit/0aec72bf315a1d338b3aa1a4e97d441c413e3b04?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        to head [(`20008e0`)](https://app.codecov.io/gh/HumanSignal/label-studio/commit/20008e0b648eca543446dfb8695937fc2802b783?dropdown=coverage&el=desc&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal).\\n>
+        Report is 10 commits behind head on develop.\\n\\n| [Files with missing lines](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7206?dropdown=coverage&src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        | Patch % | Lines |\\n|---|---|---|\\n| [label\\\\_studio/jwt\\\\_auth/views.py](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7206?src=pr&el=tree&filepath=label_studio%2Fjwt_auth%2Fviews.py&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal#diff-bGFiZWxfc3R1ZGlvL2p3dF9hdXRoL3ZpZXdzLnB5)
+        | 20.00% | [4 Missing :warning: ](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7206?src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        |\\n| [label\\\\_studio/core/utils/sentry.py](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7206?src=pr&el=tree&filepath=label_studio%2Fcore%2Futils%2Fsentry.py&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal#diff-bGFiZWxfc3R1ZGlvL2NvcmUvdXRpbHMvc2VudHJ5LnB5)
+        | 0.00% | [1 Missing :warning: ](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7206?src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        |\\n| [label\\\\_studio/projects/functions/next\\\\_task.py](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7206?src=pr&el=tree&filepath=label_studio%2Fprojects%2Ffunctions%2Fnext_task.py&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal#diff-bGFiZWxfc3R1ZGlvL3Byb2plY3RzL2Z1bmN0aW9ucy9uZXh0X3Rhc2sucHk=)
+        | 0.00% | [1 Missing :warning: ](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7206?src=pr&el=tree&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        |\\n\\n<details><summary>Additional details and impacted files</summary>\\n\\n\\n```diff\\n@@
+        \          Coverage Diff            @@\\n##           develop    #7206   +/-
+        \  ##\\n========================================\\n  Coverage    77.17%   77.18%
+        \          \\n========================================\\n  Files          187
+        \     187           \\n  Lines        14499    14504    +5     \\n========================================\\n+
+        Hits         11190    11195    +5     \\n  Misses        3309     3309           \\n```\\n\\n|
+        [Flag](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7206/flags?src=pr&el=flags&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        | Coverage \u0394 | |\\n|---|---|---|\\n| [pytests](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7206/flags?src=pr&el=flag&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal)
+        | `77.18% <66.66%> (+<0.01%)` | :arrow_up: |\\n\\nFlags with carried forward
+        coverage won't be shown. [Click here](https://docs.codecov.io/docs/carryforward-flags?utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal#carryforward-flags-in-the-pull-request-comment)
+        to find out more.\\n\\n</details>\\n\\n[:umbrella: View full report in Codecov
+        by Sentry](https://app.codecov.io/gh/HumanSignal/label-studio/pull/7206?dropdown=coverage&src=pr&el=continue&utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal).
+        \  \\n:loudspeaker: Have feedback on the report? [Share it here](https://about.codecov.io/codecov-pr-comment-feedback/?utm_medium=referral&utm_source=github&utm_content=comment&utm_campaign=pr+comments&utm_term=HumanSignal).\\n\\n<details><summary>\U0001F680
+        New features to boost your workflow: </summary>\\n\\n- \u2744 [Test Analytics](https://docs.codecov.com/docs/test-analytics):
+        Detect flaky tests, report on failures, and find test suite problems.\\n-
+        \U0001F4E6 [JS Bundle Analysis](https://docs.codecov.com/docs/javascript-bundle-analysis):
+        Save yourself from yourself by tracking and limiting bundle sizes in JS merges.\\n</details>\",\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/comments/2716136371/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"performed_via_github_app\":{\"id\":254,\"client_id\":\"Iv1.9d88ef6ecc903626\",\"slug\":\"codecov\",\"node_id\":\"MDM6QXBwMjU0\",\"owner\":{\"login\":\"codecov\",\"id\":8226205,\"node_id\":\"MDEyOk9yZ2FuaXphdGlvbjgyMjYyMDU=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/8226205?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/codecov\",\"html_url\":\"https://github.com/codecov\",\"followers_url\":\"https://api.github.com/users/codecov/followers\",\"following_url\":\"https://api.github.com/users/codecov/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/codecov/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/codecov/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/codecov/subscriptions\",\"organizations_url\":\"https://api.github.com/users/codecov/orgs\",\"repos_url\":\"https://api.github.com/users/codecov/repos\",\"events_url\":\"https://api.github.com/users/codecov/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/codecov/received_events\",\"type\":\"Organization\",\"user_view_type\":\"public\",\"site_admin\":false},\"name\":\"Codecov\",\"description\":\"Codecov
+        provides highly integrated tools to group, merge, archive and compare coverage
+        reports. Whether your team is comparing changes in a pull request or reviewing
+        a single commit, Codecov will improve the code review workflow and quality.\\r\\n\\r\\n##
+        Code coverage done right.\xAE\\r\\n\\r\\n1. Upload coverage reports from your
+        CI builds.\\r\\n2. Codecov merges all builds and languages into one beautiful
+        coherent report.\\r\\n3. Get commit statuses, pull request comments and coverage
+        overlay via our browser extension.\\r\\n\\r\\nWhen Codecov merges your uploads
+        it keeps track of the CI provider (inc. build details) and user specified
+        context, e.g. `#unittest` ~ `#smoketest` or `#oldcode` ~ `#newcode`. You can
+        track the `#unittest` coverage independently of other groups. [Learn more
+        here](\\r\\nhttp://docs.codecov.io/docs/flags)\\r\\n\\r\\nThrough **Codecov's
+        Browser Extension** reports overlay directly in GitHub UI to assist in code
+        review in [Chrome](https://chrome.google.com/webstore/detail/codecov/gedikamndpbemklijjkncpnolildpbgo)
+        or Firefox (https://addons.mozilla.org/en-US/firefox/addon/codecov/)\\r\\n\\r\\n*Highly
+        detailed* **pull request comments** and *customizable* **commit statuses**
+        will improve your team's workflow and code coverage incrementally.\\r\\n\\r\\n**File
+        backed configuration** all through the `codecov.yml`. \\r\\n\\r\\n## FAQ\\r\\n-
+        Do you **merge multiple uploads** to the same commit? **Yes**\\r\\n- Do you
+        **support multiple languages** in the same project? **Yes**\\r\\n- Can you
+        **group coverage reports** by project and/or test type? **Yes**\\r\\n- How
+        does **pricing** work? Only paid users can view reports and post statuses/comments.
+        \",\"external_url\":\"https://codecov.io\",\"html_url\":\"https://github.com/apps/codecov\",\"created_at\":\"2016-09-25T14:18:27Z\",\"updated_at\":\"2025-03-05T19:27:10Z\",\"permissions\":{\"administration\":\"read\",\"checks\":\"write\",\"contents\":\"read\",\"emails\":\"read\",\"issues\":\"read\",\"members\":\"read\",\"metadata\":\"read\",\"pull_requests\":\"write\",\"statuses\":\"write\"},\"events\":[\"check_run\",\"check_suite\",\"create\",\"delete\",\"fork\",\"member\",\"membership\",\"organization\",\"public\",\"pull_request\",\"push\",\"release\",\"repository\",\"status\",\"team_add\"]}}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Mar 2025 21:38:05 GMT
+      ETag:
+      - W/"15a9728dc5f2742094d991712d6dbd3b29a9291e58d965e721bbcebd4320b0b7"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - 2A0F:172A1D:A6200D:ABF1B3:67D1FEBD
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4958'
+      X-RateLimit-Reset:
+      - '1741818568'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '42'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-06-05 21:34:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/7205/comments
+  response:
+    body:
+      string: '[]'
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Length:
+      - '2'
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Mar 2025 21:38:06 GMT
+      ETag:
+      - '"a4d965ffb8941aa29a2cd09bf9b63382bb440ac169fbb9b9a07e59986287217f"'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - 7ABD:12CB:8C6CF1:9193A9:67D1FEBE
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4957'
+      X-RateLimit-Reset:
+      - '1741818568'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '43'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-06-05 21:34:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues/7204/comments
+  response:
+    body:
+      string: '[]'
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Length:
+      - '2'
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Mar 2025 21:38:07 GMT
+      ETag:
+      - '"a4d965ffb8941aa29a2cd09bf9b63382bb440ac169fbb9b9a07e59986287217f"'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - A702:7BE85:C4E928:CABB29:67D1FEBE
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4956'
+      X-RateLimit-Reset:
+      - '1741818568'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '44'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-06-05 21:34:55 +0300
+      x-accepted-github-permissions:
+      - issues=read; pull_requests=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+version: 1

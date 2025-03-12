@@ -38,6 +38,6 @@ jobs:
         env:
           OWNER: ${{ secrets.OWNER }}
           REPO: ${{ secrets.REPO }}
-          TOKEN: ${{ secrets.TOKEN }}
+          GITHUB: ${{ secrets.TOKEN }}
         run: |
           pytest
