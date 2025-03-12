@@ -1,14 +1,11 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import QuestionViewSet
+from .views import QuestionViewSet, QuestionFormView
 
 router = DefaultRouter()
 router.register(r'questions', QuestionViewSet, basename='question')
 
 urlpatterns = [
-    path('', QuestionViewSet.as_view({
-        'get': 'ask_form',
-        'post': 'create'
-    }), name='ask-form'),  # Changed from 'root' to 'ask-form'
+    path('', QuestionFormView.as_view(), name='ask-form'),
     path('api/', include(router.urls)),
 ]
