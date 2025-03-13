@@ -1,7 +1,5 @@
-from business_logic.train import read_config
 from business_logic.retrieve import RetrieveRepo
 from business_logic.chunks import ChunkSplitter
-from business_logic.mymodel import MyModel
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import pytest
@@ -11,18 +9,11 @@ from io import StringIO
 from dotenv import load_dotenv
 from unittest.mock import MagicMock
 from tests.mocked_issues import cont_1, cont_2
+import requests
+from functools import wraps
 
 # Load environment variables from .env file
 load_dotenv()
-
-# Mock function to simulate reading from config.txt using environment variables
-@pytest.fixture
-def mock_read_config(monkeypatch):
-    def mock_open(*args, **kwargs):
-        mock_file_content = f"{os.getenv('OWNER')}\n{os.getenv('REPO')}\n{os.getenv('TOKEN')}\n"
-        return StringIO(mock_file_content)
-
-    monkeypatch.setattr('builtins.open', mock_open)
 
 @pytest.fixture(scope='module')
 def vcr_config():
@@ -44,59 +35,112 @@ def vcr_config():
 
     myvcr = vcr.VCR(
         cassette_library_dir='./tests',
-        record_mode= vcr.record_mode.RecordMode.ONCE,
+        record_mode=vcr.record_mode.RecordMode.ONCE,
         filter_headers=['authorization', 'Authorization', 'Bearer'],
         before_record_request=before_record_request,
         before_record_response=before_record_response,
+        match_on=['uri', 'method', 'query']
     )
     return myvcr
 
+def with_vcr(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        cassette_name = f'cassettes/{func.__name__}.yaml'
+        with vcr.VCR(
+            cassette_library_dir='./tests',
+            record_mode=vcr.record_mode.RecordMode.ONCE,
+            filter_headers=['authorization', 'Authorization', 'Bearer'],
+            match_on=['uri', 'method', 'query']
+        ).use_cassette(cassette_name):
+            return func(*args, **kwargs)
+    return wrapper
+
+@with_vcr
+def mocked_get_issues(self): #retrieve issues in format: title, body and state = url of comments for this issue
+    print("Starting retrieval of issues")
+    url = f"https://api.github.com/repos/{self.owner}/{self.repo}/issues"
+    issues = []
+    page = 1
+    per_page = 10
+    max_issues = 10
+    while len(issues) < max_issues:
+        params = {'per_page': per_page, 'page': page}
+        response = requests.get(url, params=params, headers=self.headers)
+        if response.status_code != 200:
+            break
+        page_issues = response.json()
+        if not page_issues or page > 1:
+            break
+        issues.extend(page_issues)
+        print("page ", page)
+        page += 1
+
+    if issues:
+        for issue in issues:
+            if issue.get("body"):
+                body = self.clear_issue(issue["body"])
+                self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]\n{body}", issue["id"]]
+            else:
+                self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]", issue["id"]]
+        print("successfully retrieved")
+    else:
+        print("There are no found issues in your repo")
+
+@with_vcr
+def mocked_get_issues_comments(self):  # Get comments
+    print('starting to retrieve comments')
+    result = []
+    for item in self.data.values():
+        url = item[0]
+        comment = self.fetch_comments(url)
+        result.append(comment)
+
+    self.save_data(result)
+
 @pytest.mark.asyncio
 @pytest.mark.usefixtures("vcr_config")
-async def test_get_data(mock_read_config, vcr_config):
-    with vcr_config.use_cassette('cassettes/get_data_cassette.yaml'):
-        owner, repo, token = read_config()
-        fetch = RetrieveRepo(owner, repo, token)
+async def test_get_data(vcr_config):    
+    # Set up test environment
+    owner = os.getenv('OWNER')
+    repo = os.getenv('REPO')
+    token = os.getenv('GITHUB')
+    
+    # Create RetrieveRepo instance and get the data
+    fetch = RetrieveRepo(owner, repo, token)
+    # Monkey patch both methods
+    original_get_issues = fetch.get_issues
+    original_get_comments = fetch.get_issues_comments
+    fetch.get_issues = lambda: mocked_get_issues(fetch)
+    fetch.get_issues_comments = lambda: mocked_get_issues_comments(fetch)
+    try:
         fetch.get_issues()
         fetch.get_issues_comments()
+    finally:
+        # Restore original methods
+        fetch.get_issues = original_get_issues
+        fetch.get_issues_comments = original_get_comments
 
-        issues_dir = "issues/"
+    issues_dir = "issues/"
+    if not os.path.isdir(issues_dir):
+        os.makedirs(issues_dir)
+    os.makedirs('tests/issues', exist_ok=True)
 
-        # Make sure the directory exists
-        assert os.path.isdir(issues_dir)
-        
-        # Compare the generated files with the expected files
-        # Here, we assume that the filenames are based on the issue ID (issue_id.md)
-        for issue_file in os.listdir(issues_dir):
-            if issue_file.endswith(".md"):
-                issue_id = issue_file.replace(".md", "")
-                
-                # Check if the generated file exists
-                issue_file_path = os.path.join(issues_dir, issue_file)
-                assert os.path.exists(issue_file_path), f"Issue file {issue_file_path} does not exist"
-                
-                # Get the expected file content from the corresponding file on your local machine
-                parent_dir = os.path.join(os.getcwd(), os.pardir)
-                local_file_path = os.path.join(parent_dir, "issues", f"{issue_id}.md")
-                
-                # Compare the content of the generated file with the local file
-                with open(issue_file_path, 'r', encoding='utf-8') as generated_file:
-                    generated_content = generated_file.read().strip()
+    # Compare the generated files with the expected files
+    for issue_file in os.listdir(issues_dir):
+        if issue_file.endswith(".md"):
+            issue_id = issue_file.replace(".md", "")
+            issue_file_path = os.path.join(issues_dir, issue_file)
+            
+            # Compare the content of the generated file with the local file
+            with open(issue_file_path, 'r', encoding='utf-8') as generated_file:
+                generated_content = generated_file.read().strip()
 
-                with open(local_file_path, 'r', encoding='utf-8') as local_file:
-                    local_content = local_file.read().strip()
+            with open(os.path.join('tests/', issue_file_path), 'r', encoding='utf-8') as local_file:
+                local_content = local_file.read().strip()
 
-                # Compare the content of the two files
-                assert generated_content == local_content, f"Content of {issue_file_path} does not match local file"
-
-class MockChroma:
-    def __init__(self, docs: list[Document], model: MyModel):
-        self.collection = MagicMock()
-        self.collection.add = MagicMock()
-        print("Mocked Chroma initialized.")
-
-    def get_data(self):
-        return self.collection  # Returning a mock collection
+            # Compare the content of the two files
+            assert generated_content == local_content, f"Content of {issue_file_path} does not match local file"
 
 @pytest.fixture
 def mock_file_data(monkeypatch):
@@ -155,21 +199,3 @@ def test_create_chunks(mock_file_data, mock_text_splitter):
     assert result[2].metadata["comment"] == '''State: [open]\nHello, I want to plot 8 time series stored in same file in same row, and choose between 4 labels for classification.\n\nBut i\'m getting problem importing the csv \'Problems with parsing CSV: 
 Cannot find provided separator ",". Row 1:\nURL: undefined$\' what does it mean ?No comments provided'''
     assert result[3].page_content == "time series in same window?"
-
-# Additional test case for Chroma class
-#NOT POSSIBLE
-# def test_chroma(mock_file_data, mock_text_splitter):
-#     mock_docs = [
-#         Document(page_content="# docs: DOC-274: Refresh", metadata={'comment': 'State: [open]\nNew template image files### . . . |  Name | Link |. |:-:|------------------------|. |<span aria-hidden="true">🔨</span> Latest commit | e8f38db1d90b310002ef0abd465ad21b7dff198c |. |<span aria-hidden="true">🔍</span> Latest deploy log | https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/678aa11a4ae8f500082235c7 |'}),
-#         Document(page_content="Refresh template images", metadata={'comment': 'State: [open]\nNew template image files### . . . |  Name | Link |. |:-:|------------------------|. |<span aria-hidden="true">🔨</span> Latest commit | e8f38db1d90b310002ef0abd465ad21b7dff198c |. |<span aria-hidden="true">🔍</span> Latest deploy log | https://app.netlify.com/sites/label-studio-docs-new-theme/deploys/678aa11a4ae8f500082235c7 |'}),
-#         Document(page_content="# How to plot multiple time", metadata={'comment': '''State: [open]\nHello, I want to plot 8 time series stored in same file in same row, and choose between 4 labels for classification.\n\nBut i\'m getting problem importing the csv \'Problems with parsing CSV: 
-# Cannot find provided separator ",". Row 1:\nURL: undefined$\' what does it mean ?No comments provided'''}),
-#         Document(page_content="time series in same window?", metadata={'comment': '''State: [open]\nHello, I want to plot 8 time series stored in same file in same row, and choose between 4 labels for classification.\n\nBut i\'m getting problem importing the csv \'Problems with parsing CSV: 
-# Cannot find provided separator ",". Row 1:\nURL: undefined$\' what does it mean ?No comments provided'''})
-#     ]
-#     mock_model = MagicMock()
-#     mock_model.embed = MagicMock(return_value=MagicMock(data=[MagicMock(embedding=[0.1, 0.2, 0.3])]))
-    
-#     mock_chroma = MockChroma(mock_docs, mock_model)
-#     mock_chroma.get_data()
-#     assert mock_chroma.collection.add.called

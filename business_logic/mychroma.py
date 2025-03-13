@@ -6,6 +6,7 @@ class MyChroma:
     def __init__(self, model: MyModel): #initiate chroma collection
         self.model = model
         self.client = chromadb.PersistentClient(path="./chromadb")
+        self.client.delete_collection(name="embeddings_collection")
         self.collection = self.client.get_or_create_collection(name="embeddings_collection")
 
     def fill_data(self, docs: list[Document]): #fill data with issues and comments

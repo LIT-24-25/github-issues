@@ -9,3 +9,4 @@
 *.cer
 *.sqlite3
 **/.venv
+issues/

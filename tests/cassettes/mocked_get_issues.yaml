@@ -1,0 +1,400 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.github.com/repos/HumanSignal/label-studio/issues?per_page=10&page=1
+  response:
+    body:
+      string: "[{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7217\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7217/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7217/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7217/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7217\",\"id\":2915106578,\"node_id\":\"PR_kwDOC3t2Ec6OZ7dw\",\"number\":7217,\"title\":\"feat:
+        OPTIC-1749: Only send 5XX API Exceptions to Sentry\",\"user\":{\"login\":\"mcanu\",\"id\":71667929,\"node_id\":\"MDQ6VXNlcjcxNjY3OTI5\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/71667929?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/mcanu\",\"html_url\":\"https://github.com/mcanu\",\"followers_url\":\"https://api.github.com/users/mcanu/followers\",\"following_url\":\"https://api.github.com/users/mcanu/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/mcanu/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/mcanu/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/mcanu/subscriptions\",\"organizations_url\":\"https://api.github.com/users/mcanu/orgs\",\"repos_url\":\"https://api.github.com/users/mcanu/repos\",\"events_url\":\"https://api.github.com/users/mcanu/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/mcanu/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":4280486528,\"node_id\":\"LA_kwDOC3t2Ec7_IwqA\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/feat\",\"name\":\"feat\",\"color\":\"ededed\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":3,\"created_at\":\"2025-03-12T20:35:28Z\",\"updated_at\":\"2025-03-12T20:52:48Z\",\"closed_at\":null,\"author_association\":\"CONTRIBUTOR\",\"sub_issues_summary\":{\"total\":0,\"completed\":0,\"percent_completed\":0},\"active_lock_reason\":null,\"draft\":false,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/7217\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7217\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/7217.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/7217.patch\",\"merged_at\":null},\"body\":\"<!--\\r\\n\\r\\nThis
+        description MUST be filled out for a PR to receive a review. Its primary purposes
+        are:\\r\\n\\r\\n - to enable your reviewer to review your code easily, and\\r\\n
+        - to convince your reviewer that your code works as intended.\\r\\n\\r\\nSome
+        pointers to think about when filling out your PR description:\\r\\n - Reason
+        for change: Description of problem and solution\\r\\n - Screenshots: All visible
+        changes should include screenshots.\\r\\n - Rollout strategy: How will this
+        code be rolled out? Feature flags / env var / other\\r\\n - Testing: Description
+        of how this is being verified\\r\\n - Risks: Are there any known risks associated
+        with this change, eg to security or performance?\\r\\n - Reviewer notes: Any
+        info to help reviewers approve the PR\\r\\n - General notes: Any info to help
+        onlookers understand the code, or callouts to significant portions.\\r\\n\\r\\nYou
+        may use AI tools such as Copilot Actions to assist with writing your PR description
+        (see https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-for-pull-requests/creating-a-pull-request-summary-with-github-copilot);
+        however, an AI summary isn't enough by itself. You'll need to provide your
+        reviewer with strong evidence that your code works as intended, which requires
+        actually running the code and showing that it works.\\r\\n\\r\\n-->\\r\\n\\r\\nThis
+        pull requests adds `sentry_skip: True` to API errors that aren't 5XX. We are
+        receiving a lot of errors that are from 4XX, which cause noise in Sentry for
+        us.\\r\\nAlso, removing ...SentryIgnored exceptions.\\r\\n\\r\\n\\r\\n## Copilot
+        Summary:\\r\\n\\r\\nThis pull request includes multiple changes to the `label_studio`
+        project, primarily focusing on replacing custom exceptions with `ValidationError`
+        from `rest_framework` and updating the exception handling logic. The most
+        important changes are summarized below:\\r\\n\\r\\n### Exception Handling
+        Updates:\\r\\n\\r\\n* Replaced `LabelStudioValidationErrorSentryIgnored` with
+        `ValidationError` in the `validate_label_config` function in `label_studio/core/label_config.py`.
+        [[1]](diffhunk://#diff-18a1b8d149cd666039b50f1d108eb67394d16cb88164d908b198fabdf4571034L113-R111)
+        [[2]](diffhunk://#diff-18a1b8d149cd666039b50f1d108eb67394d16cb88164d908b198fabdf4571034L122-R133)\\r\\n*
+        Updated `custom_exception_handler` in `label_studio/core/utils/common.py`
+        to skip Sentry logging for non-500 `APIException` errors and added handling
+        for `LabelStudioXMLSyntaxErrorSentryIgnored`. [[1]](diffhunk://#diff-0cd678e6cc83f541b3bfc4b09fcfad8c76ee49d47af7c7e41127240bee7b1130L92-R102)
+        [[2]](diffhunk://#diff-0cd678e6cc83f541b3bfc4b09fcfad8c76ee49d47af7c7e41127240bee7b1130R147-R149)\\r\\n\\r\\n###
+        Code Cleanup:\\r\\n\\r\\n* Removed unused imports and custom exception classes
+        from `label_studio/core/utils/exceptions.py`. [[1]](diffhunk://#diff-bf1fc4b8b301381ea19a63f97e1fe342090904d68c00fd629e13aca4bdc0fc79L4-R4)
+        [[2]](diffhunk://#diff-bf1fc4b8b301381ea19a63f97e1fe342090904d68c00fd629e13aca4bdc0fc79L30-L45)\\r\\n*
+        Removed `LabelStudioValidationErrorSentryIgnored` from various files and replaced
+        it with `ValidationError` in `label_studio/data_import/api.py` and `label_studio/projects/models.py`.
+        [[1]](diffhunk://#diff-0d189d758de143ca7197ad41a825d2285df6df57e018672bfe1451dc2785dd3bL416-R415)
+        [[2]](diffhunk://#diff-6ff9748c9ae68f8cccd65f4ee20df06ed0a8b9c32b58da39db3001a7178b1dabL549-R549)
+        [[3]](diffhunk://#diff-6ff9748c9ae68f8cccd65f4ee20df06ed0a8b9c32b58da39db3001a7178b1dabL588-R588)
+        [[4]](diffhunk://#diff-6ff9748c9ae68f8cccd65f4ee20df06ed0a8b9c32b58da39db3001a7178b1dabL614-R614)
+        [[5]](diffhunk://#diff-6ff9748c9ae68f8cccd65f4ee20df06ed0a8b9c32b58da39db3001a7178b1dabL654-R654)\\r\\n\\r\\n###
+        Import Adjustments:\\r\\n\\r\\n* Added `ValidationError` import from `rest_framework.exceptions`
+        in `label_studio/core/label_config.py` and `label_studio/projects/models.py`.
+        [[1]](diffhunk://#diff-18a1b8d149cd666039b50f1d108eb67394d16cb88164d908b198fabdf4571034R17-L20)
+        [[2]](diffhunk://#diff-6ff9748c9ae68f8cccd65f4ee20df06ed0a8b9c32b58da39db3001a7178b1dabR48)\\r\\n*
+        Added `APIException` import in `label_studio/core/utils/common.py`.\\r\\n\\r\\n###
+        Sentry Configuration:\\r\\n\\r\\n* Updated `SENTRY_IGNORED_EXCEPTIONS` in
+        `label_studio/core/settings/base.py` to remove exceptions that are now handled
+        by `APIException`.\\r\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7217/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7217/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7216\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7216/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7216/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7216/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7216\",\"id\":2915021580,\"node_id\":\"PR_kwDOC3t2Ec6OZqAS\",\"number\":7216,\"title\":\"fix:
+        OPTIC: 1809: Adding option to only update last_activiy after a significant
+        difference\",\"user\":{\"login\":\"wesleylima\",\"id\":1276184,\"node_id\":\"MDQ6VXNlcjEyNzYxODQ=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/1276184?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/wesleylima\",\"html_url\":\"https://github.com/wesleylima\",\"followers_url\":\"https://api.github.com/users/wesleylima/followers\",\"following_url\":\"https://api.github.com/users/wesleylima/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/wesleylima/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/wesleylima/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/wesleylima/subscriptions\",\"organizations_url\":\"https://api.github.com/users/wesleylima/orgs\",\"repos_url\":\"https://api.github.com/users/wesleylima/repos\",\"events_url\":\"https://api.github.com/users/wesleylima/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/wesleylima/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":4284144270,\"node_id\":\"LA_kwDOC3t2Ec7_WtqO\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/fix\",\"name\":\"fix\",\"color\":\"ededed\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":2,\"created_at\":\"2025-03-12T19:54:49Z\",\"updated_at\":\"2025-03-12T20:01:23Z\",\"closed_at\":null,\"author_association\":\"CONTRIBUTOR\",\"sub_issues_summary\":{\"total\":0,\"completed\":0,\"percent_completed\":0},\"active_lock_reason\":null,\"draft\":false,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/7216\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7216\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/7216.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/7216.patch\",\"merged_at\":null},\"body\":\"\u2026\\r\\n\\r\\n<!--\\r\\n\\r\\nThis
+        description MUST be filled out for a PR to receive a review. Its primary purposes
+        are:\\r\\n\\r\\n - to enable your reviewer to review your code easily, and\\r\\n
+        - to convince your reviewer that your code works as intended.\\r\\n\\r\\nSome
+        pointers to think about when filling out your PR description:\\r\\n - Reason
+        for change: Description of problem and solution\\r\\n - Screenshots: All visible
+        changes should include screenshots.\\r\\n - Rollout strategy: How will this
+        code be rolled out? Feature flags / env var / other\\r\\n - Testing: Description
+        of how this is being verified\\r\\n - Risks: Are there any known risks associated
+        with this change, eg to security or performance?\\r\\n - Reviewer notes: Any
+        info to help reviewers approve the PR\\r\\n - General notes: Any info to help
+        onlookers understand the code, or callouts to significant portions.\\r\\n\\r\\nYou
+        may use AI tools such as Copilot Actions to assist with writing your PR description
+        (see https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-for-pull-requests/creating-a-pull-request-summary-with-github-copilot);
+        however, an AI summary isn't enough by itself. You'll need to provide your
+        reviewer with strong evidence that your code works as intended, which requires
+        actually running the code and showing that it works.\\r\\n\\r\\n-->\\r\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7216/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7216/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7215\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7215/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7215/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7215/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7215\",\"id\":2914422487,\"node_id\":\"PR_kwDOC3t2Ec6OXoLG\",\"number\":7215,\"title\":\"chore(deps):
+        bump @babel/helpers from 7.23.6 to 7.26.10 in /web\",\"user\":{\"login\":\"dependabot[bot]\",\"id\":49699333,\"node_id\":\"MDM6Qm90NDk2OTkzMzM=\",\"avatar_url\":\"https://avatars.githubusercontent.com/in/29110?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/dependabot%5Bbot%5D\",\"html_url\":\"https://github.com/apps/dependabot\",\"followers_url\":\"https://api.github.com/users/dependabot%5Bbot%5D/followers\",\"following_url\":\"https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/dependabot%5Bbot%5D/subscriptions\",\"organizations_url\":\"https://api.github.com/users/dependabot%5Bbot%5D/orgs\",\"repos_url\":\"https://api.github.com/users/dependabot%5Bbot%5D/repos\",\"events_url\":\"https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/dependabot%5Bbot%5D/received_events\",\"type\":\"Bot\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":3076496317,\"node_id\":\"MDU6TGFiZWwzMDc2NDk2MzE3\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/dependencies\",\"name\":\"dependencies\",\"color\":\"0366d6\",\"default\":false,\"description\":\"Pull
+        requests that update a dependency file\"},{\"id\":5371232811,\"node_id\":\"LA_kwDOC3t2Ec8AAAABQCaCKw\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/javascript\",\"name\":\"javascript\",\"color\":\"168700\",\"default\":false,\"description\":\"Pull
+        requests that update Javascript code\"}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":2,\"created_at\":\"2025-03-12T15:51:56Z\",\"updated_at\":\"2025-03-12T15:53:11Z\",\"closed_at\":null,\"author_association\":\"CONTRIBUTOR\",\"sub_issues_summary\":{\"total\":0,\"completed\":0,\"percent_completed\":0},\"active_lock_reason\":null,\"draft\":false,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/7215\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7215\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/7215.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/7215.patch\",\"merged_at\":null},\"body\":\"Bumps
+        [@babel/helpers](https://github.com/babel/babel/tree/HEAD/packages/babel-helpers)
+        from 7.23.6 to 7.26.10.\\n<details>\\n<summary>Release notes</summary>\\n<p><em>Sourced
+        from <a href=\\\"https://github.com/babel/babel/releases\\\"><code>@\u200Bbabel/helpers</code>'s
+        releases</a>.</em></p>\\n<blockquote>\\n<h2>v7.26.10 (2025-03-11)</h2>\\n<p>Thanks
+        <a href=\\\"https://github.com/jordan-choi\\\"><code>@\u200Bjordan-choi</code></a>
+        and <a href=\\\"https://github.com/mmmsssttt404\\\"><code>@\u200Bmmmsssttt404</code></a>
+        for your first PRs!</p>\\n<p>This release includes a fix for <a href=\\\"https://github.com/babel/babel/security/advisories/GHSA-968p-4wvh-cqc8\\\">https://github.com/babel/babel/security/advisories/GHSA-968p-4wvh-cqc8</a>,
+        a security vulnerability which affects the <code>.replace</code> method of
+        transpiled regular expressions that use named capturing groups.</p>\\n<h4>:eyeglasses:
+        Spec Compliance</h4>\\n<ul>\\n<li><code>babel-parser</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17159\\\">#17159</a>
+        Disallow decorator in array pattern (<a href=\\\"https://github.com/JLHwung\\\"><code>@\u200BJLHwung</code></a>)</li>\\n</ul>\\n</li>\\n</ul>\\n<h4>:bug:
+        Bug Fix</h4>\\n<ul>\\n<li><code>babel-parser</code>, <code>babel-template</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17164\\\">#17164</a>
+        Fix: always initialize ExportDeclaration attributes (<a href=\\\"https://github.com/JLHwung\\\"><code>@\u200BJLHwung</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-core</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17142\\\">#17142</a>
+        fix: &quot;Map maximum size exceeded&quot; in deepClone (<a href=\\\"https://github.com/liuxingbaoyu\\\"><code>@\u200Bliuxingbaoyu</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-parser</code>,
+        <code>babel-plugin-transform-typescript</code>\\n<ul>\\n<li><a href=\\\"https://redirect.github.com/babel/babel/pull/17154\\\">#17154</a>
+        Update typescript parser tests (<a href=\\\"https://github.com/JLHwung\\\"><code>@\u200BJLHwung</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-traverse</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17151\\\">#17151</a>
+        fix: Should not evaluate vars in child scope (<a href=\\\"https://github.com/liuxingbaoyu\\\"><code>@\u200Bliuxingbaoyu</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-generator</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17153\\\">#17153</a>
+        fix: Correctly generate <code>abstract override</code> (<a href=\\\"https://github.com/liuxingbaoyu\\\"><code>@\u200Bliuxingbaoyu</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-parser</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17107\\\">#17107</a>
+        Fix source type detection when parsing TypeScript (<a href=\\\"https://github.com/JLHwung\\\"><code>@\u200BJLHwung</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-helpers</code>,
+        <code>babel-runtime</code>, <code>babel-runtime-corejs2</code>, <code>babel-runtime-corejs3</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17173\\\">#17173</a>
+        Fix processing of replacement pattern with named capture groups (<a href=\\\"https://github.com/%5Bmmmsssttt404%5D(https://github.com/mmmsssttt404)\\\"><code>@\u200Bmmmsssttt404</code></a>)</li>\\n</ul>\\n</li>\\n</ul>\\n<h4>:nail_care:
+        Polish</h4>\\n<ul>\\n<li><code>babel-standalone</code>\\n<ul>\\n<li><a href=\\\"https://redirect.github.com/babel/babel/pull/17158\\\">#17158</a>
+        Avoid warnings when re-bundling <code>@\u200Bbabel/standalone</code> with
+        webpack (<a href=\\\"https://github.com/liuxingbaoyu\\\"><code>@\u200Bliuxingbaoyu</code></a>)</li>\\n</ul>\\n</li>\\n</ul>\\n<h4>:house:
+        Internal</h4>\\n<ul>\\n<li><code>babel-parser</code>\\n<ul>\\n<li><a href=\\\"https://redirect.github.com/babel/babel/pull/17160\\\">#17160</a>
+        Left-value parsing cleanup (<a href=\\\"https://github.com/JLHwung\\\"><code>@\u200BJLHwung</code></a>)</li>\\n</ul>\\n</li>\\n</ul>\\n<h4>Committers:
+        6</h4>\\n<ul>\\n<li>Babel Bot (<a href=\\\"https://github.com/babel-bot\\\"><code>@\u200Bbabel-bot</code></a>)</li>\\n<li>Hu\xE1ng
+        J\xF9nli\xE0ng (<a href=\\\"https://github.com/JLHwung\\\"><code>@\u200BJLHwung</code></a>)</li>\\n<li>Nicol\xF2
+        Ribaudo (<a href=\\\"https://github.com/nicolo-ribaudo\\\"><code>@\u200Bnicolo-ribaudo</code></a>)</li>\\n<li>Yunyoung
+        Jordan Choi (<a href=\\\"https://github.com/jordan-choi\\\"><code>@\u200Bjordan-choi</code></a>)</li>\\n<li><a
+        href=\\\"https://github.com/liuxingbaoyu\\\"><code>@\u200Bliuxingbaoyu</code></a></li>\\n<li><a
+        href=\\\"https://github.com/mmmsssttt404\\\"><code>@\u200Bmmmsssttt404</code></a></li>\\n</ul>\\n<h2>v7.26.9
+        (2025-02-14)</h2>\\n<h4>:bug: Bug Fix</h4>\\n<ul>\\n<li><code>babel-types</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17103\\\">#17103</a>
+        fix: Definition for <code>TSPropertySignature.kind</code> (<a href=\\\"https://github.com/liuxingbaoyu\\\"><code>@\u200Bliuxingbaoyu</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-generator</code>,
+        <code>babel-types</code>\\n<ul>\\n<li><a href=\\\"https://redirect.github.com/babel/babel/pull/17062\\\">#17062</a>
+        Print TypeScript optional/definite in ClassPrivateProperty (<a href=\\\"https://github.com/jamiebuilds-signal\\\"><code>@\u200Bjamiebuilds-signal</code></a>)</li>\\n</ul>\\n</li>\\n</ul>\\n<!--
+        raw HTML omitted -->\\n</blockquote>\\n<p>... (truncated)</p>\\n</details>\\n<details>\\n<summary>Changelog</summary>\\n<p><em>Sourced
+        from <a href=\\\"https://github.com/babel/babel/blob/main/CHANGELOG.md\\\"><code>@\u200Bbabel/helpers</code>'s
+        changelog</a>.</em></p>\\n<blockquote>\\n<h2>v7.26.10 (2025-03-11)</h2>\\n<h4>:eyeglasses:
+        Spec Compliance</h4>\\n<ul>\\n<li><code>babel-parser</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17159\\\">#17159</a>
+        Disallow decorator in array pattern (<a href=\\\"https://github.com/JLHwung\\\"><code>@\u200BJLHwung</code></a>)</li>\\n</ul>\\n</li>\\n</ul>\\n<h4>:bug:
+        Bug Fix</h4>\\n<ul>\\n<li><code>babel-parser</code>, <code>babel-template</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17164\\\">#17164</a>
+        Fix: always initialize ExportDeclaration attributes (<a href=\\\"https://github.com/JLHwung\\\"><code>@\u200BJLHwung</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-core</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17142\\\">#17142</a>
+        fix: &quot;Map maximum size exceeded&quot; in deepClone (<a href=\\\"https://github.com/liuxingbaoyu\\\"><code>@\u200Bliuxingbaoyu</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-parser</code>,
+        <code>babel-plugin-transform-typescript</code>\\n<ul>\\n<li><a href=\\\"https://redirect.github.com/babel/babel/pull/17154\\\">#17154</a>
+        Update typescript parser tests (<a href=\\\"https://github.com/JLHwung\\\"><code>@\u200BJLHwung</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-traverse</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17151\\\">#17151</a>
+        fix: Should not evaluate vars in child scope (<a href=\\\"https://github.com/liuxingbaoyu\\\"><code>@\u200Bliuxingbaoyu</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-generator</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17153\\\">#17153</a>
+        fix: Correctly generate <code>abstract override</code> (<a href=\\\"https://github.com/liuxingbaoyu\\\"><code>@\u200Bliuxingbaoyu</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-parser</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17107\\\">#17107</a>
+        Fix source type detection when parsing TypeScript (<a href=\\\"https://github.com/JLHwung\\\"><code>@\u200BJLHwung</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-helpers</code>,
+        <code>babel-runtime</code>, <code>babel-runtime-corejs2</code>, <code>babel-runtime-corejs3</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17173\\\">#17173</a>
+        Fix processing of replacement pattern with named capture groups (<a href=\\\"https://github.com/%5Bmmmsssttt404%5D(https://github.com/mmmsssttt404)\\\"><code>@\u200Bmmmsssttt404</code></a>)</li>\\n</ul>\\n</li>\\n</ul>\\n<h4>:nail_care:
+        Polish</h4>\\n<ul>\\n<li><code>babel-standalone</code>\\n<ul>\\n<li><a href=\\\"https://redirect.github.com/babel/babel/pull/17158\\\">#17158</a>
+        Avoid warnings when re-bundling <code>@\u200Bbabel/standalone</code> with
+        webpack (<a href=\\\"https://github.com/liuxingbaoyu\\\"><code>@\u200Bliuxingbaoyu</code></a>)</li>\\n</ul>\\n</li>\\n</ul>\\n<h4>:house:
+        Internal</h4>\\n<ul>\\n<li><code>babel-parser</code>\\n<ul>\\n<li><a href=\\\"https://redirect.github.com/babel/babel/pull/17160\\\">#17160</a>
+        Left-value parsing cleanup (<a href=\\\"https://github.com/JLHwung\\\"><code>@\u200BJLHwung</code></a>)</li>\\n</ul>\\n</li>\\n</ul>\\n<h2>v7.26.9
+        (2025-02-14)</h2>\\n<h4>:bug: Bug Fix</h4>\\n<ul>\\n<li><code>babel-types</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17103\\\">#17103</a>
+        fix: Definition for <code>TSPropertySignature.kind</code> (<a href=\\\"https://github.com/liuxingbaoyu\\\"><code>@\u200Bliuxingbaoyu</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-generator</code>,
+        <code>babel-types</code>\\n<ul>\\n<li><a href=\\\"https://redirect.github.com/babel/babel/pull/17062\\\">#17062</a>
+        Print TypeScript optional/definite in ClassPrivateProperty (<a href=\\\"https://github.com/jamiebuilds-signal\\\"><code>@\u200Bjamiebuilds-signal</code></a>)</li>\\n</ul>\\n</li>\\n</ul>\\n<h4>:house:
+        Internal</h4>\\n<ul>\\n<li><code>babel-types</code>\\n<ul>\\n<li><a href=\\\"https://redirect.github.com/babel/babel/pull/17130\\\">#17130</a>
+        Use <code>.ts</code> files with explicit reexports to solve name conflicts
+        (<a href=\\\"https://github.com/nicolo-ribaudo\\\"><code>@\u200Bnicolo-ribaudo</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-core</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17127\\\">#17127</a>
+        Do not depend on <code>@types/gensync</code> in Babel 7 (<a href=\\\"https://github.com/nicolo-ribaudo\\\"><code>@\u200Bnicolo-ribaudo</code></a>)</li>\\n</ul>\\n</li>\\n</ul>\\n<h2>v7.26.7
+        (2025-01-24)</h2>\\n<h4>:bug: Bug Fix</h4>\\n<ul>\\n<li><code>babel-helpers</code>,
+        <code>babel-preset-env</code>, <code>babel-runtime-corejs3</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17086\\\">#17086</a>
+        Make &quot;object without properties&quot; helpers ES6-compatible (<a href=\\\"https://github.com/tquetano-netflix\\\"><code>@\u200Btquetano-netflix</code></a>)</li>\\n</ul>\\n</li>\\n<li><code>babel-plugin-transform-typeof-symbol</code>\\n<ul>\\n<li><a
+        href=\\\"https://redirect.github.com/babel/babel/pull/17085\\\">#17085</a>
+        fix: Correctly handle <code>typeof</code> in arrow functions (<a href=\\\"https://github.com/liuxingbaoyu\\\"><code>@\u200Bliuxingbaoyu</code></a>)</li>\\n</ul>\\n</li>\\n</ul>\\n<!--
+        raw HTML omitted -->\\n</blockquote>\\n<p>... (truncated)</p>\\n</details>\\n<details>\\n<summary>Commits</summary>\\n<ul>\\n<li><a
+        href=\\\"https://github.com/babel/babel/commit/e1ce99df422971175249509e7bbc2b327b8f7957\\\"><code>e1ce99d</code></a>
+        v7.26.10</li>\\n<li><a href=\\\"https://github.com/babel/babel/commit/d5952e80c0faa5ec20e35085531b6e572d31dad4\\\"><code>d5952e8</code></a>
+        Fix processing of replacement pattern with named capture groups (<a href=\\\"https://github.com/babel/babel/tree/HEAD/packages/babel-helpers/issues/17173\\\">#17173</a>)</li>\\n<li><a
+        href=\\\"https://github.com/babel/babel/commit/64bca7b5f308cd52c192a5c821a57f6d1b0475f4\\\"><code>64bca7b</code></a>
+        v7.26.9</li>\\n<li><a href=\\\"https://github.com/babel/babel/commit/4cf5c9e0fbe8899bb9eb0dac7c615406a4fe926d\\\"><code>4cf5c9e</code></a>
+        [babel 8] Use <code>@babel/types</code> for parser's return type (<a href=\\\"https://github.com/babel/babel/tree/HEAD/packages/babel-helpers/issues/17117\\\">#17117</a>)</li>\\n<li><a
+        href=\\\"https://github.com/babel/babel/commit/2d9514066e3b135835ed93246ebbcdb7ca0263ca\\\"><code>2d95140</code></a>
+        v7.26.7</li>\\n<li><a href=\\\"https://github.com/babel/babel/commit/0e6199b2aac12f41053416977379066e80ef14a7\\\"><code>0e6199b</code></a>
+        Make &quot;object without properties&quot; helpers ES6-compatible (<a href=\\\"https://github.com/babel/babel/tree/HEAD/packages/babel-helpers/issues/17086\\\">#17086</a>)</li>\\n<li><a
+        href=\\\"https://github.com/babel/babel/commit/cd24cc07ef6558b7f6510f9177f6393c91b0549f\\\"><code>cd24cc0</code></a>
+        chore: Update TS 5.7 (<a href=\\\"https://github.com/babel/babel/tree/HEAD/packages/babel-helpers/issues/17053\\\">#17053</a>)</li>\\n<li><a
+        href=\\\"https://github.com/babel/babel/commit/63d30381c169780460e01bdb6669c5e01af1dfbe\\\"><code>63d3038</code></a>
+        v7.26.0</li>\\n<li><a href=\\\"https://github.com/babel/babel/commit/bfa56c49569f0bfd5579e0e1870ffa92f74fad48\\\"><code>bfa56c4</code></a>
+        Support <code>import()</code> in <code>rewriteImportExtensions</code> (<a
+        href=\\\"https://github.com/babel/babel/tree/HEAD/packages/babel-helpers/issues/16794\\\">#16794</a>)</li>\\n<li><a
+        href=\\\"https://github.com/babel/babel/commit/b07957ebb316a1e2fc67454fc7423508bb942e63\\\"><code>b07957e</code></a>
+        v7.25.9</li>\\n<li>Additional commits viewable in <a href=\\\"https://github.com/babel/babel/commits/v7.26.10/packages/babel-helpers\\\">compare
+        view</a></li>\\n</ul>\\n</details>\\n<br />\\n\\n\\n[![Dependabot compatibility
+        score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=@babel/helpers&package-manager=npm_and_yarn&previous-version=7.23.6&new-version=7.26.10)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)\\n\\nDependabot
+        will resolve any conflicts with this PR as long as you don't alter it yourself.
+        You can also trigger a rebase manually by commenting `@dependabot rebase`.\\n\\n[//]:
+        # (dependabot-automerge-start)\\n[//]: # (dependabot-automerge-end)\\n\\n---\\n\\n<details>\\n<summary>Dependabot
+        commands and options</summary>\\n<br />\\n\\nYou can trigger Dependabot actions
+        by commenting on this PR:\\n- `@dependabot rebase` will rebase this PR\\n-
+        `@dependabot recreate` will recreate this PR, overwriting any edits that have
+        been made to it\\n- `@dependabot merge` will merge this PR after your CI passes
+        on it\\n- `@dependabot squash and merge` will squash and merge this PR after
+        your CI passes on it\\n- `@dependabot cancel merge` will cancel a previously
+        requested merge and block automerging\\n- `@dependabot reopen` will reopen
+        this PR if it is closed\\n- `@dependabot close` will close this PR and stop
+        Dependabot recreating it. You can achieve the same result by closing it manually\\n-
+        `@dependabot show <dependency name> ignore conditions` will show all of the
+        ignore conditions of the specified dependency\\n- `@dependabot ignore this
+        major version` will close this PR and stop Dependabot creating any more for
+        this major version (unless you reopen the PR or upgrade to it yourself)\\n-
+        `@dependabot ignore this minor version` will close this PR and stop Dependabot
+        creating any more for this minor version (unless you reopen the PR or upgrade
+        to it yourself)\\n- `@dependabot ignore this dependency` will close this PR
+        and stop Dependabot creating any more for this dependency (unless you reopen
+        the PR or upgrade to it yourself)\\nYou can disable automated security fix
+        PRs for this repo from the [Security Alerts page](https://github.com/HumanSignal/label-studio/network/alerts).\\n\\n</details>\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7215/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7215/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7213\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7213/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7213/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7213/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7213\",\"id\":2913557458,\"node_id\":\"PR_kwDOC3t2Ec6OUtg_\",\"number\":7213,\"title\":\"refactor:
+        LEAP-1289: Remove outliner FF_OUTLINER_OPTIM feature flag\",\"user\":{\"login\":\"Gondragos\",\"id\":6546098,\"node_id\":\"MDQ6VXNlcjY1NDYwOTg=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/6546098?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/Gondragos\",\"html_url\":\"https://github.com/Gondragos\",\"followers_url\":\"https://api.github.com/users/Gondragos/followers\",\"following_url\":\"https://api.github.com/users/Gondragos/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/Gondragos/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/Gondragos/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/Gondragos/subscriptions\",\"organizations_url\":\"https://api.github.com/users/Gondragos/orgs\",\"repos_url\":\"https://api.github.com/users/Gondragos/repos\",\"events_url\":\"https://api.github.com/users/Gondragos/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/Gondragos/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":6185844337,\"node_id\":\"LA_kwDOC3t2Ec8AAAABcLR-cQ\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/refactor\",\"name\":\"refactor\",\"color\":\"ededed\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":2,\"created_at\":\"2025-03-12T10:58:45Z\",\"updated_at\":\"2025-03-12T15:40:41Z\",\"closed_at\":null,\"author_association\":\"COLLABORATOR\",\"sub_issues_summary\":{\"total\":0,\"completed\":0,\"percent_completed\":0},\"active_lock_reason\":null,\"draft\":false,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/7213\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7213\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/7213.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/7213.patch\",\"merged_at\":null},\"body\":\"Eliminated
+        all references to the `fflag_feat_front_lsdv_4620_outliner_optimization_310723_short`
+        feature flag as its functionality is now standard. Updated relevant components,
+        styles, and tests to simplify logic and ensure proper behavior without conditional
+        flag checks.\\r\\n\\r\\n<!--\\r\\n\\r\\nThis description MUST be filled out
+        for a PR to receive a review. Its primary purposes are:\\r\\n\\r\\n - to enable
+        your reviewer to review your code easily, and\\r\\n - to convince your reviewer
+        that your code works as intended.\\r\\n\\r\\nSome pointers to think about
+        when filling out your PR description:\\r\\n - Reason for change: Description
+        of problem and solution\\r\\n - Screenshots: All visible changes should include
+        screenshots.\\r\\n - Rollout strategy: How will this code be rolled out? Feature
+        flags / env var / other\\r\\n - Testing: Description of how this is being
+        verified\\r\\n - Risks: Are there any known risks associated with this change,
+        eg to security or performance?\\r\\n - Reviewer notes: Any info to help reviewers
+        approve the PR\\r\\n - General notes: Any info to help onlookers understand
+        the code, or callouts to significant portions.\\r\\n\\r\\nYou may use AI tools
+        such as Copilot Actions to assist with writing your PR description (see https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-for-pull-requests/creating-a-pull-request-summary-with-github-copilot);
+        however, an AI summary isn't enough by itself. You'll need to provide your
+        reviewer with strong evidence that your code works as intended, which requires
+        actually running the code and showing that it works.\\r\\n\\r\\n-->\\r\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7213/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7213/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7212\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7212/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7212/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7212/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7212\",\"id\":2913492646,\"node_id\":\"PR_kwDOC3t2Ec6OUfWx\",\"number\":7212,\"title\":\"fix:
+        LEAP-649: Saving draft on task switching\",\"user\":{\"login\":\"Gondragos\",\"id\":6546098,\"node_id\":\"MDQ6VXNlcjY1NDYwOTg=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/6546098?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/Gondragos\",\"html_url\":\"https://github.com/Gondragos\",\"followers_url\":\"https://api.github.com/users/Gondragos/followers\",\"following_url\":\"https://api.github.com/users/Gondragos/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/Gondragos/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/Gondragos/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/Gondragos/subscriptions\",\"organizations_url\":\"https://api.github.com/users/Gondragos/orgs\",\"repos_url\":\"https://api.github.com/users/Gondragos/repos\",\"events_url\":\"https://api.github.com/users/Gondragos/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/Gondragos/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":4284144270,\"node_id\":\"LA_kwDOC3t2Ec7_WtqO\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/fix\",\"name\":\"fix\",\"color\":\"ededed\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":2,\"created_at\":\"2025-03-12T10:34:08Z\",\"updated_at\":\"2025-03-12T10:35:39Z\",\"closed_at\":null,\"author_association\":\"COLLABORATOR\",\"sub_issues_summary\":{\"total\":0,\"completed\":0,\"percent_completed\":0},\"active_lock_reason\":null,\"draft\":false,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/7212\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7212\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/7212.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/7212.patch\",\"merged_at\":null},\"body\":\"This
+        commit ensures the task ID remains consistent throughout the `onSubmitDraft`
+        process, even while waiting for asynchronous operations.  Previously, the
+        task ID could change during submission, leading to potential issues. This
+        change prevents that.\\r\\n\\r\\n<!--\\r\\n\\r\\nThis description MUST be
+        filled out for a PR to receive a review. Its primary purposes are:\\r\\n\\r\\n
+        - to enable your reviewer to review your code easily, and\\r\\n - to convince
+        your reviewer that your code works as intended.\\r\\n\\r\\nSome pointers to
+        think about when filling out your PR description:\\r\\n - Reason for change:
+        Description of problem and solution\\r\\n - Screenshots: All visible changes
+        should include screenshots.\\r\\n - Rollout strategy: How will this code be
+        rolled out? Feature flags / env var / other\\r\\n - Testing: Description of
+        how this is being verified\\r\\n - Risks: Are there any known risks associated
+        with this change, eg to security or performance?\\r\\n - Reviewer notes: Any
+        info to help reviewers approve the PR\\r\\n - General notes: Any info to help
+        onlookers understand the code, or callouts to significant portions.\\r\\n\\r\\nYou
+        may use AI tools such as Copilot Actions to assist with writing your PR description
+        (see https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-for-pull-requests/creating-a-pull-request-summary-with-github-copilot);
+        however, an AI summary isn't enough by itself. You'll need to provide your
+        reviewer with strong evidence that your code works as intended, which requires
+        actually running the code and showing that it works.\\r\\n\\r\\n-->\\r\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7212/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7212/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7211\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7211/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7211/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7211/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7211\",\"id\":2913237192,\"node_id\":\"PR_kwDOC3t2Ec6OToeg\",\"number\":7211,\"title\":\"refactor:
+        LEAP-1772: Remove FF_OPTIC_2 feature flag and associated logic\",\"user\":{\"login\":\"Gondragos\",\"id\":6546098,\"node_id\":\"MDQ6VXNlcjY1NDYwOTg=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/6546098?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/Gondragos\",\"html_url\":\"https://github.com/Gondragos\",\"followers_url\":\"https://api.github.com/users/Gondragos/followers\",\"following_url\":\"https://api.github.com/users/Gondragos/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/Gondragos/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/Gondragos/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/Gondragos/subscriptions\",\"organizations_url\":\"https://api.github.com/users/Gondragos/orgs\",\"repos_url\":\"https://api.github.com/users/Gondragos/repos\",\"events_url\":\"https://api.github.com/users/Gondragos/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/Gondragos/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":6185844337,\"node_id\":\"LA_kwDOC3t2Ec8AAAABcLR-cQ\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/refactor\",\"name\":\"refactor\",\"color\":\"ededed\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":2,\"created_at\":\"2025-03-12T09:02:00Z\",\"updated_at\":\"2025-03-12T12:03:05Z\",\"closed_at\":null,\"author_association\":\"COLLABORATOR\",\"sub_issues_summary\":{\"total\":0,\"completed\":0,\"percent_completed\":0},\"active_lock_reason\":null,\"draft\":false,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/7211\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7211\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/7211.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/7211.patch\",\"merged_at\":null},\"body\":\"Eliminated
+        the `fflag_feat_optic_2_ensure_draft_saved_short` feature flag and related
+        conditional checks from the codebase as it is no longer needed.\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7211/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7211/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7210\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7210/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7210/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7210/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7210\",\"id\":2912122099,\"node_id\":\"PR_kwDOC3t2Ec6OP5tz\",\"number\":7210,\"title\":\"fix:
+        OPTIC-1794: Improve handling of missing tasks and projects when fetching data
+        within DataManager\",\"user\":{\"login\":\"bmartel\",\"id\":2242258,\"node_id\":\"MDQ6VXNlcjIyNDIyNTg=\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/2242258?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/bmartel\",\"html_url\":\"https://github.com/bmartel\",\"followers_url\":\"https://api.github.com/users/bmartel/followers\",\"following_url\":\"https://api.github.com/users/bmartel/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/bmartel/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/bmartel/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/bmartel/subscriptions\",\"organizations_url\":\"https://api.github.com/users/bmartel/orgs\",\"repos_url\":\"https://api.github.com/users/bmartel/repos\",\"events_url\":\"https://api.github.com/users/bmartel/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/bmartel/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":4284144270,\"node_id\":\"LA_kwDOC3t2Ec7_WtqO\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/fix\",\"name\":\"fix\",\"color\":\"ededed\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":2,\"created_at\":\"2025-03-11T23:28:12Z\",\"updated_at\":\"2025-03-12T17:37:02Z\",\"closed_at\":null,\"author_association\":\"CONTRIBUTOR\",\"sub_issues_summary\":{\"total\":0,\"completed\":0,\"percent_completed\":0},\"active_lock_reason\":null,\"draft\":false,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/7210\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7210\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/7210.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/7210.patch\",\"merged_at\":null},\"body\":\"This
+        pull request includes a couple updates to error handling within the `DataManager`
+        component. We are introducing more graceful ways of handling missing tasks
+        and project data, siding with redirects and more subtle toast messages instead
+        of crashing the page and leaving the user in an unusable state of the application.
+        We are now no longer going to treat polling data the same as normal data requests,
+        as one is non critical and nice to have, the other must exist for the application
+        to work. In the case of polling `interaction=\\\"timer\\\"` data we will ignore
+        these errors completely and allow it to retry. The non polling data fetching
+        the main project or task will be handled with a redirect back to the page
+        previous, DataManager of the project (missing task), or the projects list
+        itself (missing project) in that order based on what the missing data type
+        is.\\r\\n\\r\\n[Kapture 2025-03-11 at 20.40.27.webm](https://github.com/user-attachments/assets/d1080771-ec36-41d5-a4ae-d8c9dca276ab)\\r\\n\\r\\n\\r\\n###
+        Error Handling and Redirection Improvements:\\r\\n\\r\\n* [`web/apps/labelstudio/src/pages/DataManager/DataManager.jsx`](diffhunk://#diff-ee4ec91c0e13fd4685594a907d22c9ccae9ef8cce012fd603d19584690cb124aL99-R107):
+        Enhanced the crash event handling to redirect users based on the error details,
+        either to the home page or the projects page.\\r\\n* [`web/libs/datamanager/src/stores/AppStore.js`](diffhunk://#diff-d1e11a839827428aa6aada8e027a22b057a463ccb73c693e464c6e0784a9825fL742-R758):
+        Updated the `crash` method to accept an options parameter, allowing conditional
+        redirection based on the error context.\\r\\n* [`web/libs/datamanager/src/stores/AppStore.js`](diffhunk://#diff-d1e11a839827428aa6aada8e027a22b057a463ccb73c693e464c6e0784a9825fL507-R516):
+        Modified the project fetching logic to handle cases where the project does
+        not exist, triggering a crash with redirection.\\r\\n\\r\\n### Project and
+        Task Data Handling:\\r\\n\\r\\n* [`web/libs/datamanager/src/stores/AppStore.js`](diffhunk://#diff-d1e11a839827428aa6aada8e027a22b057a463ccb73c693e464c6e0784a9825fR487-R498):
+        Added a check for the length of the new project data to ensure valid comparison
+        and updating of the project state.\\r\\n* [`web/libs/datamanager/src/stores/DataStores/tasks.js`](diffhunk://#diff-524bd37e2870a2414a48568a8f21257ae07d41ce3e1bfe8fecbf02a0ddf4ce5bL148-R160):
+        Enhanced the task data retrieval process to handle task cancellations and
+        non-existent tasks, invoking a crash with redirection if necessary.\\r\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7210/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7210/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7206\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7206/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7206/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7206/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7206\",\"id\":2911249877,\"node_id\":\"PR_kwDOC3t2Ec6OM7Bp\",\"number\":7206,\"title\":\"feat:
+        DIA-1924: \\\"Import sample data\\\" ability in the Data Import page\",\"user\":{\"login\":\"matt-bernstein\",\"id\":60152561,\"node_id\":\"MDQ6VXNlcjYwMTUyNTYx\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/60152561?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/matt-bernstein\",\"html_url\":\"https://github.com/matt-bernstein\",\"followers_url\":\"https://api.github.com/users/matt-bernstein/followers\",\"following_url\":\"https://api.github.com/users/matt-bernstein/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/matt-bernstein/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/matt-bernstein/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/matt-bernstein/subscriptions\",\"organizations_url\":\"https://api.github.com/users/matt-bernstein/orgs\",\"repos_url\":\"https://api.github.com/users/matt-bernstein/repos\",\"events_url\":\"https://api.github.com/users/matt-bernstein/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/matt-bernstein/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[{\"id\":4280486528,\"node_id\":\"LA_kwDOC3t2Ec7_IwqA\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/feat\",\"name\":\"feat\",\"color\":\"ededed\",\"default\":false,\"description\":null},{\"id\":8211222335,\"node_id\":\"LA_kwDOC3t2Ec8AAAAB6W1PPw\",\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/labels/FM%20Stale\",\"name\":\"FM
+        Stale\",\"color\":\"ededed\",\"default\":false,\"description\":null}],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":4,\"created_at\":\"2025-03-11T16:51:59Z\",\"updated_at\":\"2025-03-12T15:52:26Z\",\"closed_at\":null,\"author_association\":\"CONTRIBUTOR\",\"sub_issues_summary\":{\"total\":0,\"completed\":0,\"percent_completed\":0},\"active_lock_reason\":null,\"draft\":false,\"pull_request\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/pulls/7206\",\"html_url\":\"https://github.com/HumanSignal/label-studio/pull/7206\",\"diff_url\":\"https://github.com/HumanSignal/label-studio/pull/7206.diff\",\"patch_url\":\"https://github.com/HumanSignal/label-studio/pull/7206.patch\",\"merged_at\":null},\"body\":\"-
+        add sample data import component\\r\\n- add configurable manifest file with
+        sample data\\r\\n- create default manifest file with data hosted on our s3\\r\\n<!--\\r\\n\\r\\nThis
+        description MUST be filled out for a PR to receive a review. Its primary purposes
+        are:\\r\\n\\r\\n - to enable your reviewer to review your code easily, and\\r\\n
+        - to convince your reviewer that your code works as intended.\\r\\n\\r\\nSome
+        pointers to think about when filling out your PR description:\\r\\n - Reason
+        for change: Description of problem and solution\\r\\n - Screenshots: All visible
+        changes should include screenshots.\\r\\n - Rollout strategy: How will this
+        code be rolled out? Feature flags / env var / other\\r\\n - Testing: Description
+        of how this is being verified\\r\\n - Risks: Are there any known risks associated
+        with this change, eg to security or performance?\\r\\n - Reviewer notes: Any
+        info to help reviewers approve the PR\\r\\n - General notes: Any info to help
+        onlookers understand the code, or callouts to significant portions.\\r\\n\\r\\nYou
+        may use AI tools such as Copilot Actions to assist with writing your PR description
+        (see https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-for-pull-requests/creating-a-pull-request-summary-with-github-copilot);
+        however, an AI summary isn't enough by itself. You'll need to provide your
+        reviewer with strong evidence that your code works as intended, which requires
+        actually running the code and showing that it works.\\r\\n\\r\\n-->\\r\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7206/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7206/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7205\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7205/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7205/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7205/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/issues/7205\",\"id\":2911086347,\"node_id\":\"I_kwDOC3t2Ec6tg6cL\",\"number\":7205,\"title\":\"Get
+        project import info API returns empty task_ids\",\"user\":{\"login\":\"ljain-ias\",\"id\":141899332,\"node_id\":\"U_kgDOCHU2RA\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/141899332?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/ljain-ias\",\"html_url\":\"https://github.com/ljain-ias\",\"followers_url\":\"https://api.github.com/users/ljain-ias/followers\",\"following_url\":\"https://api.github.com/users/ljain-ias/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/ljain-ias/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/ljain-ias/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/ljain-ias/subscriptions\",\"organizations_url\":\"https://api.github.com/users/ljain-ias/orgs\",\"repos_url\":\"https://api.github.com/users/ljain-ias/repos\",\"events_url\":\"https://api.github.com/users/ljain-ias/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/ljain-ias/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":0,\"created_at\":\"2025-03-11T15:57:11Z\",\"updated_at\":\"2025-03-11T15:57:26Z\",\"closed_at\":null,\"author_association\":\"NONE\",\"sub_issues_summary\":{\"total\":0,\"completed\":0,\"percent_completed\":0},\"active_lock_reason\":null,\"body\":\"**Describe
+        the bug**\\nWhen calling the Get Project Import Info API (GET /api/projects/:id/imports/:import_pk),
+        the response contains an empty task_ids list, even though the imported task
+        is visible in the Label Studio UI.\\n\\nThis issue causes problems when trying
+        to automate task import verification and retrieve task IDs programmatically.\\n\\n**To
+        Reproduce**\\nSteps to reproduce the behavior:\\n\\n- Use the Create Task
+        API (POST /api/projects/:id/import) to import new tasks.\\n- Call the Get
+        Import Info API (GET /api/projects/:id/imports/:import_pk) to retrieve details
+        about the import operation.\\n- Observe that while the \\\"tasks\\\" field
+        contains the imported task details, the \\\"task_ids\\\" field is empty ([]).\\n\\n**Expected
+        behavior**\\n\\n- The task_ids field should contain the IDs of the tasks that
+        were imported as part of the import operation.\\n- This would allow users
+        to verify the success of an import operation programmatically.\\n\\n\\n**Environment
+        (please complete the following information):**\\n - Label Studio Version -
+        2.22.0.dev11\\n\\n**Additional context**\\nReproducible for multiple imports
+        across different projects.\\nThe imported task is visible in the Label Studio
+        UI, but the API response does not return task IDs.\\nPossible API issue where
+        task_ids are not populated correctly in the response.\\n\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7205/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7205/timeline\",\"performed_via_github_app\":null,\"state_reason\":null},{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7204\",\"repository_url\":\"https://api.github.com/repos/HumanSignal/label-studio\",\"labels_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7204/labels{/name}\",\"comments_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7204/comments\",\"events_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7204/events\",\"html_url\":\"https://github.com/HumanSignal/label-studio/issues/7204\",\"id\":2910730993,\"node_id\":\"I_kwDOC3t2Ec6tfjrx\",\"number\":7204,\"title\":\"Import
+        tasks API doesn't return task ids\",\"user\":{\"login\":\"ljain-ias\",\"id\":141899332,\"node_id\":\"U_kgDOCHU2RA\",\"avatar_url\":\"https://avatars.githubusercontent.com/u/141899332?v=4\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/ljain-ias\",\"html_url\":\"https://github.com/ljain-ias\",\"followers_url\":\"https://api.github.com/users/ljain-ias/followers\",\"following_url\":\"https://api.github.com/users/ljain-ias/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/ljain-ias/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/ljain-ias/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/ljain-ias/subscriptions\",\"organizations_url\":\"https://api.github.com/users/ljain-ias/orgs\",\"repos_url\":\"https://api.github.com/users/ljain-ias/repos\",\"events_url\":\"https://api.github.com/users/ljain-ias/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/ljain-ias/received_events\",\"type\":\"User\",\"user_view_type\":\"public\",\"site_admin\":false},\"labels\":[],\"state\":\"open\",\"locked\":false,\"assignee\":null,\"assignees\":[],\"milestone\":null,\"comments\":0,\"created_at\":\"2025-03-11T14:17:06Z\",\"updated_at\":\"2025-03-11T14:17:06Z\",\"closed_at\":null,\"author_association\":\"NONE\",\"sub_issues_summary\":{\"total\":0,\"completed\":0,\"percent_completed\":0},\"active_lock_reason\":null,\"body\":\"**Describe
+        the bug**\\nI am using import tasks API to import tasks into LabelStudio and
+        even after setting the return_task_ids param, it does not return task_ids.
+        In fact it only returns import id. \\n\\n**To Reproduce**\\nSteps to reproduce
+        the behavior:\\nAPI ref - https://api.labelstud.io/api-reference/api-reference/projects/import-tasks\\n\\n```\\ncurl
+        -X POST \\\"http://localhost:8080/api/projects/127868/import?return_task_ids=true?return_task_ids=true\\\"
+        \\\\\\n--\\n> | -H \\\"Authorization: Token  \\\" \\\\\\n> | -H \\\"Content-Type:
+        application/json\\\" \\\\\\n> | -d '[\\n> | {\\n> | \\\"tasks\\\": `\\\"[{\\\"text\\\":
+        \\\"Some text 1\\\"}, {\\\"text\\\": \\\"Some text 2\\\"}]'`\\n\\n```\\n\\n\\n\\n**Expected
+        behavior**\\nTask details with task ids in the response\\n\\n**Actual behaviour**\\nget
+        this response \\n`{'import': 2439745}`\",\"closed_by\":null,\"reactions\":{\"url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7204/reactions\",\"total_count\":0,\"+1\":0,\"-1\":0,\"laugh\":0,\"hooray\":0,\"confused\":0,\"heart\":0,\"rocket\":0,\"eyes\":0},\"timeline_url\":\"https://api.github.com/repos/HumanSignal/label-studio/issues/7204/timeline\",\"performed_via_github_app\":null,\"state_reason\":null}]"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO,
+        X-GitHub-Request-Id, Deprecation, Sunset
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - default-src 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 12 Mar 2025 21:38:00 GMT
+      ETag:
+      - W/"4b48a81aa2befd1e0ff40d2f9b64aea418eefe818c300b56245c0e540be33d77"
+      Link:
+      - <https://api.github.com/repositories/192640529/issues?per_page=10&page=2>;
+        rel="next", <https://api.github.com/repositories/192640529/issues?per_page=10&page=97>;
+        rel="last"
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Server:
+      - github.com
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-GitHub-Media-Type:
+      - github.v3; format=json
+      X-GitHub-Request-Id:
+      - 2EB2:162E3B:A984B0:AF57D5:67D1FEB8
+      X-RateLimit-Limit:
+      - '5000'
+      X-RateLimit-Remaining:
+      - '4966'
+      X-RateLimit-Reset:
+      - '1741818568'
+      X-RateLimit-Resource:
+      - core
+      X-RateLimit-Used:
+      - '34'
+      X-XSS-Protection:
+      - '0'
+      github-authentication-token-expiration:
+      - 2025-06-05 21:34:55 +0300
+      x-accepted-github-permissions:
+      - issues=read
+      x-github-api-version-selected:
+      - '2022-11-28'
+    status:
+      code: 200
+      message: OK
+version: 1
