@@ -100,9 +100,7 @@ def mocked_get_issues_comments(self):  # Get comments
 
 @pytest.mark.asyncio
 @pytest.mark.usefixtures("vcr_config")
-async def test_get_data(vcr_config):
-    # Create cassettes directory if it doesn't exist
-    
+async def test_get_data(vcr_config):    
     # Set up test environment
     owner = os.getenv('OWNER')
     repo = os.getenv('REPO')
@@ -124,10 +122,12 @@ async def test_get_data(vcr_config):
         fetch.get_issues_comments = original_get_comments
 
     issues_dir = "issues/"
-    
+    if not os.path.isdir(issues_dir):
+        os.makedirs(issues_dir)
+    os.makedirs('tests/issues', exist_ok=True)
+
     # Compare the generated files with the expected files
     for issue_file in os.listdir(issues_dir):
-        print(issue_file)
         if issue_file.endswith(".md"):
             issue_id = issue_file.replace(".md", "")
             issue_file_path = os.path.join(issues_dir, issue_file)
