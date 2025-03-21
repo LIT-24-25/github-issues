@@ -9,6 +9,7 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/LIT-24-25/github-issues",
+    packages=find_packages(),
     install_requires=[
         "chromadb==0.6.3",
         "Django==5.1.6",
