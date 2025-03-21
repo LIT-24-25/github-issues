@@ -1,6 +1,16 @@
 import requests
 from pathlib import Path
 import re
+import logging
+from tqdm import tqdm
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 
 class RetrieveRepo:
     def __init__(self, owner, repo, token): #set properties or repo
@@ -11,6 +21,7 @@ class RetrieveRepo:
         self.headers = {
         'Authorization': f"Bearer {self.token}"
         }
+        logger.info(f"Initialized RetrieveRepo for {owner}/{repo}")
     
     def clear_issue(self, line: str):
         trash_1 = """### <span aria-hidden="true">✅</span> Deploy Preview for *label-studio-docs-new-theme* ready!"""
@@ -37,63 +48,86 @@ _To edit notification comments on pull requests, go to your [Netlify site config
         return line
 
     def get_issues(self): #retrieve issues in format: title, body and state = url of comments for this issue
-        print("Starting retrieval of issues")
+        logger.info("Starting retrieval of issues")
         url = f"https://api.github.com/repos/{self.owner}/{self.repo}/issues"
         issues = []
         page = 1
         per_page = 10
+        
+        # Create progress bar for pages
+        pbar = tqdm(desc="Retrieving issues", unit="page")
+        
         while True:
             params = {'per_page': per_page, 'page': page}
             response = requests.get(url, params=params, headers=self.headers)
             if response.status_code != 200:
+                logger.error(f"Failed to retrieve issues. Status code: {response.status_code}")
                 break
             page_issues = response.json()
             if not page_issues:
                 break
             issues.extend(page_issues)
-            print("page ", page)
+            logger.info(f"Retrieved page {page} with {len(page_issues)} issues")
+            pbar.update(1)
             page += 1
+        
+        pbar.close()
 
         if issues:
-            for issue in issues:
+            logger.info(f"Processing {len(issues)} issues")
+            # Add progress bar for processing issues
+            for issue in tqdm(issues, desc="Processing issues", unit="issue"):
                 if issue.get("body"):
                     body = self.clear_issue(issue["body"])
                     self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]\n{body}", issue["id"]]
                 else:
                     self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]", issue["id"]]
-            print("succesfully retrieved")
+            logger.info("Successfully processed all issues")
         else:
-            print("There are no found issues in your repo")
-
+            logger.warning("No issues found in the repository")
 
     def get_issues_comments(self):  # Get comments
         result = []
-        print('starting to retrieve comments')
-        for item in self.data.values():
+        logger.info('Starting to retrieve comments')
+        total_items = len(self.data)
+        
+        # Add progress bar for comment retrieval
+        for idx, item in enumerate(tqdm(self.data.values(), desc="Retrieving comments", unit="comment", total=total_items), 1):
             url = item[0]
             comment = self.fetch_comments(url)
             result.append(comment)
+            logger.info(f"Retrieved comments for issue {idx}/{total_items}")
 
         self.save_data(result)
 
     def fetch_comments(self, url):  # Get single comment from API
-        response = requests.get(url, headers=self.headers)
+        try:
+            response = requests.get(url, headers=self.headers)
+        except:
+            response = ''
         if response.status_code == 200:
             repositories_data = response.json()
             if repositories_data:
+                logger.debug(f"Successfully retrieved comments from {url}")
                 return self.clear_comment(repositories_data[0]["body"])
             else:
+                logger.info(f"No comments found for {url}")
                 return "No comments provided"
         else:
-            print(f"Failed to retrieve comments. Status code: {response.status_code}")
+            logger.error(f"Failed to retrieve comments. Status code: {response.status_code}")
             return "Failed to fetch"
     
     def save_data(self, result: list): #save data
+        logger.info("Starting to save data to files")
         titles = list(self.data.keys())
         Path("issues/").mkdir(exist_ok=True)
-        for index, res in enumerate(result):
+        
+        # Add progress bar for saving files
+        for index, res in enumerate(tqdm(result, desc="Saving issues", unit="file")):
             if res:
-                with open(f"issues/{self.data[titles[index]][2]}.md", "w", encoding="utf-8") as f:
+                file_path = f"issues/{self.data[titles[index]][2]}.md"
+                with open(file_path, "w", encoding="utf-8") as f:
                     f.write(f"# {titles[index]} \n")
                     f.write(self.data[titles[index]][1] + res)
-        print('finished saving')
+                logger.debug(f"Saved issue to {file_path}")
+        logger.info('Finished saving all issues')
