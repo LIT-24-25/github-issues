@@ -39,7 +39,7 @@ class MyModel:
             temperature=0,
         )
         response = self.giga.chat(payload)
-        return context,response.choices[0].message.content
+        return context, response.choices[0].message.content
     
 
     def call_qwen(self, user_question, some_chroma):
