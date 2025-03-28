@@ -24,7 +24,16 @@
             background-color: #f8f9fa;
             padding: 20px;
             border-right: 1px solid #dee2e6;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
             overflow-y: auto;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        .sidebar-hidden {
+            transform: translateX(-100%);
         }
         .content {
             flex: 1;
@@ -32,6 +41,32 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
+            margin-left: 300px; /* Add margin to prevent content from being hidden under sidebar */
+            transition: margin-left 0.3s ease;
+        }
+        .content-expanded {
+            margin-left: 0;
+        }
+        .sidebar-toggle {
+            position: fixed;
+            top: 10px;
+            left: 310px;
+            z-index: 1001;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+        }
+        .sidebar-toggle-hidden {
+            left: 10px;
         }
         .form-container {
             max-width: 600px;
@@ -106,7 +141,7 @@
 <body>
     <div id="app" class="main-container">
         <!-- Sidebar with questions -->
-        <div class="sidebar">
+        <div class="sidebar" :class="{'sidebar-hidden': sidebarHidden}">
             <h3 class="mb-4">Previous Questions</h3>
             <ul class="question-list">
                 <li v-for="question in questions" 
@@ -119,8 +154,14 @@
             </ul>
         </div>
 
+        <!-- Sidebar Toggle Button -->
+        <button class="sidebar-toggle" :class="{'sidebar-toggle-hidden': sidebarHidden}" @click="toggleSidebar">
+            <span v-if="sidebarHidden">&#9654;</span>
+            <span v-else>&#9664;</span>
+        </button>
+
         <!-- Main content -->
-        <div class="content">
+        <div class="content" :class="{'content-expanded': sidebarHidden}">
             <!-- Question Form View -->
             <div v-if="!showResponse" class="form-container">
                 <h2 class="mb-4 text-center">Ask Your Question</h2>
@@ -205,12 +246,16 @@
                 availableModels: ['GigaChat', 'QwenAI'],
                 showResponse: false,
                 currentQuestion: null,
-                formattedAnswer: ''
+                formattedAnswer: '',
+                sidebarHidden: false
             },
             created() {
                 this.fetchQuestions();
             },
             methods: {
+                toggleSidebar() {
+                    this.sidebarHidden = !this.sidebarHidden;
+                },
                 fetchQuestions() {
                     fetch('/api/questions/')
                         .then(response => response.json())
