@@ -52,7 +52,7 @@ _To edit notification comments on pull requests, go to your [Netlify site config
         url = f"https://api.github.com/repos/{self.owner}/{self.repo}/issues"
         issues = []
         page = 1
-        per_page = 10
+        per_page = 100
         
         # Create progress bar for pages
         pbar = tqdm(desc="Retrieving issues", unit="page")

@@ -18,20 +18,52 @@ class MyChroma:
     def fill_data(self, docs: list[Document]): #fill data with issues and comments
         logger.info(f"Starting to add {len(docs)} documents to ChromaDB")
         
-        # Create progress bar
-        pbar = tqdm(total=len(docs), desc="Adding documents to ChromaDB", unit="doc")
+        # Prepare batch arrays
+        documents = []
+        metadatas = []
+        ids = []
         
+        # Prepare document data without progress bar
         for idx, doc in enumerate(docs, 1):
-            embedding = self.model.embed(doc.page_content)
-            self.collection.add(
-                documents=[doc.page_content],
-                embeddings=[embedding.data[0].embedding],
-                metadatas=[doc.metadata],
-                ids=[f"doc_{idx}"]
-            )
-            pbar.update(1)
-            if idx % 10 == 0:  # Log progress every 10 documents
-                logger.info(f"Added {idx}/{len(docs)} documents to collection")
+            documents.append(doc.page_content)
+            metadatas.append(doc.metadata)
+            ids.append(f"doc_{idx}")
+        
+        # Process in smaller batches to avoid connection issues
+        batch_size = 100  # Adjust based on your document size
+        total_batches = (len(documents) + batch_size - 1) // batch_size
+        
+        logger.info(f"Processing documents in {total_batches} batches of {batch_size}")
+        
+        # Create progress bar for the entire embedding and adding process
+        pbar = tqdm(total=len(documents), desc="Processing documents", unit="doc")
+        
+        for i in range(0, len(documents), batch_size):
+            batch_docs = documents[i:i+batch_size]
+            batch_metadatas = metadatas[i:i+batch_size]
+            batch_ids = ids[i:i+batch_size]
+            
+            # Create embeddings for current batch
+            logger.info(f"Creating embeddings for batch {i//batch_size + 1}/{total_batches}")
+            batch_embeddings = self.model.embed(batch_docs)
+            batch_embed_vectors = [embedding.embedding for embedding in batch_embeddings.data]
+            
+            # Add current batch to the collection
+            logger.info(f"Adding batch {i//batch_size + 1}/{total_batches} to collection")
+            try:
+                self.collection.add(
+                    documents=batch_docs,
+                    embeddings=batch_embed_vectors,
+                    metadatas=batch_metadatas,
+                    ids=batch_ids
+                )
+                logger.info(f"Successfully added batch {i//batch_size + 1}/{total_batches}")
+            except Exception as e:
+                logger.error(f"Error adding batch {i//batch_size + 1}/{total_batches}: {str(e)}")
+                # Optionally implement retry logic here
+            
+            # Update progress bar after processing this batch
+            pbar.update(len(batch_docs))
         
         pbar.close()
         logger.info("Successfully added all documents to collection")

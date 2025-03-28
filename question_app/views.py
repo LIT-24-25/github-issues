@@ -3,10 +3,11 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
+from rest_framework.views import APIView
 from django.views.generic import TemplateView
 from .models import Question
 from .serializers import QuestionSerializer
-from question_app.instances import my_model, my_chroma
+from question_app.instances import my_model, my_chroma, training_metadata
 
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
@@ -64,3 +65,11 @@ class QuestionViewSet(viewsets.ModelViewSet):
 class QuestionFormView(TemplateView):
     """Serve the main Vue.js application template"""
     template_name = "question_app/question.html"
+
+
+class TrainingStatsView(APIView):
+    """API endpoint to retrieve training metadata"""
+    
+    def get(self, request):
+        """Return the training metadata"""
+        return Response(training_metadata)

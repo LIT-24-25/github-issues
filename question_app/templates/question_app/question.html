@@ -136,6 +136,68 @@
             padding: 15px;
             border-radius: 4px;
         }
+        .stats-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .stats-button:hover {
+            transform: scale(1.1);
+        }
+        .stats-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .stats-modal.show {
+            display: flex;
+        }
+        .stats-modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .stats-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .stats-modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .stats-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
@@ -143,6 +205,7 @@
         <!-- Sidebar with questions -->
         <div class="sidebar" :class="{'sidebar-hidden': sidebarHidden}">
             <h3 class="mb-4">Previous Questions</h3>
+            
             <ul class="question-list">
                 <li v-for="question in questions" 
                     :key="question.id" 
@@ -159,6 +222,30 @@
             <span v-if="sidebarHidden">&#9654;</span>
             <span v-else>&#9664;</span>
         </button>
+
+        <!-- Stats Button -->
+        <div class="stats-button" @click="toggleStatsModal">
+            <i>&#9432;</i>
+        </div>
+
+        <!-- Stats Modal -->
+        <div class="stats-modal" :class="{ 'show': showStatsModal }">
+            <div class="stats-modal-content">
+                <div class="stats-modal-header">
+                    <h3 class="m-0">Training Statistics</h3>
+                    <button class="stats-modal-close" @click="toggleStatsModal">&times;</button>
+                </div>
+                <div class="stats-card">
+                    <h5 class="mb-3">Model Training Details</h5>
+                    <p class="mb-2"><strong>Repository:</strong> [[ trainingStats.repository ]]</p>
+                    <p class="mb-2"><strong>Training Date:</strong> [[ trainingStats.trainingDate ]]</p>
+                    <p class="mb-0"><strong>Issues Count:</strong> [[ trainingStats.issuesCount ]]</p>
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-primary" @click="toggleStatsModal">Close</button>
+                </div>
+            </div>
+        </div>
 
         <!-- Main content -->
         <div class="content" :class="{'content-expanded': sidebarHidden}">
@@ -247,12 +334,22 @@
                 showResponse: false,
                 currentQuestion: null,
                 formattedAnswer: '',
-                sidebarHidden: false
+                sidebarHidden: false,
+                showStatsModal: false,
+                trainingStats: {
+                    repository: 'Loading...',
+                    trainingDate: 'Loading...',
+                    issuesCount: 'Loading...'
+                }
             },
             created() {
                 this.fetchQuestions();
+                this.fetchTrainingStats();
             },
             methods: {
+                toggleStatsModal() {
+                    this.showStatsModal = !this.showStatsModal;
+                },
                 toggleSidebar() {
                     this.sidebarHidden = !this.sidebarHidden;
                 },
@@ -263,6 +360,21 @@
                             this.questions = data;
                         })
                         .catch(error => console.error('Error fetching questions:', error));
+                },
+                fetchTrainingStats() {
+                    fetch('/api/training-stats/')
+                        .then(response => response.json())
+                        .then(data => {
+                            this.trainingStats = data;
+                        })
+                        .catch(error => {
+                            console.error('Error fetching training stats:', error);
+                            this.trainingStats = {
+                                repository: 'Not available',
+                                trainingDate: 'Not available',
+                                issuesCount: 'Not available'
+                            };
+                        });
                 },
                 submitQuestion() {
                     if (!this.availableModels.includes(this.model)) {
