@@ -98,9 +98,8 @@ def mocked_get_issues_comments(self):  # Get comments
 
     self.save_data(result)
 
-@pytest.mark.asyncio
 @pytest.mark.usefixtures("vcr_config")
-async def test_get_data(vcr_config):    
+def test_get_data(vcr_config):    
     # Set up test environment
     owner = os.getenv('OWNER')
     repo = os.getenv('REPO')
