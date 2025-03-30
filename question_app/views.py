@@ -33,14 +33,14 @@ class QuestionViewSet(viewsets.ModelViewSet):
         
         try:
             if request_model == 'GigaChat':
-                context, model_response = my_model.call_gigachat(question_text, my_chroma)
+                urls, model_response = my_model.call_gigachat(question_text, my_chroma)
             else:
-                context, model_response = my_model.call_qwen(question_text, my_chroma)
+                urls, model_response = my_model.call_qwen(question_text, my_chroma)
                 
             question = Question.objects.create(
                 question=question_text,
                 answer=model_response,
-                context=context
+                context=urls
             )
             serializer = self.get_serializer(question)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
