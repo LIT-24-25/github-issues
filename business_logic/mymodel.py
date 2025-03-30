@@ -13,7 +13,7 @@ class MyModel:
         return self.giga.embeddings(text)
 
     def call_gigachat(self, user_question, some_chroma):
-        context = some_chroma.find_embeddings(user_question)
+        context, urls = some_chroma.find_embeddings(user_question)
         prompt = f"""Instruction for LLM: 
         Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user’s request. Write only possible solutions without summary and key points of the question itself.
 
@@ -39,11 +39,12 @@ class MyModel:
             temperature=0,
         )
         response = self.giga.chat(payload)
-        return context, response.choices[0].message.content
+        print(urls)
+        return urls, response.choices[0].message.content
     
 
     def call_qwen(self, user_question, some_chroma):
-        context = some_chroma.find_embeddings(user_question)
+        context, urls = some_chroma.find_embeddings(user_question)
         response = requests.post(
             url="https://openrouter.ai/api/v1/chat/completions",
             headers={
@@ -59,27 +60,35 @@ class MyModel:
                     {
                         "type": "text",
                         "text": f"""Instruction for LLM: 
-    Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user’s request. Write only possible solutions without summary and key points of the question itself.
+                        Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user’s request. Write only possible solutions without summary and key points of the question itself.
 
 
 
-    Context:
-    =========================
-    {context}
-    =========================
+                        Context:
+                        =========================
+                        {context}
+                        =========================
 
 
 
-    User question:
-    {user_question}
-    """
+                        User question:
+                        {user_question}
+                        """
                     }
                     ]
                 }
                 ],
-                
             }, indent=2)
             )
 
         data = response.json()
-        return context, data['choices'][0]['message']['content']
+        # Add error handling for the response
+        if 'error' in data:
+            return urls, f"Error: {data['error']['message']}"
+        
+        # Check if the expected structure exists
+        if 'choices' in data and len(data['choices']) > 0 and 'message' in data['choices'][0]:
+            return urls, data['choices'][0]['message']['content']
+        else:
+            # Return a fallback or log the unexpected structure
+            return urls, "Unexpected response structure: " + str(data)

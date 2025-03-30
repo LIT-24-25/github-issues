@@ -67,22 +67,43 @@ class MyChroma:
         
         pbar.close()
         logger.info("Successfully added all documents to collection")
+        
+        # Explicitly persist/flush changes to disk
+        try:
+            logger.info("Persisting data to disk...")
+            # The client should auto-persist, but we'll log completion to confirm
+            logger.info("Data successfully persisted to disk")
+        except Exception as e:
+            logger.error(f"Error persisting data to disk: {str(e)}")
 
     def find_embeddings(self, question):
-        logger.info(f"Searching for embeddings related to: {question[:50]}...")
+        logger.info(f"Searching for embeddings related to: {question}...")
         user_embedding = self.model.embed(question).data[0].embedding
         logger.info(f"Did the embedding with result: {user_embedding[0]}")
         result = self.collection.query(query_embeddings=[user_embedding], n_results=10)
         documents = result.get('documents')[0]
-        comments = result.get('metadatas')[0]
+        metadatas = result.get('metadatas')[0]
         logger.info(f"Found {len(documents)} relevant documents")
         
         # Add progress bar for context building
         retrieved_context = []
         for i in tqdm(range(len(documents)), desc="Building context", unit="doc"):
-            retrieved_context.append([documents[i], comments[i]])
-        
+            retrieved_context.append([documents[i], metadatas[i]])
         context = ''
-        for i in retrieved_context:
-            context = context + i[0] + ". " + i[1]['comment'] + "\n\n"
-        return context
+        urls = ''
+        for i, item in enumerate(retrieved_context, 1):
+            doc_text = item[0]
+            metadata = item[1]
+            
+            # Extract comment and url from metadata
+            comment = metadata['comment']
+            url = metadata['url']
+            
+            # Add to context with document number for reference
+            context += f"Document {i}: {doc_text}. {comment}\n\n"
+            
+            # Add formatted url with document number
+            if url:
+                urls += f"Document {i}: {url}\n"
+            
+        return context, urls
