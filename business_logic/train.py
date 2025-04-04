@@ -82,6 +82,5 @@ def train_process():
         logger.error(f"Error verifying data: {str(e)}")
     
     # Save training metadata at the end of the process
-    fetch = RetrieveRepo(owner, repo, github_token)
     metadata_file = save_training_metadata(owner, repo, fetch)
     print(f"Training metadata saved to: {metadata_file}")
