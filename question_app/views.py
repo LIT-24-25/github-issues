@@ -3,10 +3,11 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
+from rest_framework.views import APIView
 from django.views.generic import TemplateView
 from .models import Question
 from .serializers import QuestionSerializer
-from question_app.instances import my_model, my_chroma
+from question_app.instances import my_model, my_chroma, training_metadata
 
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
@@ -32,14 +33,14 @@ class QuestionViewSet(viewsets.ModelViewSet):
         
         try:
             if request_model == 'GigaChat':
-                context, model_response = my_model.call_gigachat(question_text, my_chroma)
+                urls, model_response = my_model.call_gigachat(question_text, my_chroma)
             else:
-                context, model_response = my_model.call_qwen(question_text, my_chroma)
+                urls, model_response = my_model.call_qwen(question_text, my_chroma)
                 
             question = Question.objects.create(
                 question=question_text,
                 answer=model_response,
-                context=context
+                context=urls
             )
             serializer = self.get_serializer(question)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -64,3 +65,11 @@ class QuestionViewSet(viewsets.ModelViewSet):
 class QuestionFormView(TemplateView):
     """Serve the main Vue.js application template"""
     template_name = "question_app/question.html"
+
+
+class TrainingStatsView(APIView):
+    """API endpoint to retrieve training metadata"""
+    
+    def get(self, request):
+        """Return the training metadata"""
+        return Response(training_metadata)
