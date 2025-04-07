@@ -282,7 +282,7 @@
             <div v-else class="response-container">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2>Response</h2>
-                    <button @click="showResponse = false" class="btn btn-outline-primary">
+                    <button @click="resetForm" class="btn btn-outline-primary">
                         Ask New Question
                     </button>
                 </div>
@@ -428,6 +428,10 @@
                         .catch(error => {
                             console.error('Error fetching question response:', error);
                         });
+                },
+                resetForm() {
+                    this.showResponse = false;
+                    this.newQuestion = '';
                 }
             }
         });
