@@ -34,13 +34,15 @@ class QuestionViewSet(viewsets.ModelViewSet):
         try:
             if request_model == 'GigaChat':
                 urls, model_response = my_model.call_gigachat(question_text, my_chroma)
+                model_name = "GigaChat"
             else:
-                urls, model_response = my_model.call_qwen(question_text, my_chroma)
+                urls, model_response, model_name = my_model.call_openrouter(question_text, my_chroma)
                 
             question = Question.objects.create(
                 question=question_text,
                 answer=model_response,
-                context=urls
+                context=urls,
+                model=model_name
             )
             serializer = self.get_serializer(question)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -59,7 +61,8 @@ class QuestionViewSet(viewsets.ModelViewSet):
             'id': question.id,
             'question': question.question,
             'answer': question.answer,
-            'context': question.context
+            'context': question.context,
+            'model': question.model
         })
 
 class QuestionFormView(TemplateView):

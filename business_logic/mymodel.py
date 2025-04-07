@@ -43,7 +43,7 @@ class MyModel:
         return urls, response.choices[0].message.content
     
 
-    def call_qwen(self, user_question, some_chroma):
+    def call_openrouter(self, user_question, some_chroma):
         context, urls = some_chroma.find_embeddings(user_question)
         response = requests.post(
             url="https://openrouter.ai/api/v1/chat/completions",
@@ -52,7 +52,7 @@ class MyModel:
                 "Content-Type": "application/json",
             },
             data=json.dumps({
-                "model": "qwen/qwen-plus",
+                "models": ["deepseek/deepseek-chat-v3-0324:free", "meta-llama/llama-4-maverick:free", "deepseek/deepseek-v3-base:free"],
                 "messages": [
                 {
                     "role": "user",
@@ -82,13 +82,14 @@ class MyModel:
             )
 
         data = response.json()
+        print(data)
         # Add error handling for the response
         if 'error' in data:
-            return urls, f"Error: {data['error']['message']}"
+            return urls, f"Error: {data['error']['message']}", "OpenRouter"
         
         # Check if the expected structure exists
         if 'choices' in data and len(data['choices']) > 0 and 'message' in data['choices'][0]:
-            return urls, data['choices'][0]['message']['content']
+            return urls, data['choices'][0]['message']['content'], data["model"]
         else:
             # Return a fallback or log the unexpected structure
-            return urls, "Unexpected response structure: " + str(data)
+            return urls, "Unexpected response structure: " + str(data), "OpenRouter"
