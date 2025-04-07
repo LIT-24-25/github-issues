@@ -290,6 +290,9 @@
                 <div class="question-section">
                     <h5 class="mb-2">Question:</h5>
                         <p class="mb-0">[[ currentQuestion.question ]]</p>
+                    <div class="text-muted mt-2 small">
+                        <strong>Model used:</strong> [[ currentQuestion.model ]]
+                    </div>
                 </div>
                 
                 <div class="answer-section">
@@ -416,7 +419,8 @@
                                 id: id,
                                 question: data.question,
                                 answer: data.answer,
-                                context: data.context
+                                context: data.context,
+                                model: data.model || 'Unknown'
                             };
                             this.formattedAnswer = marked.parse(data.answer);
                             this.showResponse = true;
