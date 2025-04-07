@@ -35,7 +35,7 @@ class QuestionViewSet(viewsets.ModelViewSet):
             if request_model == 'GigaChat':
                 urls, model_response = my_model.call_gigachat(question_text, my_chroma)
             else:
-                urls, model_response = my_model.call_qwen(question_text, my_chroma)
+                urls, model_response = my_model.call_openrouter(question_text, my_chroma)
                 
             question = Question.objects.create(
                 question=question_text,

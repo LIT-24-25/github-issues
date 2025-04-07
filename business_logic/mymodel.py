@@ -43,7 +43,7 @@ class MyModel:
         return urls, response.choices[0].message.content
     
 
-    def call_qwen(self, user_question, some_chroma):
+    def call_openrouter(self, user_question, some_chroma):
         context, urls = some_chroma.find_embeddings(user_question)
         response = requests.post(
             url="https://openrouter.ai/api/v1/chat/completions",
@@ -52,7 +52,7 @@ class MyModel:
                 "Content-Type": "application/json",
             },
             data=json.dumps({
-                "model": "qwen/qwen-plus",
+                "models": ["qwen/qwen-plus", "deepseek/deepseek-chat-v3-0324", "qwen/qwen-max"],
                 "messages": [
                 {
                     "role": "user",
