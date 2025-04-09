@@ -82,7 +82,6 @@ class MyModel:
             )
 
         data = response.json()
-        print(data)
         # Add error handling for the response
         if 'error' in data:
             return urls, f"Error: {data['error']['message']}", "OpenRouter"
