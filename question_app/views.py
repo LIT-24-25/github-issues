@@ -44,15 +44,23 @@ class QuestionViewSet(viewsets.ModelViewSet):
             if conversation_id:
                 try:
                     conversation = Conversation.objects.get(id=conversation_id)
+                    # We're continuing an existing conversation, so don't update the title
                 except Conversation.DoesNotExist:
                     return Response(
                         {'error': 'Conversation not found'}, 
                         status=status.HTTP_404_NOT_FOUND
                     )
             else:
-                # Create a new conversation with the question as the title
+                # Create a new conversation with a truncated title (4-5 words)
+                words = question_text.split()
+                short_title = ' '.join(words[:5]) if len(words) > 5 else question_text
+                
+                # Limit the title length for DB field size
+                if len(short_title) > 255:
+                    short_title = short_title[:252] + '...'
+                
                 conversation = Conversation.objects.create(
-                    title=question_text[:255]  # Limit to field size
+                    title=short_title
                 )
             
             # Get message history for this conversation if continuing a conversation
@@ -130,7 +138,7 @@ class ConversationViewSet(viewsets.ViewSet):
             if latest_question:
                 result.append({
                     'id': conv.id,
-                    'title': conv.title or latest_question.question[:50] + '...' if len(latest_question.question) > 50 else latest_question.question,
+                    'title': conv.title,  # Use the original title as stored in the database
                     'created_at': conv.created_at,
                     'updated_at': conv.updated_at,
                     'latest_question': {

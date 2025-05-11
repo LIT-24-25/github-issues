@@ -97,6 +97,10 @@
         .conversation-title {
             font-weight: bold;
             margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
         }
         .conversation-meta {
             font-size: 0.8em;
@@ -236,17 +240,24 @@
         .message-meta {
             font-size: 0.8em;
             color: #6c757d;
-            padding-left: 10px;
+            padding: 5px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .context-dropdown {
-            margin-top: 5px;
-            padding-left: 10px;
+            margin-top: 3px;
+            width: 100%;
+            text-align: center;
         }
         .context-toggle {
             font-size: 0.8em;
             color: #6c757d;
             cursor: pointer;
             text-decoration: underline;
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
         }
         .context-toggle:hover {
             color: #495057;
@@ -264,6 +275,8 @@
             overflow-y: auto;
             text-indent: 0;
             tab-size: 4;
+            width: 100%;
+            text-align: left;
         }
         
         .context-area pre, .context-area code {
@@ -282,6 +295,10 @@
         
         .context-area a:hover {
             text-decoration: none;
+        }
+        .model-name {
+            margin-bottom: 3px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -303,7 +320,7 @@
                     :class="{'bg-light': currentConversationId === conversation.id}">
                     <div class="conversation-title">[[ conversation.title ]]</div>
                     <div class="conversation-meta">
-                        [[ formatDate(conversation.updated_at) ]] · [[ conversation.latest_question.model ]]
+                        [[ formatDate(conversation.updated_at) ]]
                     </div>
                 </li>
             </ul>
@@ -355,7 +372,7 @@
                         <div v-else>
                             <div class="message-content markdown-content" v-html="formatMarkdown(message.content)"></div>
                             <div class="message-meta">
-                                <small>[[ message.model ]]</small>
+                                <small class="model-name">[[ message.model ]]</small>
                                 <div class="context-dropdown" v-if="message.context">
                                     <div class="context-toggle" @click="toggleContext(index)">
                                         [[ isContextVisible(index) ? 'Hide Context' : 'Show Context' ]]
