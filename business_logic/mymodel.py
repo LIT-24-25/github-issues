@@ -86,7 +86,6 @@ class MyModel:
                 model="deepseek/deepseek-chat-v3-0324",
                 extra_body={"models": ["qwen/qwen-plus", "qwen/qwen-max"]},
                 messages=messages,
-                max_retries=3
             )
             
             # Get the response content
