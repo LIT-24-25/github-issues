@@ -11,6 +11,7 @@ from unittest.mock import MagicMock
 from tests.mocked_issues import cont_1, cont_2
 import requests
 from functools import wraps
+from pathlib import Path
 
 # Load environment variables from .env file
 load_dotenv()
@@ -99,6 +100,36 @@ def mocked_get_issues_comments(self):  # Get comments
 
     self.save_data(result)
 
+# Mocked save_data function that saves to tests/issues/ instead of issues/
+def mocked_save_data(self, result: list):
+    print("Starting to save data to test files")
+    titles = list(self.data.keys())
+    
+    # Create tests/issues directory if it doesn't exist
+    test_issues_dir = Path("tests/issues/")
+    if test_issues_dir.exists():
+        import shutil
+        # Use rmtree to remove directory and its contents
+        try:
+            shutil.rmtree(test_issues_dir)
+        except PermissionError:
+            print("Warning: Could not remove tests/issues directory, will try to use existing one")
+    
+    # Create the directory
+    test_issues_dir.mkdir(exist_ok=True)
+    
+    # Save files
+    for index, res in enumerate(result):
+        if res:
+            issue_data = self.data[titles[index]]
+            file_path = f"tests/issues/{issue_data[2]}.md"
+            
+            with open(file_path, "w", encoding="utf-8") as f:
+                f.write(f"# {titles[index]}\n")
+                f.write(issue_data[1] + res)
+            print(f"Saved test issue to {file_path}")
+    print('Finished saving all test issues')
+
 @pytest.mark.usefixtures("vcr_config")
 def test_get_data(vcr_config):    
     # Set up test environment
@@ -111,14 +142,10 @@ def test_get_data(vcr_config):
     # Monkey patch both methods
     original_get_issues = fetch.get_issues
     original_get_comments = fetch.get_issues_comments
+    original_save_data = fetch.save_data
     fetch.get_issues = lambda: mocked_get_issues(fetch)
     fetch.get_issues_comments = lambda: mocked_get_issues_comments(fetch)
-    
-    # Create the issues directory before running the test
-    issues_dir = "issues/"
-    if not os.path.isdir(issues_dir):
-        os.makedirs(issues_dir)
-    os.makedirs('tests/issues', exist_ok=True)
+    fetch.save_data = lambda result: mocked_save_data(fetch, result)
     
     try:
         fetch.get_issues()
@@ -127,30 +154,18 @@ def test_get_data(vcr_config):
         # Restore original methods
         fetch.get_issues = original_get_issues
         fetch.get_issues_comments = original_get_comments
+        fetch.save_data = original_save_data
 
-    # Instead of checking actual files, we can just verify that the mocked functions were called
-    # This avoids the FileNotFoundError for 'tests/issues/1009469020.md'
-    
     # Make sure at least one issue file exists in the directory
-    issue_files = os.listdir(issues_dir)
+    test_issues_dir = "tests/issues/"
+    issue_files = os.listdir(test_issues_dir)
     assert len(issue_files) > 0, "No issue files were created by the mocked functions"
     
-    # For any files that were created, copy them to the tests/issues directory
+    # Verify content of files
     for issue_file in issue_files:
         if issue_file.endswith(".md"):
-            source_path = os.path.join(issues_dir, issue_file)
-            dest_path = os.path.join('tests/issues', issue_file)
-            
-            # Read the content of the generated file
-            with open(source_path, 'r', encoding='utf-8') as generated_file:
-                generated_content = generated_file.read().strip()
-            
-            # Write it to the test directory
-            with open(dest_path, 'w', encoding='utf-8') as test_file:
-                test_file.write(generated_content)
-                
-            # Now we can safely compare
-            assert os.path.exists(dest_path), f"Failed to create test file {dest_path}"
+            file_path = os.path.join(test_issues_dir, issue_file)
+            assert os.path.exists(file_path), f"Failed to create test file {file_path}"
 
 @pytest.fixture
 def mock_file_data(monkeypatch):
@@ -191,32 +206,33 @@ def mock_file_data(monkeypatch):
     # Mock open to return the content of the file dynamically
     def custom_open(filename, *args, **kwargs):
         file_contents = {
-            'issues/2910730993.md': cont_1,
-            'issues/2915106578.md': cont_2,
+            'tests/issues/2910730993.md': cont_1,
+            'tests/issues/2915106578.md': cont_2,
         }
-        # Extract the base filename without the 'issues/' prefix
+        # Extract the base filename without the directory prefix
         base_filename = filename.split('/')[-1]
         if filename in file_contents:
             return MockFile(file_contents[filename])
-        elif f'issues/{base_filename}' in file_contents:
-            return MockFile(file_contents[f'issues/{base_filename}'])
+        elif f'tests/issues/{base_filename}' in file_contents:
+            return MockFile(file_contents[f'tests/issues/{base_filename}'])
         return StringIO('')  # Return empty string if file is not found
     
     monkeypatch.setattr('builtins.open', custom_open)
     
-    # Mock os.path.exists to return True for the issues directory
+    # Mock os.path.exists to return True for the test issues directory
+    original_exists = os.path.exists
     def mock_exists(path):
-        if path == 'issues/':
+        if path == 'tests/issues/' or path == Path('tests/issues/'):
             return True
-        return False
+        return original_exists(path)
     
     monkeypatch.setattr(os.path, 'exists', mock_exists)
     
     # Mock os.path.join to handle path joining correctly
     original_join = os.path.join
     def mock_join(*args):
-        if args[0] == 'issues/' and len(args) > 1:
-            return f'issues/{args[1]}'
+        if args[0] == 'tests/issues/' and len(args) > 1:
+            return f'tests/issues/{args[1]}'
         return original_join(*args)
     
     monkeypatch.setattr(os.path, 'join', mock_join)

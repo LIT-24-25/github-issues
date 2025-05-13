@@ -106,6 +106,10 @@ _To edit notification comments on pull requests, go to your [Netlify site config
             response = requests.get(url, headers=self.headers)
         except:
             response = ''
+        
+        if response=='':
+            return "Failed to fetch"
+            
         if response.status_code == 200:
             repositories_data = response.json()
             if repositories_data:
@@ -121,8 +125,19 @@ _To edit notification comments on pull requests, go to your [Netlify site config
     def save_data(self, result: list): #save data
         logger.info("Starting to save data to files")
         titles = list(self.data.keys())
-        Path("issues/").unlink(missing_ok=True)
-        Path("issues/").mkdir(exist_ok=True)
+        
+        # Create issues directory if it doesn't exist, or clear it if it does
+        issues_dir = Path("issues/")
+        if issues_dir.exists():
+            import shutil
+            # Use rmtree to remove directory and its contents
+            try:
+                shutil.rmtree(issues_dir)
+            except PermissionError:
+                logger.warning("Could not remove issues directory, will try to use existing one")
+        
+        # Create the directory
+        issues_dir.mkdir(exist_ok=True)
         
         # Add progress bar for saving files
         for index, res in enumerate(tqdm(result, desc="Saving issues", unit="file")):
