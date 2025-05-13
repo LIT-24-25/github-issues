@@ -34,21 +34,18 @@ class ChunkSplitter():
 				logger.debug(f"Processing file: {file_path}")
 				
 				with open(file_path, 'r', encoding="utf-8") as f: # open in readonly mode
-					head = f.readline()
-					extra = f.read()
+					issue_url = f.readline().strip()  # First line is the URL
+					head = f.readline()  # Second line is the title
+					extra = f.read()  # Rest of the content
 					
 					if not head.strip():
-						logger.warning(f"File {filename} has empty first line")
+						logger.warning(f"File {filename} has empty title line")
 						continue
 					
 					splitter: RecursiveCharacterTextSplitter = RecursiveCharacterTextSplitter( 
 					chunk_size=30,
 					chunk_overlap = 10
 					)
-					
-					# Create GitHub issue URL from filename (without .md extension)
-					issue_number = filename.split('.')[0]
-					issue_url = f"https://github.com/{owner}/{repo}/issues/{issue_number}"
 					
 					# Add both comment and url to metadata
 					metadata = {

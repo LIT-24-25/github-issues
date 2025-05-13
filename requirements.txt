@@ -12,3 +12,5 @@ tqdm==4.67.1
 vcrpy==7.0.0
 
 django-environ==0.12.0
+
+openai==1.69.0

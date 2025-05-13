@@ -63,6 +63,8 @@ def train_process():
     
     my_model_train = MyModel(gigachat_token, openrouter_token)
     my_chroma_train = MyChroma(my_model_train)
+    my_chroma_train.client.delete_collection(name="embeddings_collection")
+    my_chroma_train.collection = my_chroma_train.client.get_or_create_collection(name="embeddings_collection")
     
     # Fill ChromaDB with chunks
     logger.info("Starting to fill ChromaDB with chunks...")

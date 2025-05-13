@@ -81,17 +81,30 @@
             font-size: 16px;
             min-height: 100px;
         }
-        .question-list {
+        .conversation-list {
             list-style: none;
             padding: 0;
         }
-        .question-list-item {
+        .conversation-list-item {
             padding: 10px;
             border-bottom: 1px solid #dee2e6;
             cursor: pointer;
+            border-radius: 4px;
         }
-        .question-list-item:hover {
+        .conversation-list-item:hover {
             background-color: #e9ecef;
+        }
+        .conversation-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+        .conversation-meta {
+            font-size: 0.8em;
+            color: #6c757d;
         }
         .response-container {
             max-width: 800px;
@@ -198,21 +211,117 @@
             border-radius: 8px;
             margin-bottom: 15px;
         }
+        .new-chat-button {
+            margin-bottom: 20px;
+        }
+        .chat-history {
+            margin-top: 20px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .chat-message {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .user-message {
+            background-color: #e3f2fd;
+            margin-left: 20px;
+            margin-right: 0;
+        }
+        .assistant-message {
+            background-color: #f1f8e9;
+            margin-left: 0;
+            margin-right: 20px;
+        }
+        .message-content {
+            padding: 10px;
+        }
+        .message-meta {
+            font-size: 0.8em;
+            color: #6c757d;
+            padding: 5px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .context-dropdown {
+            margin-top: 3px;
+            width: 100%;
+            text-align: center;
+        }
+        .context-toggle {
+            font-size: 0.8em;
+            color: #6c757d;
+            cursor: pointer;
+            text-decoration: underline;
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .context-toggle:hover {
+            color: #495057;
+        }
+        .context-area {
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 5px;
+            font-family: monospace;
+            font-size: 0.85em;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            max-height: 200px;
+            overflow-y: auto;
+            text-indent: 0;
+            tab-size: 4;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .context-area pre, .context-area code {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            border: none;
+            text-indent: 0;
+        }
+        
+        .context-area a {
+            color: #0d6efd;
+            text-decoration: underline;
+            word-break: break-all;
+        }
+        
+        .context-area a:hover {
+            text-decoration: none;
+        }
+        .model-name {
+            margin-bottom: 3px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
     <div id="app" class="main-container">
-        <!-- Sidebar with questions -->
+        <!-- Sidebar with conversations -->
         <div class="sidebar" :class="{'sidebar-hidden': sidebarHidden}">
-            <h3 class="mb-4">Previous Questions</h3>
+            <h3 class="mb-4">Conversations</h3>
             
-            <ul class="question-list">
-                <li v-for="question in questions" 
-                    :key="question.id" 
-                    class="question-list-item" 
-                    @click="viewResponse(question.id)"
-                    :class="{'bg-light': currentQuestion && currentQuestion.id === question.id}">
-                    [[ question.question ]]
+            <button @click="resetForm" class="btn btn-primary w-100 new-chat-button">
+                New Chat
+            </button>
+            
+            <ul class="conversation-list">
+                <li v-for="conversation in conversations" 
+                    :key="conversation.id" 
+                    class="conversation-list-item mb-2" 
+                    @click="loadConversation(conversation.id)"
+                    :class="{'bg-light': currentConversationId === conversation.id}">
+                    <div class="conversation-title">[[ conversation.title ]]</div>
+                    <div class="conversation-meta">
+                        [[ formatDate(conversation.updated_at) ]]
+                    </div>
                 </li>
             </ul>
         </div>
@@ -249,10 +358,40 @@
 
         <!-- Main content -->
         <div class="content" :class="{'content-expanded': sidebarHidden}">
-            <!-- Question Form View -->
-            <div v-if="!showResponse" class="form-container">
-                <h2 class="mb-4 text-center">Ask Your Question</h2>
-                <form @submit.prevent="submitQuestion">
+            <!-- Conversation View -->
+            <div class="response-container">
+                <h2 class="mb-4">Chat</h2>
+                
+                <!-- Chat History -->
+                <div v-if="conversationHistory.length > 0" class="chat-history">
+                    <div v-for="(message, index) in conversationHistory" :key="index" 
+                         :class="['chat-message', message.role === 'user' ? 'user-message' : 'assistant-message']">
+                        <div class="message-content" v-if="message.role === 'user'">
+                            [[ message.content ]]
+                        </div>
+                        <div v-else>
+                            <div class="message-content markdown-content" v-html="formatMarkdown(message.content)"></div>
+                            <div class="message-meta">
+                                <small class="model-name">[[ message.model ]]</small>
+                                <div class="context-dropdown" v-if="message.context">
+                                    <div class="context-toggle" @click="toggleContext(index)">
+                                        [[ isContextVisible(index) ? 'Hide Context' : 'Show Context' ]]
+                                    </div>
+                                    <div class="context-area" v-show="isContextVisible(index)" v-html="makeLinksClickable(message.context)"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Empty conversation state -->
+                <div v-else class="text-center py-5">
+                    <h5>Start a new conversation</h5>
+                    <p class="text-muted">Ask a question to begin</p>
+                </div>
+                
+                <!-- Question Form -->
+                <form @submit.prevent="submitQuestion" class="mt-4">
                     <div class="mb-3">
                         <select class="form-select mb-3" v-model="model">
                             <option v-for="option in availableModels" 
@@ -277,49 +416,6 @@
                     </div>
                 </form>
             </div>
-
-            <!-- Response View -->
-            <div v-else class="response-container">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2>Response</h2>
-                    <button @click="resetForm" class="btn btn-outline-primary">
-                        Ask New Question
-                    </button>
-                </div>
-                
-                <div class="question-section">
-                    <h5 class="mb-2">Question:</h5>
-                        <p class="mb-0">[[ currentQuestion.question ]]</p>
-                    <div class="text-muted mt-2 small">
-                        <strong>Model used:</strong> [[ currentQuestion.model ]]
-                    </div>
-                </div>
-                
-                <div class="answer-section">
-                    <h5 class="mb-3">Answer:</h5>
-                    <div class="markdown-content" v-html="formattedAnswer"></div>
-                </div>
-                
-                <div class="context-section mt-4">
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-outline-secondary" type="button" 
-                                data-bs-toggle="collapse" 
-                                data-bs-target="#contextCollapse" 
-                                aria-expanded="false" 
-                                aria-controls="contextCollapse">
-                            Show Context
-                        </button>
-                    </div>
-                    <div class="collapse mt-3" id="contextCollapse">
-                        <div class="card card-body bg-light">
-                            <h6 class="mb-3">Relevant Context:</h6>
-                            <div class="context-content">
-                                [[ currentQuestion.context ]]
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     
@@ -329,16 +425,16 @@
         new Vue({
             el: '#app',
             data: {
-                questions: [],
+                conversations: [],
+                conversationHistory: [],
+                currentConversationId: null,
                 newQuestion: '',
                 loading: false,
-                model: 'GigaChat',
+                model: 'OpenRouter',
                 availableModels: ['GigaChat', 'OpenRouter'],
-                showResponse: false,
-                currentQuestion: null,
-                formattedAnswer: '',
                 sidebarHidden: false,
                 showStatsModal: false,
+                visibleContexts: {},
                 trainingStats: {
                     repository: 'Loading...',
                     trainingDate: 'Loading...',
@@ -346,7 +442,7 @@
                 }
             },
             created() {
-                this.fetchQuestions();
+                this.fetchConversations();
                 this.fetchTrainingStats();
             },
             methods: {
@@ -356,13 +452,26 @@
                 toggleSidebar() {
                     this.sidebarHidden = !this.sidebarHidden;
                 },
-                fetchQuestions() {
-                    fetch('/api/questions/')
+                toggleContext(index) {
+                    // Use Vue.set to ensure reactivity
+                    Vue.set(this.visibleContexts, index, !this.isContextVisible(index));
+                },
+                isContextVisible(index) {
+                    return !!this.visibleContexts[index];
+                },
+                makeLinksClickable(text) {
+                    if (!text) return '';
+                    // Simple URL regex pattern
+                    const urlPattern = /(https?:\/\/[^\s]+)/g;
+                    return text.replace(urlPattern, '<a href="$1" target="_blank">$1</a>');
+                },
+                fetchConversations() {
+                    fetch('/api/conversations/')
                         .then(response => response.json())
                         .then(data => {
-                            this.questions = data;
+                            this.conversations = data;
                         })
-                        .catch(error => console.error('Error fetching questions:', error));
+                        .catch(error => console.error('Error fetching conversations:', error));
                 },
                 fetchTrainingStats() {
                     fetch('/api/training-stats/')
@@ -379,11 +488,50 @@
                             };
                         });
                 },
+                formatDate(dateString) {
+                    const date = new Date(dateString);
+                    return date.toLocaleDateString();
+                },
+                formatMarkdown(text) {
+                    return marked.parse(text);
+                },
+                loadConversation(conversationId) {
+                    this.currentConversationId = conversationId;
+                    this.conversationHistory = [];
+                    this.visibleContexts = {}; // Reset context visibility
+                    
+                    // Fetch all questions for this conversation
+                    fetch(`/api/questions/?conversation=${conversationId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            // Sort by ID to ensure correct order
+                            data.sort((a, b) => a.id - b.id);
+                            
+                            // Format into conversation history
+                            this.conversationHistory = [];
+                            data.forEach(question => {
+                                this.conversationHistory.push({
+                                    role: 'user',
+                                    content: question.question
+                                });
+                                this.conversationHistory.push({
+                                    role: 'assistant',
+                                    content: question.answer,
+                                    model: question.model,
+                                    context: typeof question.context === 'string' ? question.context.trim() : question.context
+                                });
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Error loading conversation:', error);
+                        });
+                },
                 submitQuestion() {
                     if (!this.availableModels.includes(this.model)) {
                         alert('Invalid model selection');
                         return;
                     }
+                    
                     this.loading = true;
                     fetch('/api/questions/', {
                         method: 'POST',
@@ -393,7 +541,8 @@
                         },
                         body: JSON.stringify({
                             question: this.newQuestion,
-                            model: this.model
+                            model: this.model,
+                            conversation_id: this.currentConversationId
                         })
                     })
                     .then(response => response.json())
@@ -402,8 +551,24 @@
                         if (data.error) {
                             alert(data.error);
                         } else {
-                            this.viewResponse(data.id);
-                            this.fetchQuestions(); // Refresh the questions list
+                            // Add the new question and answer to the conversation history
+                            this.conversationHistory.push({
+                                role: 'user',
+                                content: this.newQuestion
+                            });
+                            this.conversationHistory.push({
+                                role: 'assistant',
+                                content: data.answer,
+                                model: data.model,
+                                context: typeof data.context === 'string' ? data.context.trim() : data.context
+                            });
+                            this.newQuestion = '';
+                            
+                            // Set current conversation if this is a new conversation
+                            if (!this.currentConversationId) {
+                                this.currentConversationId = data.conversation_id;
+                                this.fetchConversations(); // Refresh conversation list
+                            }
                         }
                     })
                     .catch(error => {
@@ -411,27 +576,11 @@
                         console.error('Error submitting question:', error);
                     });
                 },
-                viewResponse(id) {
-                    fetch(`/api/questions/${id}/view_response/`)
-                        .then(response => response.json())
-                        .then(data => {
-                            this.currentQuestion = {
-                                id: id,
-                                question: data.question,
-                                answer: data.answer,
-                                context: data.context,
-                                model: data.model || 'Unknown'
-                            };
-                            this.formattedAnswer = marked.parse(data.answer);
-                            this.showResponse = true;
-                        })
-                        .catch(error => {
-                            console.error('Error fetching question response:', error);
-                        });
-                },
                 resetForm() {
-                    this.showResponse = false;
+                    this.currentConversationId = null;
+                    this.conversationHistory = [];
                     this.newQuestion = '';
+                    this.visibleContexts = {}; // Reset context visibility
                 }
             }
         });
