@@ -18,7 +18,7 @@ class MyModel:
     def embed(self, text): #create embedding for text
         return self.giga.embeddings(text)
 
-    def call_gigachat(self, user_question, some_chroma):
+    def call_gigachat(self, user_question, some_chroma, message_history):
         context, urls = some_chroma.find_embeddings(user_question)
         prompt = f"""Instruction for LLM: 
         Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user’s request. Write only possible solutions without summary and key points of the question itself.
@@ -29,23 +29,27 @@ class MyModel:
         =========================
         {context}
         =========================
-
-
-
-        User question:
-        {user_question}
         """
+        messages = []
+        messages.append(
+            Messages(
+                role=MessagesRole.ASSISTANT,
+                content=prompt
+            )
+        )
+        if message_history and len(message_history) > 0:
+            messages.extend(message_history)
+        messages.append(
+            Messages(
+                role=MessagesRole.USER,
+                content=user_question
+            )
+        )
         payload = Chat(
-            messages=[
-                Messages(
-                    role=MessagesRole.USER,
-                    content=prompt
-                )
-            ],
             temperature=0,
+            messages=messages
         )
         response = self.giga.chat(payload)
-        print(urls)
         return urls, response.choices[0].message.content
     
 

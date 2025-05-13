@@ -79,9 +79,11 @@ _To edit notification comments on pull requests, go to your [Netlify site config
             for issue in tqdm(issues, desc="Processing issues", unit="issue"):
                 if issue.get("body"):
                     body = self.clear_issue(issue["body"])
-                    self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]\n{body}", issue["id"]]
+                    # Store html_url (issue URL) along with other data
+                    self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]\n{body}", issue["id"], issue["html_url"]]
                 else:
-                    self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]", issue["id"]]
+                    # Store html_url (issue URL) along with other data
+                    self.data[issue["title"]] = [issue["comments_url"], f"State: [{issue['state']}]", issue["id"], issue["html_url"]]
             logger.info("Successfully processed all issues")
         else:
             logger.warning("No issues found in the repository")
@@ -96,7 +98,6 @@ _To edit notification comments on pull requests, go to your [Netlify site config
             url = item[0]
             comment = self.fetch_comments(url)
             result.append(comment)
-            logger.info(f"Retrieved comments for issue {idx}/{total_items}")
 
         self.save_data(result)
 
@@ -120,14 +121,21 @@ _To edit notification comments on pull requests, go to your [Netlify site config
     def save_data(self, result: list): #save data
         logger.info("Starting to save data to files")
         titles = list(self.data.keys())
+        Path("issues/").unlink(missing_ok=True)
         Path("issues/").mkdir(exist_ok=True)
         
         # Add progress bar for saving files
         for index, res in enumerate(tqdm(result, desc="Saving issues", unit="file")):
             if res:
-                file_path = f"issues/{self.data[titles[index]][2]}.md"
+                issue_data = self.data[titles[index]]
+                file_path = f"issues/{issue_data[2]}.md"
+                issue_url = issue_data[3]  # Get the issue URL saved from the API
+                
                 with open(file_path, "w", encoding="utf-8") as f:
-                    f.write(f"# {titles[index]} \n")
-                    f.write(self.data[titles[index]][1] + res)
+                    # Write issue URL as the first line
+                    f.write(f"{issue_url}\n")
+                    # Then write the title and content
+                    f.write(f"# {titles[index]}\n")
+                    f.write(issue_data[1] + res)
                 logger.debug(f"Saved issue to {file_path}")
         logger.info('Finished saving all issues')
