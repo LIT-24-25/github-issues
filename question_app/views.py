@@ -9,6 +9,7 @@ from .models import Question
 from .serializers import QuestionSerializer
 from question_app.instances import my_model, my_chroma, training_metadata
 from conversation.models import Conversation
+from gigachat.models import Messages, MessagesRole
 
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
@@ -67,21 +68,39 @@ class QuestionViewSet(viewsets.ModelViewSet):
             message_history = []
             if conversation_id:
                 previous_questions = Question.objects.filter(conversation_id=conversation_id).order_by('id')
-                for q in previous_questions:
-                    message_history.append({
-                        "role": "user",
-                        "content": q.question
-                    })
-                    message_history.append({
-                        "role": "assistant",
-                        "content": q.answer
-                    })
+                if request_model == 'OpenRouter':
+                    for q in previous_questions:
+                        message_history.append({
+                            "role": "user",
+                            "content": q.question
+                        })
+                        message_history.append({
+                            "role": "assistant",
+                            "content": q.answer
+                        })
+                elif request_model == 'GigaChat':
+                    for q in previous_questions:
+                        message_history.append(
+                            Messages(
+                                role=MessagesRole.USER,
+                                content=q.question
+                            )
+                        )
+                        message_history.append(
+                            Messages(
+                                role=MessagesRole.ASSISTANT,
+                                content=q.answer
+                            )
+                        )
             
-            if request_model == 'GigaChat':
-                urls, model_response = my_model.call_gigachat(question_text, my_chroma)
+            # Call the appropriate model
+            if request_model == 'OpenRouter':
+                urls, model_response, model_name = my_model.call_openrouter(question_text, my_chroma, message_history)
+            elif request_model == 'GigaChat':
+                urls, model_response = my_model.call_gigachat(question_text, my_chroma, message_history)
                 model_name = "GigaChat"
             else:
-                urls, model_response, model_name = my_model.call_openrouter(question_text, my_chroma, message_history)
+                urls, model_response, model_name = "None", "None", "None"
                 
             question = Question.objects.create(
                 question=question_text,
