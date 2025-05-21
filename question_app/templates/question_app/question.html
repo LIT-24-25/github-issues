@@ -300,10 +300,71 @@
             margin-bottom: 3px;
             display: inline-block;
         }
+        
+        /* Toast notification styles */
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+        .toast {
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin-bottom: 10px;
+            min-width: 300px;
+            max-width: 450px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .toast-header {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .toast-header.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .toast-body {
+            padding: 12px 15px;
+            word-wrap: break-word;
+        }
+        .toast-title {
+            font-weight: bold;
+            margin-right: auto;
+        }
+        .toast-close {
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 0 5px;
+        }
     </style>
 </head>
 <body>
     <div id="app" class="main-container">
+        <!-- Toast notifications container -->
+        <div class="toast-container">
+            <div v-for="(toast, index) in toasts" :key="index" class="toast" :class="{'show': toast.show}">
+                <div class="toast-header" :class="{'error': toast.type === 'error'}">
+                    <div class="toast-title">[[ toast.title ]]</div>
+                    <button class="toast-close" @click="closeToast(index)">&times;</button>
+                </div>
+                <div class="toast-body">[[ toast.message ]]</div>
+            </div>
+        </div>
+        
         <!-- Sidebar with conversations -->
         <div class="sidebar" :class="{'sidebar-hidden': sidebarHidden}">
             <h3 class="mb-4">Conversations</h3>
@@ -439,13 +500,46 @@
                     repository: 'Loading...',
                     trainingDate: 'Loading...',
                     issuesCount: 'Loading...'
-                }
+                },
+                toasts: []
             },
             created() {
                 this.fetchConversations();
                 this.fetchTrainingStats();
             },
             methods: {
+                // Toast notification methods
+                showToast(title, message, type = 'info', duration = 5000) {
+                    const toast = {
+                        title: title,
+                        message: message,
+                        type: type,
+                        show: true
+                    };
+                    
+                    this.toasts.push(toast);
+                    
+                    // Automatically hide the toast after specified duration
+                    setTimeout(() => {
+                        const index = this.toasts.indexOf(toast);
+                        if (index !== -1) {
+                            this.toasts[index].show = false;
+                            // Remove from array after animation completes
+                            setTimeout(() => {
+                                this.toasts.splice(index, 1);
+                            }, 300);
+                        }
+                    }, duration);
+                },
+                
+                closeToast(index) {
+                    this.toasts[index].show = false;
+                    // Remove from array after animation completes
+                    setTimeout(() => {
+                        this.toasts.splice(index, 1);
+                    }, 300);
+                },
+                
                 toggleStatsModal() {
                     this.showStatsModal = !this.showStatsModal;
                 },
@@ -471,7 +565,10 @@
                         .then(data => {
                             this.conversations = data;
                         })
-                        .catch(error => console.error('Error fetching conversations:', error));
+                        .catch(error => {
+                            console.error('Error fetching conversations:', error);
+                            this.showToast('Error', 'Failed to fetch conversations', 'error');
+                        });
                 },
                 fetchTrainingStats() {
                     fetch('/api/training-stats/')
@@ -486,6 +583,7 @@
                                 trainingDate: 'Not available',
                                 issuesCount: 'Not available'
                             };
+                            this.showToast('Warning', 'Failed to load training statistics', 'error');
                         });
                 },
                 formatDate(dateString) {
@@ -524,11 +622,12 @@
                         })
                         .catch(error => {
                             console.error('Error loading conversation:', error);
+                            this.showToast('Error', 'Failed to load conversation', 'error');
                         });
                 },
                 submitQuestion() {
                     if (!this.availableModels.includes(this.model)) {
-                        alert('Invalid model selection');
+                        this.showToast('Error', 'Invalid model selection', 'error');
                         return;
                     }
                     
@@ -545,35 +644,44 @@
                             conversation_id: this.currentConversationId
                         })
                     })
-                    .then(response => response.json())
-                    .then(data => {
+                    .then(response => {
+                        return response.json().then(data => {
+                            return { status: response.status, data };
+                        });
+                    })
+                    .then(({ status, data }) => {
                         this.loading = false;
-                        if (data.error) {
-                            alert(data.error);
-                        } else {
-                            // Add the new question and answer to the conversation history
-                            this.conversationHistory.push({
-                                role: 'user',
-                                content: this.newQuestion
-                            });
-                            this.conversationHistory.push({
-                                role: 'assistant',
-                                content: data.answer,
-                                model: data.model,
-                                context: typeof data.context === 'string' ? data.context.trim() : data.context
-                            });
-                            this.newQuestion = '';
-                            
-                            // Set current conversation if this is a new conversation
-                            if (!this.currentConversationId) {
-                                this.currentConversationId = data.conversation_id;
-                                this.fetchConversations(); // Refresh conversation list
-                            }
+                        
+                        if (status !== 201 || data.error) {
+                            // Handle error response
+                            const errorMessage = data.error || 'An unknown error occurred';
+                            this.showToast('Error', errorMessage, 'error');
+                            return;
+                        }
+                        
+                        // Add the new question and answer to the conversation history
+                        this.conversationHistory.push({
+                            role: 'user',
+                            content: this.newQuestion
+                        });
+                        this.conversationHistory.push({
+                            role: 'assistant',
+                            content: data.answer,
+                            model: data.model,
+                            context: typeof data.context === 'string' ? data.context.trim() : data.context
+                        });
+                        this.newQuestion = '';
+                        
+                        // Set current conversation if this is a new conversation
+                        if (!this.currentConversationId) {
+                            this.currentConversationId = data.conversation_id;
+                            this.fetchConversations(); // Refresh conversation list
                         }
                     })
                     .catch(error => {
                         this.loading = false;
                         console.error('Error submitting question:', error);
+                        this.showToast('Error', 'Failed to submit question. Please try again.', 'error');
                     });
                 },
                 resetForm() {
