@@ -19,85 +19,95 @@ class MyModel:
         return self.giga.embeddings(text)
 
     def call_gigachat(self, user_question, some_chroma, message_history):
-        context, urls = some_chroma.find_embeddings(user_question)
-        prompt = f"""Instruction for LLM: 
-        Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user’s request. Write only possible solutions without summary and key points of the question itself.
+        try:
+            raise ValueError("tests")
+            context, urls = some_chroma.find_embeddings(user_question)
+            prompt = f"""Instruction for LLM: 
+            Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user's request. Write only possible solutions without summary and key points of the question itself.
 
 
 
-        Context:
-        =========================
-        {context}
-        =========================
-        """
-        messages = []
-        messages.append(
-            Messages(
-                role=MessagesRole.ASSISTANT,
-                content=prompt
+            Context:
+            =========================
+            {context}
+            =========================
+            """
+            messages = []
+            messages.append(
+                Messages(
+                    role=MessagesRole.ASSISTANT,
+                    content=prompt
+                )
             )
-        )
-        if message_history and len(message_history) > 0:
-            messages.extend(message_history)
-        messages.append(
-            Messages(
-                role=MessagesRole.USER,
-                content=user_question
+            if message_history and len(message_history) > 0:
+                messages.extend(message_history)
+            messages.append(
+                Messages(
+                    role=MessagesRole.USER,
+                    content=user_question
+                )
             )
-        )
-        payload = Chat(
-            temperature=0,
-            messages=messages
-        )
-        response = self.giga.chat(payload)
-        return urls, response.choices[0].message.content
+            payload = Chat(
+                temperature=0,
+                messages=messages
+            )
+            response = self.giga.chat(payload)
+            return urls, response.choices[0].message.content
+        except Exception as e:
+            # Return consistent error format: context, error message, None for model name
+            return urls if 'urls' in locals() else None, f"Error: {str(e)}", None
     
 
     def call_openrouter(self, user_question, some_chroma, message_history=None):
-        context, urls = some_chroma.find_embeddings(user_question)
-        
-        # Default system instruction
-        system_instruction = """Instruction for LLM: 
-        Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user's request. Write only possible solutions without summary and key points of the question itself.
-
-        Context:
-        =========================
-        {context}
-        =========================
-        """
-        
-        # Prepare message history for continuous dialogue
-        messages = []
-        
-        # Add system message with context
-        messages.append({
-            "role": "system",
-            "content": system_instruction.format(context=context)
-        })
-        
-        # Add message history if provided
-        if message_history and len(message_history) > 0:
-            messages.extend(message_history)
-        
-        # Add the latest user question
-        messages.append({
-            "role": "user",
-            "content": user_question
-        })
-        
         try:
-            response = self.openai_client.chat.completions.create(
-                model="deepseek/deepseek-chat-v3-0324",
-                extra_body={"models": ["qwen/qwen-plus", "qwen/qwen-max"]},
-                messages=messages,
-            )
+            context, urls = some_chroma.find_embeddings(user_question)
             
-            # Get the response content
-            assistant_message = response.choices[0].message.content
-            model_used = response.model
+            # Default system instruction
+            system_instruction = """Instruction for LLM: 
+            Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user's request. Write only possible solutions without summary and key points of the question itself.
+
+            Context:
+            =========================
+            {context}
+            =========================
+            """
             
-            return urls, assistant_message, model_used
+            # Prepare message history for continuous dialogue
+            messages = []
             
+            # Add system message with context
+            messages.append({
+                "role": "system",
+                "content": system_instruction.format(context=context)
+            })
+            
+            # Add message history if provided
+            if message_history and len(message_history) > 0:
+                messages.extend(message_history)
+            
+            # Add the latest user question
+            messages.append({
+                "role": "user",
+                "content": user_question
+            })
+            
+            try:
+                response = self.openai_client.chat.completions.create(
+                    model="deepseek/deepseek-chat-v3-0324",
+                    extra_body={"models": ["qwen/qwen-plus", "qwen/qwen-max"]},
+                    messages=messages,
+                )
+                
+                # Get the response content
+                assistant_message = response.choices[0].message.content
+                model_used = response.model
+                
+                return urls, assistant_message, model_used
+                
+            except Exception as e:
+                # Return error with consistent format: context, error message, None for model name
+                return urls, f"Error: {str(e)}", None
+                
         except Exception as e:
-            # Handle any errors from the API
-            return urls, f"Error: {str(e)}", "OpenRouter"
+            # For any other errors in the outer try block
+            return None, f"Error: {str(e)}", None
