@@ -20,7 +20,6 @@ class MyModel:
 
     def call_gigachat(self, user_question, some_chroma, message_history):
         try:
-            raise ValueError("tests")
             context, urls = some_chroma.find_embeddings(user_question)
             prompt = f"""Instruction for LLM: 
             Use information from provided issues, especially those with the label [State]:closed, to form a concise and precise answer to the user's request. Write only possible solutions without summary and key points of the question itself.

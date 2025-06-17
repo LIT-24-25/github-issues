@@ -354,7 +354,6 @@
 </head>
 <body>
     <div id="app" class="main-container">
-        <!-- Toast notifications container -->
         <div class="toast-container">
             <div v-for="(toast, index) in toasts" :key="index" class="toast" :class="{'show': toast.show}">
                 <div class="toast-header" :class="{'error': toast.type === 'error'}">
@@ -365,7 +364,6 @@
             </div>
         </div>
         
-        <!-- Sidebar with conversations -->
         <div class="sidebar" :class="{'sidebar-hidden': sidebarHidden}">
             <h3 class="mb-4">Conversations</h3>
             
@@ -387,18 +385,15 @@
             </ul>
         </div>
 
-        <!-- Sidebar Toggle Button -->
         <button class="sidebar-toggle" :class="{'sidebar-toggle-hidden': sidebarHidden}" @click="toggleSidebar">
             <span v-if="sidebarHidden">&#9654;</span>
             <span v-else>&#9664;</span>
         </button>
 
-        <!-- Stats Button -->
         <div class="stats-button" @click="toggleStatsModal">
             <i>&#9432;</i>
         </div>
 
-        <!-- Stats Modal -->
         <div class="stats-modal" :class="{ 'show': showStatsModal }">
             <div class="stats-modal-content">
                 <div class="stats-modal-header">
@@ -417,13 +412,10 @@
             </div>
         </div>
 
-        <!-- Main content -->
         <div class="content" :class="{'content-expanded': sidebarHidden}">
-            <!-- Conversation View -->
             <div class="response-container">
                 <h2 class="mb-4">Chat</h2>
                 
-                <!-- Chat History -->
                 <div v-if="conversationHistory.length > 0" class="chat-history">
                     <div v-for="(message, index) in conversationHistory" :key="index" 
                          :class="['chat-message', message.role === 'user' ? 'user-message' : 'assistant-message']">
@@ -445,13 +437,11 @@
                     </div>
                 </div>
                 
-                <!-- Empty conversation state -->
                 <div v-else class="text-center py-5">
                     <h5>Start a new conversation</h5>
                     <p class="text-muted">Ask a question to begin</p>
                 </div>
                 
-                <!-- Question Form -->
                 <form @submit.prevent="submitQuestion" class="mt-4">
                     <div class="mb-3">
                         <select class="form-select mb-3" v-model="model">
@@ -508,7 +498,6 @@
                 this.fetchTrainingStats();
             },
             methods: {
-                // Toast notification methods
                 showToast(title, message, type = 'info', duration = 5000) {
                     const toast = {
                         title: title,
@@ -519,12 +508,10 @@
                     
                     this.toasts.push(toast);
                     
-                    // Automatically hide the toast after specified duration
                     setTimeout(() => {
                         const index = this.toasts.indexOf(toast);
                         if (index !== -1) {
                             this.toasts[index].show = false;
-                            // Remove from array after animation completes
                             setTimeout(() => {
                                 this.toasts.splice(index, 1);
                             }, 300);
@@ -534,7 +521,6 @@
                 
                 closeToast(index) {
                     this.toasts[index].show = false;
-                    // Remove from array after animation completes
                     setTimeout(() => {
                         this.toasts.splice(index, 1);
                     }, 300);
@@ -547,7 +533,6 @@
                     this.sidebarHidden = !this.sidebarHidden;
                 },
                 toggleContext(index) {
-                    // Use Vue.set to ensure reactivity
                     Vue.set(this.visibleContexts, index, !this.isContextVisible(index));
                 },
                 isContextVisible(index) {
@@ -555,7 +540,6 @@
                 },
                 makeLinksClickable(text) {
                     if (!text) return '';
-                    // Simple URL regex pattern
                     const urlPattern = /(https?:\/\/[^\s]+)/g;
                     return text.replace(urlPattern, '<a href="$1" target="_blank">$1</a>');
                 },
@@ -596,16 +580,13 @@
                 loadConversation(conversationId) {
                     this.currentConversationId = conversationId;
                     this.conversationHistory = [];
-                    this.visibleContexts = {}; // Reset context visibility
+                    this.visibleContexts = {};
                     
-                    // Fetch all questions for this conversation
                     fetch(`/api/questions/?conversation=${conversationId}`)
                         .then(response => response.json())
                         .then(data => {
-                            // Sort by ID to ensure correct order
                             data.sort((a, b) => a.id - b.id);
                             
-                            // Format into conversation history
                             this.conversationHistory = [];
                             data.forEach(question => {
                                 this.conversationHistory.push({
@@ -653,13 +634,11 @@
                         this.loading = false;
                         
                         if (status !== 201 || data.error) {
-                            // Handle error response
                             const errorMessage = data.error || 'An unknown error occurred';
                             this.showToast('Error', errorMessage, 'error');
                             return;
                         }
                         
-                        // Add the new question and answer to the conversation history
                         this.conversationHistory.push({
                             role: 'user',
                             content: this.newQuestion
@@ -672,10 +651,9 @@
                         });
                         this.newQuestion = '';
                         
-                        // Set current conversation if this is a new conversation
                         if (!this.currentConversationId) {
                             this.currentConversationId = data.conversation_id;
-                            this.fetchConversations(); // Refresh conversation list
+                            this.fetchConversations();
                         }
                     })
                     .catch(error => {
@@ -688,7 +666,7 @@
                     this.currentConversationId = null;
                     this.conversationHistory = [];
                     this.newQuestion = '';
-                    this.visibleContexts = {}; // Reset context visibility
+                    this.visibleContexts = {};
                 }
             }
         });
