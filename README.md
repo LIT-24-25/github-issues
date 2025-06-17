@@ -18,14 +18,11 @@ GitHelp is an intelligent technical support system for GitHub repositories that 
 
 GitHelp works by:
 1. Training on your repository's existing issues to build a knowledge base
-2. Monitoring new issues for questions
-3. Using AI to generate appropriate responses
-4. Automatically posting responses as issue comments
+2. Using AI to generate appropriate responses
 
 ## Prerequisites 📋
 
-Before you begin, ensure you have:
-- Python 3.10 or higher installed
+- Python 3.11 or higher installed
 - Git installed
 - Access to GitHub repository with admin privileges
 - API keys for OpenRouter and GigaChat

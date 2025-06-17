@@ -17,7 +17,6 @@ class QuestionViewSet(viewsets.ModelViewSet):
     renderer_classes = [JSONRenderer]
 
     def list(self, request):
-        """Get all questions"""
         conversation_id = request.query_params.get('conversation')
         
         if conversation_id:
@@ -29,7 +28,6 @@ class QuestionViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     def create(self, request):
-        """Create a new question and get model response"""
         question_text = request.data.get('question')
         request_model = request.data.get('model')
         conversation_id = request.data.get('conversation_id')
@@ -41,22 +39,18 @@ class QuestionViewSet(viewsets.ModelViewSet):
             )
         
         try:
-            # Get or create a conversation
             if conversation_id:
                 try:
                     conversation = Conversation.objects.get(id=conversation_id)
-                    # We're continuing an existing conversation, so don't update the title
                 except Conversation.DoesNotExist:
                     return Response(
                         {'error': 'Conversation not found'}, 
                         status=status.HTTP_404_NOT_FOUND
                     )
             else:
-                # Create a new conversation with a truncated title (4-5 words)
                 words = question_text.split()
                 short_title = ' '.join(words[:5]) if len(words) > 5 else question_text
                 
-                # Limit the title length for DB field size
                 if len(short_title) > 255:
                     short_title = short_title[:252] + '...'
                 
@@ -64,7 +58,6 @@ class QuestionViewSet(viewsets.ModelViewSet):
                     title=short_title
                 )
             
-            # Get message history for this conversation if continuing a conversation
             message_history = []
             if conversation_id:
                 previous_questions = Question.objects.filter(conversation_id=conversation_id).order_by('id')
@@ -93,12 +86,10 @@ class QuestionViewSet(viewsets.ModelViewSet):
                             )
                         )
             
-            # Call the appropriate model
             if request_model == 'OpenRouter':
                 urls, model_response, model_name = my_model.call_openrouter(question_text, my_chroma, message_history)
             elif request_model == 'GigaChat':
                 response_tuple = my_model.call_gigachat(question_text, my_chroma, message_history)
-                # Handle either 2 or 3 return values from call_gigachat
                 if len(response_tuple) == 3:
                     urls, model_response, model_name = response_tuple
                 else:
@@ -107,10 +98,8 @@ class QuestionViewSet(viewsets.ModelViewSet):
             else:
                 urls, model_response, model_name = None, "Invalid model selection", None
             
-            # Check for error conditions
             if model_response is None or model_name is None or (isinstance(model_response, str) and model_response.startswith("Error:")):
                 error_message = "Error occurred" if model_response is None else model_response
-                # If this was a new conversation without existing questions, delete it
                 if not conversation_id and not Question.objects.filter(conversation=conversation).exists():
                     conversation.delete()
                     
@@ -119,7 +108,6 @@ class QuestionViewSet(viewsets.ModelViewSet):
                     status=status.HTTP_500_INTERNAL_SERVER_ERROR
                 )
                 
-            # Create question record only if there was no error
             question = Question.objects.create(
                 question=question_text,
                 answer=model_response,
@@ -131,7 +119,6 @@ class QuestionViewSet(viewsets.ModelViewSet):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
             
         except Exception as e:
-            # If this was a new conversation without existing questions, delete it
             if 'conversation' in locals() and not conversation_id and not Question.objects.filter(conversation=conversation).exists():
                 conversation.delete()
                 
@@ -142,7 +129,6 @@ class QuestionViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=['GET'])
     def view_response(self, request, pk=None):
-        """View a specific question response"""
         question = self.get_object()
         return Response({
             'id': question.id,
@@ -154,23 +140,18 @@ class QuestionViewSet(viewsets.ModelViewSet):
         })
 
 class QuestionFormView(TemplateView):
-    """Serve the main Vue.js application template"""
     template_name = "question_app/question.html"
 
 
 class TrainingStatsView(APIView):
-    """API endpoint to retrieve training metadata"""
-    
+
     def get(self, request):
-        """Return the training metadata"""
         return Response(training_metadata)
 
 # Add a new view to get all conversations
 class ConversationViewSet(viewsets.ViewSet):
-    """API endpoint to retrieve conversations"""
-    
+
     def list(self, request):
-        """Return all conversations with their latest question"""
         conversations = Conversation.objects.all().order_by('-updated_at')
         result = []
         
