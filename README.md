@@ -22,7 +22,6 @@ GitHelp works by:
 
 ## Prerequisites 📋
 
-Before you begin, ensure you have:
 - Python 3.11 or higher installed
 - Git installed
 - Access to GitHub repository with admin privileges
