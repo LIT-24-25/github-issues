@@ -33,9 +33,6 @@ class InstanceConfig:
             InstanceConfig._initialized = True
             
     def _load_training_metadata(self):
-        """
-        Load metadata from the training metadata file if it exists.
-        """
         metadata_file_path = os.path.join("metadata", "training_metadata.txt")
         metadata = {
             "repository": "Not available",
@@ -72,14 +69,10 @@ class InstanceConfig:
         return metadata
     
     def get_training_metadata(self):
-        """
-        Return the loaded metadata as a dictionary.
-        """
         return self.training_metadata
 
 config = InstanceConfig()
 
-# Define variables for direct import access
 openrouter_token = config.openrouter_token
 gigachat_token = config.gigachat_token
 my_model = config.my_model
